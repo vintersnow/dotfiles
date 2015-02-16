@@ -9,7 +9,7 @@ if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
         .git)
           continue;;
         *)
-          ln -is "$DOTFILES/$i" "$HOME/$i";;
+          ln -fs "$DOTFILES/$i" "$HOME/$i";;
       esac
     fi
   done
