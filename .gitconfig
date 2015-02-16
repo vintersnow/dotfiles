@@ -1,0 +1,35 @@
+[user]
+	name = izuku
+	email = ankasandora@gmail.com
+[core]
+	excludesfile = /Users/izuku/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
+	precomposeunicode = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = true
+	branch = auto
+	status = auto
+	diff = auto
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[merge]
+	ff = false
+[push]
+	default = simple
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[pack]
+	windowMemory = 100m
+	packSizeLimit = 100m
+	threads = 1
