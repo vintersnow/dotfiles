@@ -1,0 +1,10 @@
+{
+  "indent" : 2,      // インデント
+  "maxlen" : 100,     // 一行の最大文字数
+  "unused" : true,   // 宣言のみで使用していない変数を検出
+  "eqeqeq":true,     // ==、!=の使用禁止
+  "undef" : true,    // グローバル変数へのアクセスを禁止 明示的に宣言していない変数へのアクセス禁止
+  "devel" : true,     // console、alertを許可
+  "node":true,
+  "jquery":true
+}
