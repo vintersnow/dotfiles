@@ -1,7 +1,17 @@
-" カーソル行を強調表示しない
-set nocursorline
-" 挿入モードの時のみ、カーソル行をハイライトする
-autocmd InsertEnter,InsertLeave * set cursorline!
+set nocursorline " カーソル行を強調表示しない
+autocmd InsertEnter,InsertLeave * set cursorline!  " 挿入モードの時のみ、カーソル行をハイライトする
+set number "行数表示"
+set showmatch "括弧入力時の対応する括弧を表示
+set tabstop=2 "インデントをスペース4つ分に設定
+set smartindent "オートインデント"
+"#####検索設定#####
+set ignorecase "大文字/小文字の区別なく検索する
+set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
+set wrapscan "検索時に最後まで行ったら最初に戻る
+
+syntax on
+
+" set cursor in tmux
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -10,7 +20,77 @@ else
   let &t_EI = "\e]50;CursorShape=0\x7"
 endif
 
+" keymap
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
-syntax on
 
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Plugins
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+NeoBundle 'tomtom/tcomment_vim'
+
+call neobundle#end()
+" Required:
+filetype plugin indent on
+
+" 未インストールのpluginがあるとインストールするか聞いてくる。
+NeoBundleCheck
+
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
+"
+"
+""""""""""""""""""""""""""""""
+" Unit.vimの設定
+" """"""""""""""""""""""""""""
+" 入力モードで開始する
+ let g:unite_enable_start_insert=1
+" " バッファ一覧
+ noremap <C-P> :Unite buffer<CR>
+" " ファイル一覧
+ noremap <C-N> :Unite -buffer-name=file file<CR>
+" " 最近使ったファイルの一覧
+ noremap <C-Z> :Unite file_mru<CR>
+" " sourcesを「今開いているファイルのディレクトリ」とする
+ noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+" " ウィンドウを分割して開く
+ au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+ au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" " ウィンドウを縦に分割して開く
+ au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" " ESCキーを2回押すと終了する
+ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+" """""""""""""""""""""""""""""""
+"
+" tcomment.vim
+let g:tcommentMapLeader1 = '<C-/>'
+-------------------------
+" カーソル位置の単語をgrep検索
+ nnoremap <silent> ,cg :<C-u>Unite grep:.  -buffer-name=search-buffer<CR><C-R><C-W>
+ " unite grep に ag(The Silver Searcher) を使う
+ if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+	let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+ endif
