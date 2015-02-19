@@ -28,7 +28,13 @@ noremap! <C-j> <esc>
 " Start Neobundle Settings.
 "---------------------------
 " bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+" set runtimepath+=~/.vim/bundle/neobundle.vim/
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -58,8 +64,7 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
-"
-"
+
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
 " """"""""""""""""""""""""""""
@@ -96,7 +101,9 @@ if executable('ag')
  let g:unite_source_grep_recursive_opt = ''
 endif
 
+"""""""""""""""""""""""""""
 "neocomplcache.vim
+"""""""""""""""""""""""""""
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
