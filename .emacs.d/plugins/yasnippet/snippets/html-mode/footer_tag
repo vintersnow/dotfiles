@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: footer_tag
+# key: fo
+# binding: C-c M-l
+# expand-env: ((some-var some-value))
+# type: command
+# --
+<footer>
+$0
+</footer>
