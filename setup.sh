@@ -2,7 +2,7 @@
 DOTFILES="${HOME}/.dotfiles"
 if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
   for i in .?*; do
-    if [ -r $i -a ! -d $i ]; then
+    if [ -r $i ]; then
       case $i in
         ..)
           continue;;

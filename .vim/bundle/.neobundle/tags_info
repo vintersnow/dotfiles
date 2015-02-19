@@ -1,0 +1,10 @@
+ag.vim
+neobundle.vim
+neocomplcache
+neomru.vim
+nerdtree
+tcomment_vim
+unite.vim
+vim-autoclose
+vim-indent-guides
+vim-trailing-whitespace

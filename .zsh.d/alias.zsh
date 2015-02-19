@@ -66,6 +66,9 @@ case ${OSTYPE} in
   alias ag='ag -S'
   alias agl='ag -S --pager="less -R"'
 
+  #pandoc
+  alias panmp='pandoc -V documentclass=ltjarticle --latex-engine=lualatex'
+
   ;;
   linux*)
         #Linux用の設定
