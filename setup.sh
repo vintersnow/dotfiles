@@ -1,6 +1,8 @@
 #!/bin/zsh -u
 DOTFILES="${HOME}/.dotfiles"
+DIR=`pwd`
 if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
+  cd $DOTFILES
   for i in .?*; do
     if [ -r $i ]; then
       case $i in
@@ -13,4 +15,5 @@ if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
       esac
     fi
   done
+  cd $DIR
 fi
