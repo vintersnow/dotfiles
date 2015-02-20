@@ -21,8 +21,8 @@ SAVEHIST=1000000
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
-# %# "
+PROMPT="%{${fg[yellow]}%}[%n@%m]%{${reset_color}%} %~
+# $ "
 
 
 # 単語の区切り文字を指定する
