@@ -1,0 +1,1 @@
+/Users/izuku/.dotfiles/.emacs.d
