@@ -8,7 +8,8 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
   done
 fi
 
-[ -f ${DOTFILE}/antigen/antigen.zsh ] && source $ZSHHOME/zshrc.antigen ]
+# [ -f ${DOTFILE}/antigen/antigen.zsh ] && source $ZSHHOME/zshrc.antigen ]
+
 if (which zprof > /dev/null) ;then
           zprof | less
-  fi
+fi
