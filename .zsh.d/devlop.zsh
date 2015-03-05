@@ -25,3 +25,16 @@ if [ -d "${PYENV_ROOT}" ]; then
   export PATH=${PYENV_ROOT}/bin:$PATH
   eval "$(pyenv init -)"
 fi
+
+# nvmの遅延読み込み
+nvm() {
+  # まず仮の nvm コマンドを unset
+  unset -f nvm
+
+  # nvm.sh をロード
+  # ここで本物の nvm コマンドが定義される
+  source "${NVM_DIR:-$HOME/.nvm}/nvm.sh"
+
+  # 仮の nvm コマンドに渡された引数を本物に受け渡す
+  nvm "$@"
+}

@@ -2,4 +2,4 @@ source ~/.dotfiles/antigen/antigen.zsh
 
 # Bundles from the default repo
 antigen-bundle git
-antigen-bundle autojunp
+#antigen-bundle autojunp
