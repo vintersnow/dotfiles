@@ -7,5 +7,6 @@ tcomment_vim
 unite.vim
 vim-autoclose
 vim-colors-solarized
+vim-endwise
 vim-indent-guides
 vim-trailing-whitespace

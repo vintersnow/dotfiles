@@ -1,3 +1,4 @@
+#setting for zprof
 #zmodload zsh/zprof && zprof
 
 # nvm Path set

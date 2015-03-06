@@ -10,6 +10,7 @@ fi
 
 # [ -f ${DOTFILE}/antigen/antigen.zsh ] && source $ZSHHOME/zshrc.antigen ]
 
+#setting for zprof
 if (which zprof > /dev/null) ;then
           zprof | less
 fi

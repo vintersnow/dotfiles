@@ -54,6 +54,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tpope/vim-endwise'
 
 call neobundle#end()
 " Required:
@@ -92,6 +93,7 @@ NeoBundleCheck
 "
 " tcomment.vim
 let g:tcommentMapLeader1 = '<C-/>'
+
 "-------------------------
 " カーソル位置の単語をgrep検索
 nnoremap <silent> ,cg :<C-u>Unite grep:.  -buffer-name=search-buffer<CR><C-R><C-W>
@@ -114,7 +116,8 @@ let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
+" 1番目の候補を自動選択
+let g:neocomplcache_enable_auto_select = 1
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : ''
@@ -132,6 +135,8 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" 補完候補が表示されている場合は確定。そうでない場合は改行
+"inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
