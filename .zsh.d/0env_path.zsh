@@ -1,5 +1,5 @@
 ## 重複パスを登録しない
-typeset -U path cdpath fpath manpath
+typeset -U path PATH cdpath fpath manpath
 
 ### 環境変数
 export LANG=ja_JP.UTF-8
