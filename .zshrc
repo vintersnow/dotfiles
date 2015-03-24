@@ -12,5 +12,5 @@ fi
 
 #setting for zprof
 if (which zprof > /dev/null) ;then
-          zprof | less
+  zprof | less
 fi
