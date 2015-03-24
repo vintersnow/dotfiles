@@ -1,0 +1,24 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<Menu>
+  <Name>Applications</Name>
+  <Menu>
+    <Name>wine-wine</Name>
+    <Directory>wine-wine.directory</Directory>
+  <Menu>
+    <Name>wine-Programs</Name>
+    <Directory>wine-Programs.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-Bridge Base Inc</Name>
+    <Directory>wine-Programs-Bridge Base Inc.directory</Directory>
+    <Include>
+      <Filename>wine-Programs-Bridge Base Inc-ブリッジ入門.desktop</Filename>
+      <Filename>wine-Programs-Bridge Base Inc-ブリッジ入門２.desktop</Filename>
+      <Filename>wine-Programs-Bridge Base Inc-Bridge Base Online.desktop</Filename>
+      <Filename>wine-Programs-Bridge Base Inc-BridgeVu Help.desktop</Filename>
+      <Filename>wine-Programs-Bridge Base Inc-Uninstall Bridge Base Online.desktop</Filename>
+    </Include>
+  </Menu>
+  </Menu>
+  </Menu>
+</Menu>
