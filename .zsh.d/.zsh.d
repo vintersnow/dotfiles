@@ -1,1 +1,0 @@
-/Users/izuku/.dotfiles/.zsh.d
