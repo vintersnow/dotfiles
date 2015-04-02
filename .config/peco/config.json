@@ -6,12 +6,6 @@
         "C-v": "peco.ScrollPageDown",
         "C-x,C-c": "peco.Cancel"
     },
-    "CustomMatcher": {
-        "Migemo": [
-            "migemogrep",
-            "$QUERY"
-        ]
-    },
     "Style": {
         "Basic": ["on_default", "default"],
         "SavedSelection": ["bold", "on_yellow", "white"],
