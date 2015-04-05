@@ -74,9 +74,9 @@ case ${OSTYPE} in
 
   ;;
   linux*)
-        #Linux用の設定
-        ;;
-      esac
+  #Linux用の設定
+  ;;
+esac
 
 # グローバルエイリアス
 alias -g L='| less -R'
