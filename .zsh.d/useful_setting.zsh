@@ -23,17 +23,7 @@ case ${OSTYPE} in
       fi
     }
 
-    #lsのカラーをsolarizedに設定
-    if [ -f ~/.dircolors ]; then
-      if type dircolors > /dev/null 2>&1; then
-        eval $(dircolors ~/.dircolors)
-        elif type gdircolors > /dev/null 2>&1; then
-        eval $(gdircolors ~/.dircolors)
-      fi
-    fi
-    if [ -n "$LS_COLORS" ]; then
-      zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-    fi
+    
 
     # iTerm2のタブ名を変更する
     function title {
@@ -53,6 +43,17 @@ function chpwd() {
     ls
   fi
 }
+#lsのカラーをsolarizedに設定
+if [ -f ~/.dircolors ]; then
+  if type dircolors > /dev/null 2>&1; then
+    eval $(dircolors ~/.dircolors)
+    elif type gdircolors > /dev/null 2>&1; then
+    eval $(gdircolors ~/.dircolors)
+  fi
+fi
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
 
 # 解凍コマンド
 function extract() {
