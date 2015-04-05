@@ -11,7 +11,7 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # setting for GO
-export GOPATH=$HOME/go
+export GOPATH=$HOME/gopath
 # export GOROOT=/usr/local/opt/go/libexec もう必要ないらしい
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # Go completion
