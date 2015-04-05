@@ -75,6 +75,10 @@ case ${OSTYPE} in
   ;;
   linux*)
   #Linux用の設定
+  alias ls='ls -Fh  --color=auto'
+  alias la='ls -A --color=auto'
+  alias ll='ls -slhF --color=auto'
+  alias lly='ls -slhF --color=auto --time-style=long-iso'
   ;;
 esac
 
