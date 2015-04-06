@@ -33,3 +33,7 @@
 	windowMemory = 100m
 	packSizeLimit = 100m
 	threads = 1
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
