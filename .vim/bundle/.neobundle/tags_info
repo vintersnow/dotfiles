@@ -1,12 +1,9 @@
 ag.vim
-alpaca_powertabline
 neobundle.vim
 neocomplcache
 neocomplete-rsense.vim
 neomru.vim
 nerdtree
-powerline
-powerline-fontpatcher
 tcomment_vim
 unite.vim
 vim-autoclose

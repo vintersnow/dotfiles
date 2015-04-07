@@ -319,8 +319,7 @@ neobundle#config({options})
 neobundle#tap({bundle-name})			 *neobundle#tap()*
 		Initialize |neobundle#tapped| and |neobundle#hooks| variable
 		as {bundle-name} bundle.
-		It returns non-zero if {bundle-name} is exists and not
-		disabled.
+		It returns non-zero if {bundle-name} is exists.
 
 neobundle#untap()				 *neobundle#untap()*
 		Clear current |neobundle#tapped| and |neobundle#hooks| variable.
@@ -1325,7 +1324,7 @@ EXAMPLES					*neobundle-examples*
 	NeoBundleFetch 'Shougo/neobundle.vim'
 
 	" Use neobundle standard recipes.
-	NeoBundle 'Shougo/neobundle-vim-recipes', {'force' : 1}
+	NeoBundle 'Shougo/neobundle-vim-recipes'
 
 	" My Bundles here:
 	" Refer to |:NeoBundle-examples|.
@@ -1496,9 +1495,8 @@ The standard recipes are in "neobundle-vim-recipes".
 https://github.com/Shougo/neobundle-vim-recipes
 
 You can use the recipes with the following command in .vimrc.
-Note: You must use "force" option for "neobundle-vim-recipes".
 >
-	NeoBundle 'Shougo/neobundle-vim-recipes', {'force' : 1}
+	NeoBundle 'Shougo/neobundle-vim-recipes'
 <
 
 The recipe files are in JSON format, like this:

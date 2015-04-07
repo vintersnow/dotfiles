@@ -68,9 +68,9 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
   \ 'insert' : 1,
   \ 'filetypes': 'ruby',
   \ }}
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Lokaltog/powerline-fontpatcher'
+"NeoBundle 'alpaca-tc/alpaca_powertabline'
+"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+"NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 call neobundle#end()
 " Required:
