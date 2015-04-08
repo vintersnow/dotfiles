@@ -742,6 +742,7 @@ tcomment#Comment()	tcomment.txt	/*tcomment#Comment()*
 tcomment#CommentAs()	tcomment.txt	/*tcomment#CommentAs()*
 tcomment#DefineType()	tcomment.txt	/*tcomment#DefineType()*
 tcomment#GetCommentDef()	tcomment.txt	/*tcomment#GetCommentDef()*
+tcomment#GetLineC()	tcomment.txt	/*tcomment#GetLineC()*
 tcomment#GuessCommentType()	tcomment.txt	/*tcomment#GuessCommentType()*
 tcomment#MaybeReuseOptions()	tcomment.txt	/*tcomment#MaybeReuseOptions()*
 tcomment#Operator()	tcomment.txt	/*tcomment#Operator()*
@@ -805,6 +806,7 @@ unite-action-common	unite.txt	/*unite-action-common*
 unite-action-completion	unite.txt	/*unite-action-completion*
 unite-action-directory	unite.txt	/*unite-action-directory*
 unite-action-file	unite.txt	/*unite-action-file*
+unite-action-history/unite	unite.txt	/*unite-action-history\/unite*
 unite-action-jump_list	unite.txt	/*unite-action-jump_list*
 unite-action-neobundle-lazy	neobundle.txt	/*unite-action-neobundle-lazy*
 unite-action-neobundle-search	neobundle.txt	/*unite-action-neobundle-search*
@@ -1012,9 +1014,11 @@ unite-source-file_point	unite.txt	/*unite-source-file_point*
 unite-source-file_rec	unite.txt	/*unite-source-file_rec*
 unite-source-file_rec/async	unite.txt	/*unite-source-file_rec\/async*
 unite-source-file_rec/git	unite.txt	/*unite-source-file_rec\/git*
+unite-source-file_rec/neovim	unite.txt	/*unite-source-file_rec\/neovim*
 unite-source-find	unite.txt	/*unite-source-find*
 unite-source-function	unite.txt	/*unite-source-function*
 unite-source-grep	unite.txt	/*unite-source-grep*
+unite-source-history/unite	unite.txt	/*unite-source-history\/unite*
 unite-source-history/yank	unite.txt	/*unite-source-history\/yank*
 unite-source-jump	unite.txt	/*unite-source-jump*
 unite-source-jump_point	unite.txt	/*unite-source-jump_point*
