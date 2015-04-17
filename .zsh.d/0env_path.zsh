@@ -18,6 +18,8 @@ case ${OSTYPE} in
   fpath=(/usr/local/share/zsh-completions $fpath)
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/vim
+  export PATH=/opt/X11/include:$PATH
+
   ;;
   linux*)
   #Linux用の設定

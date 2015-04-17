@@ -25,3 +25,6 @@
 # Indentation override for all JS under lib directory
   [lib/**.js]
   indent_size = 2
+
+[*.md]
+indent_size=4
