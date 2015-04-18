@@ -38,4 +38,3 @@
 	smudge = git hawser smudge %f
 	required = true
 [pull]
-	ff = only
