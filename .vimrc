@@ -72,7 +72,10 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
 "NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 "NeoBundle 'Lokaltog/powerline-fontpatcher'
 
+"NeoBundle 'vim-scripts/dbext.vim'
+
 call neobundle#end()
+
 " Required:
 filetype plugin indent on
 

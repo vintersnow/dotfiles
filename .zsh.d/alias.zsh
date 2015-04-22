@@ -51,6 +51,7 @@ case ${OSTYPE} in
   alias f='~/Projects/script/f.sh'
   alias bk='~/Projects/script/backup.sh'
   alias xrand='~/Projects/script/xorshift'
+  alias stthesis="~/.dotfiles/shellscripts/setup_thesis.sh"
 
   #wine
   alias wine='~/Applications/wine/bin/nihonshu '
