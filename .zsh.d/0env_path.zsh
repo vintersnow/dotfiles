@@ -10,6 +10,7 @@ export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/texbin:$PATH
+export PATH=~/.dotfiles/shellscripts:$PATH
 
 case ${OSTYPE} in
   darwin*)
