@@ -60,7 +60,7 @@ case ${OSTYPE} in
   #for removing the warning
   # alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew"
 
-  alias gdb='/usr/local/Cellar/gdb/7.8.1/bin/gdb'
+#alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
   # Go
   alias gob='go build'
