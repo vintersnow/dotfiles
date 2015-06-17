@@ -23,7 +23,7 @@ case ${OSTYPE} in
       fi
     }
 
-    
+
 
     # iTerm2のタブ名を変更する
     function title {
@@ -31,6 +31,7 @@ case ${OSTYPE} in
     }
     #辞書検索
     dict () { open dict:///"$@" ; }
+
     ;;
   linux*)
     #Linux用の設定
@@ -76,3 +77,15 @@ alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 function md(){
   mkdir -p "$1" && cd "$1"
 }
+
+### powerline
+case ${OSTYPE} in
+  darwin*)
+    #Mac用の設定
+    powerline-daemon -q
+    . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+    ;;
+  linux*)
+    #Linux用の設定
+    ;;
+esac

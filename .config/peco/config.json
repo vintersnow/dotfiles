@@ -12,5 +12,6 @@
         "Selected": ["underline", "on_cyan", "black"],
         "Query": ["yellow", "bold"],
         "Matched": ["red", "on_default"]
-    }
+    },
+    "InitialFilter":"SmartCase"
 }

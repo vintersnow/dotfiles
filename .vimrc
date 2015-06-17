@@ -24,6 +24,17 @@ endif
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
 
+" powerline
+
+
+"powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+set showtabline=2
+set noshowmode
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -68,11 +79,10 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
   \ 'insert' : 1,
   \ 'filetypes': 'ruby',
   \ }}
-"NeoBundle 'alpaca-tc/alpaca_powertabline'
-"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-"NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 "NeoBundle 'vim-scripts/dbext.vim'
+
+NeoBundle 'zenorocha/dracula-theme'
 
 call neobundle#end()
 
@@ -167,7 +177,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup() "
 " """""""""""""""""""""
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme dracula
 
 """"""""""""""""""""""""
 " colorscheme

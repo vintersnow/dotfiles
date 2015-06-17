@@ -20,6 +20,7 @@ case ${OSTYPE} in
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/vim
   export PATH=/opt/X11/include:$PATH
+  export PATH=/usr/local/bin:$PATH
 
   ;;
   linux*)

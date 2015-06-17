@@ -45,3 +45,6 @@ function peco-pkill() {
   done
 }
 alias pk="peco-pkill"
+
+# cool-peco
+[ -f ~/Projects/github/cool-peco/cool-peco ] && source ~/Projects/github/cool-peco/cool-peco ]
