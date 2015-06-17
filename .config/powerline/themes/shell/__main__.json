@@ -1,0 +1,15 @@
+{
+	"segment_data": {
+		"hostname": {
+			"args": {
+				"only_if_ssh": true
+			}
+		},
+		"cwd": {
+			"args": {
+        "ellipsis": "**",
+				"dir_limit_depth": 10
+			}
+		}
+	}
+}
