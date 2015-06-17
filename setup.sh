@@ -10,6 +10,8 @@ if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
           continue;;
         .git)
           continue;;
+        .gitignore)
+          continue;;
         *)
           ln -sfn "$DOTFILES/$i" "$HOME/$i";;
       esac

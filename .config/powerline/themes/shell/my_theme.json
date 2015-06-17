@@ -8,7 +8,7 @@
         "priority": 10,
         "args":{
           "ellipsis":"...",
-          "dir_limit_depth":5
+          "dir_limit_depth":7
         }
       }, {
         "function": "powerline.segments.shell.jobnum",
