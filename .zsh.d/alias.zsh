@@ -15,8 +15,6 @@ alias sudo='sudo '
 alias so='source '
 alias sz='source ~/.zshrc'
 
-alias gh='cd $(ghq list -p | peco)'
-alias gho='gh-open $(ghq list -p | peco)'
 
 #OS別alias
 case ${OSTYPE} in
