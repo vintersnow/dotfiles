@@ -1,5 +1,5 @@
 #setting for zprof restart zsh
-#zmodload zsh/zprof && zprof
+# zmodload zsh/zprof && zprof
 
 # nvm Path set
 PATH=${NVM_DIR:-$HOME/.nvm}/default/bin:$PATH
