@@ -76,6 +76,9 @@ case ${OSTYPE} in
   #pandoc
   alias panmp='pandoc -V documentclass=ltjarticle --latex-engine=lualatex'
 
+  # quick look
+  alias ql='qlmanage -p "$@" >& /dev/null'
+
   ;;
   linux*)
   #Linux用の設定

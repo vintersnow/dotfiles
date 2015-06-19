@@ -1,3 +1,20 @@
 #! /bin/zsh
 
-$@
+input=$1
+
+if [ $# -eq 0 ];then
+  echo "input picture file"
+  exit 1
+fi
+
+if [ $(echo $input | grep '.jpg$') ]; then
+    jpegtopnm $input | aview
+elif [ $(echo $input | grep -e '.png') ];then
+  pngtopnm $input | aview
+elif [ $(echo $input | grep -e '.gif') ];then
+  giftopnm $input | aview
+else
+  echo "not support file type"
+  exit 1
+fi
+

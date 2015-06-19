@@ -24,8 +24,8 @@ endif
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
 
-" powerline
-
+" copy to clipboard
+set clipboard=unnamed,autoselect
 
 "powerline
 python from powerline.vim import setup as powerline_setup
