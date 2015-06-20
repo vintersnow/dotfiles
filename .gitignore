@@ -1,1 +1,3 @@
 fish_history
+.vim/bundle/*
+!.vim/bundle/neobundle.vim
