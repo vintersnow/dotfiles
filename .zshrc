@@ -22,6 +22,7 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
         tmux new-session && echo "tmux created new session"
       fi
     fi
+  fi
 fi
 
 [ -f ${DOTFILE}/antigen/antigen.zsh ] && source $ZSHHOME/zshrc.antigen ]
@@ -30,3 +31,4 @@ fi
 if (which zprof > /dev/null) ;then
   zprof | less
 fi
+

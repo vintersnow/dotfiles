@@ -1,1 +1,1 @@
-/Users/izuku/.ghq/github.com/zenorocha/dracula-theme/vim/colors/dracula.vim
+/home/vagrant/.ghq/github.com/zenorocha/dracula-theme/vim/colors/dracula.vim
