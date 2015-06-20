@@ -28,12 +28,18 @@ noremap! <C-j> <esc>
 set clipboard=unnamed,autoselect
 
 "powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2
-set showtabline=2
-set noshowmode
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+    set laststatus=2
+    set showtabline=2
+    set noshowmode
+  endif
+endif
 
 "---------------------------
 " Start Neobundle Settings.
