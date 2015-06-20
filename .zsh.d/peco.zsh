@@ -17,15 +17,15 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # ### search a destination from cdr list
-function percol-get-destination-from-cdr() {
+function peco-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
   peco --query "$LBUFFER"
 }
 
 ### search a destination from cdr list and cd the destination
-function percol-cdr() {
-  local destination="$(percol-get-destination-from-cdr)"
+function peco-cdr() {
+  local destination="$(peco-get-destination-from-cdr)"
   if [ -n "$destination" ]; then
     BUFFER="cd $destination"
     zle accept-line
@@ -33,8 +33,8 @@ function percol-cdr() {
     zle reset-prompt
   fi
 }
-zle -N percol-cdr
-bindkey '^x' percol-cdr
+zle -N peco-cdr
+bindkey '^x' peco-cdr
 
 #pecoでkill
 function peco-pkill() {
