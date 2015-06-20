@@ -1,3 +1,9 @@
 [submodule "/Users/izuku/.dotfiles/.vim/bundle/neobundle.vim"]
 	path = ~/.dotfiles/.vim/bundle/neobundle.vim
 	url = git://github.com/Shougo/neobundle.vim
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "/Users/izuku/.dotfiles/dircolors-solarized"]
+	path = /Users/izuku/.dotfiles/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git

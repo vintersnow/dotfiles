@@ -45,11 +45,11 @@ function chpwd() {
   fi
 }
 #lsのカラーをsolarizedに設定
-if [ -f ~/.dircolors ]; then
+if [ -f ~/.dotfiles/.dircolors-solarized ]; then
   if type dircolors > /dev/null 2>&1; then
-    eval $(dircolors ~/.dircolors)
-    elif type gdircolors > /dev/null 2>&1; then
-    eval $(gdircolors ~/.dircolors)
+    eval $(dircolors ~/.dotfiles/.dircolors-solarized )
+  elif type gdircolors > /dev/null 2>&1; then
+    eval $(gdircolors ~/.dotfiles/.dircolors-solarized )
   fi
 fi
 if [ -n "$LS_COLORS" ]; then
