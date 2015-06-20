@@ -1,1 +1,0 @@
-/home/vagrant/.ghq/github.com/zenorocha/dracula-theme/vim/colors/dracula.vim
