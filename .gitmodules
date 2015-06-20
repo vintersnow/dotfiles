@@ -1,12 +1,3 @@
 [submodule "/Users/izuku/.dotfiles/.vim/bundle/neobundle.vim"]
-	path = .dotfiles/.vim/bundle/neobundle.vim
+	path = ~/.dotfiles/.vim/bundle/neobundle.vim
 	url = git://github.com/Shougo/neobundle.vim
-[submodule "extras/bundles/ruby-tmbundle"]
-  path = .emacs.d/elisp/yasnippet/extras/bundles/ruby-tmbundle
-  url = http://github.com/drnic/ruby-tmbundle.git
-[submodule "extras/bundles/html-tmbundle"]
-  path = extras/bundles/html-tmbundle/.emacs.d/elisp/yasnippet
-  url = http://github.com/drnic/html-tmbundle.git
-[submodule "extras/bundles/rails-tmbundle"]
-  path = .emacs.d/elisp/yasnippet/extras/bundles/rails-tmbundle
-  url = http://github.com/drnic/ruby-on-rails-tmbundle.git
