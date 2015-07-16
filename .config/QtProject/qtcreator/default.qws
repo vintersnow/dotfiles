@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 3.4.2, 2015-07-03T22:31:48. -->
+<qtcreator>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#666666</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAQAAACIAC8AVQBzAGUAcgBzAC8AaQB6AHUAawB1AC8AUQB0AC8ARQB4AGEAbQBwAGwAZQBzAC8AUQB0AC0ANQAuADUALwBxAHUAaQBjAGsALwBjAG8AbgB0AHIAbwBsAHMALwBjAGEAbABlAG4AZABhAHIALwBzAHIAYwAvAG0AYQBpAG4ALgBjAHAAcAAAAAwAAAAAGAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAIgALwBVAHMAZQByAHMALwBpAHoAdQBrAHUALwBRAHQALwBFAHgAYQBtAHAAbABlAHMALwBRAHQALQA1AC4ANQAvAHEAdQBpAGMAawAvAGMAbwBuAHQAcgBvAGwAcwAvAGMAYQBsAGUAbgBkAGEAcgAvAHEAbQBsAC8AbQBhAGkAbgAuAHEAbQBsAAAADAAAAAAcAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAFwALwBVAHMAZQByAHMALwBpAHoAdQBrAHUALwBQAHIAbwBqAGUAYwB0AHMALwBRAHQALwB0AGUAcwB0AF8AYwB1AGkALwB0AGUAcwB0AF8AYwB1AGkALgBwAHIAbwAAAAwAAAAAGAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAFQALwBVAHMAZQByAHMALwBpAHoAdQBrAHUALwBQAHIAbwBqAGUAYwB0AHMALwBRAHQALwB0AGUAcwB0AF8AYwB1AGkALwBtAGEAaQBuAC4AYwBwAHAAAAAMAAAAABgAAAABAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAACQAAAAVlbXB0eQ==</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/Users/izuku/Qt/Examples/Qt-5.5/quick/controls/calendar/calendar.pro</value>
+   <value type="QString">/Users/izuku/Projects/Qt/test_cui/test_cui.pro</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/Users/izuku/Projects/Qt/test_cui/test_cui.pro</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-IndividualFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">session</value>
+   <value type="QString">/Users/izuku/Qt/Examples/Qt-5.5/quick/controls/calendar/calendar.pro</value>
+   <value type="QString">/Users/izuku/Projects/Qt/test_cui/test_cui.pro</value>
+   <value type="QString">/Users/izuku/Projects/Qt/test_cui</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">IndividualFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>
