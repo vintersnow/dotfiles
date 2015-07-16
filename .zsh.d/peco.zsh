@@ -1,12 +1,12 @@
 ###peco
 #pecoでhistory検索
 function peco-select-history() {
-  local tac
-  if which tac > /dev/null; then
-    tac="tac"
-  else
-    tac="tail -r"
-  fi
+  # local tac
+  # if which tac > /dev/null; then
+  #   tac="tac"
+  # else
+  #   tac="tail -r"
+  # fi
   BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle clear-screen
