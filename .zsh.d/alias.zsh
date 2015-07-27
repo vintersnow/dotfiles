@@ -15,6 +15,9 @@ alias sudo='sudo '
 alias so='source '
 alias sz='source ~/.zshrc'
 
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 #OS別alias
 case ${OSTYPE} in
