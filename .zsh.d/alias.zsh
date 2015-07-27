@@ -95,6 +95,17 @@ alias -g L='| less -R'
 alias -g G='| grep'
 alias -g A='| ag'
 
+#suffix alias
+alias -s hs=runhaskell
+alias -s py=python
+alias -s rb=ruby
+
+function runc () {clang $1 && shift && ./a.out $@}
+function runcpp () { clang++ $1 && shift && ./a.out $@ }
+alias -s c=runc
+alias -s cpp=runcpp
+
+
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then

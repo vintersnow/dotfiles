@@ -45,7 +45,7 @@ function peco-pkill() {
 alias pk="peco-pkill"
 
 # cool-peco
-[ -f ~/Projects/github/cool-peco/cool-peco ] && source ~/Projects/github/cool-peco/cool-peco ]
+# [ -f ~/Projects/github/cool-peco/cool-peco ] && source ~/Projects/github/cool-peco/cool-peco ]
 
 alias gh='cd $(ghq list -p | peco)'
 alias gho='gh-open $(ghq list -p | peco)'
