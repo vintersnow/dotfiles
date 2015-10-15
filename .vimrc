@@ -10,6 +10,8 @@ set smartcase "検索文字列に大文字が含まれている場合は区別�
 set wrapscan "検索時に最後まで行ったら最初に戻る
 " タブ入力を複数の空白入力に置き換える
 set expandtab
+set mouse=a
+set ttymouse=xterm2
 
 " set cursor in tmux
 if exists('$TMUX')

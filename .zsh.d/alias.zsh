@@ -62,7 +62,10 @@ case ${OSTYPE} in
 
   #brew
   #for removing the warning
-  # alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew"
+  alias br="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew"
+  # compdef br=brew
+  # compdef '_dispatch brew brew' br
+  # compdef _brew brew
 
 #alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
@@ -80,6 +83,18 @@ case ${OSTYPE} in
   # quick look
   alias ql='qlmanage -p "$@" >& /dev/null'
 
+  #git_make
+  alias gi='/Users/izuku/Projects/UTLecture/2015practice/big_software/git_make/bin/git'
+
+  alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC --intf=rc'
+
+  #autojump
+  alias j="autojump"
+  if [ -f `brew --prefix`/etc/autojump ]; then
+    . `brew --prefix`/etc/autojump
+  fi
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
   ;;
   linux*)
   #Linux用の設定
@@ -90,10 +105,14 @@ case ${OSTYPE} in
   ;;
 esac
 
-# グローバルエイリアス
+# global alias
 alias -g L='| less -R'
 alias -g G='| grep'
 alias -g A='| ag'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g W='| wc'
 
 #suffix alias
 alias -s hs=runhaskell
@@ -105,6 +124,8 @@ function runcpp () { clang++ $1 && shift && ./a.out $@ }
 alias -s c=runc
 alias -s cpp=runcpp
 
+#git
+alias gref='git reflog'
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
@@ -118,3 +139,17 @@ elif which putclip >/dev/null 2>&1 ; then
   # Cygwin
   alias -g C='| putclip'
 fi
+
+
+compdef _hogecmd hoge
+function _hogecmd {
+  local -a cmds
+  if (( CURRENT == 2 ));then
+    cmds=('init' 'update' 'upgrade' 'commit')
+    _describe -t commands "subcommand" cmds
+  else
+    _files
+  fi
+
+  return 1;
+}

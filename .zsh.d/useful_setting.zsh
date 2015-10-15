@@ -56,6 +56,11 @@ if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+#less color
+export LESS='-gj10 --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+
+
 # 解凍コマンド
 function extract() {
   case $1 in

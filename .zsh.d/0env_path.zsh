@@ -17,12 +17,17 @@ export LC_ALL=ja_JP.UTF-8
 case ${OSTYPE} in
   darwin*)
   #Mac用の設定
-  export PATH=$PATH:~/Projects/android/android_lec/adt-bundle-mac-/sdk/platform-tools:$PATH
+  export PATH=$PATH:/Users/izuku/Library/Android/sdk/platform-tools
   fpath=(/usr/local/share/zsh-completions $fpath)
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/vim
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
+
+  #for chromium
+  export PATH=/Users/izuku/Projects/UTLecture/2015practice/big_software/chromium/depot_tools:$PATH
+
 
   ;;
   linux*)
