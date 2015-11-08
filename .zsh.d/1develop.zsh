@@ -26,7 +26,10 @@ if [ -d "${PYENV_ROOT}" ]; then
   export PATH=${PYENV_ROOT}/bin:$PATH
   eval "$(pyenv init -)"
 fi
-export PYTHON=python2
+# export PYTHON=python2
+export PYTHON=/Users/izuku/.pyenv/shims:$PATH
+export PYTHON=/usr/bin/python2.7:$PATH
+
 
 # nvmの遅延読み込み
 nvm() {

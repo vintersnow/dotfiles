@@ -19,6 +19,8 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias du='du -sh'
+
 #OS別alias
 case ${OSTYPE} in
   darwin*)
@@ -62,10 +64,10 @@ case ${OSTYPE} in
 
   #brew
   #for removing the warning
-  alias br="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:?/} brew"
+  # alias br="brew"
   # compdef br=brew
   # compdef '_dispatch brew brew' br
-  # compdef _brew brew
+  # compdef _brew br
 
 #alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
@@ -139,17 +141,3 @@ elif which putclip >/dev/null 2>&1 ; then
   # Cygwin
   alias -g C='| putclip'
 fi
-
-
-compdef _hogecmd hoge
-function _hogecmd {
-  local -a cmds
-  if (( CURRENT == 2 ));then
-    cmds=('init' 'update' 'upgrade' 'commit')
-    _describe -t commands "subcommand" cmds
-  else
-    _files
-  fi
-
-  return 1;
-}

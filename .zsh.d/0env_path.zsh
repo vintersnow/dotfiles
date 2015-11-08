@@ -10,6 +10,7 @@ export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/texbin:$PATH
 export PATH=~/.dotfiles/shellscripts:$PATH
+export PATH=/Users/izuku/.local/bin:$PATH
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
@@ -28,6 +29,7 @@ case ${OSTYPE} in
   #for chromium
   export PATH=/Users/izuku/Projects/UTLecture/2015practice/big_software/chromium/depot_tools:$PATH
 
+  #PYTHON
 
   ;;
   linux*)
