@@ -21,11 +21,11 @@ if [ -f $GOROOT/misc/zsh/go ]; then
 fi
 
 # pyenv
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-  export PATH=${PYENV_ROOT}/bin:$PATH
-  eval "$(pyenv init -)"
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)";
 fi
+
 # export PYTHON=python2
 export PYTHON=/Users/izuku/.pyenv/shims:$PATH
 export PYTHON=/usr/bin/python2.7:$PATH

@@ -63,13 +63,8 @@ case ${OSTYPE} in
   alias wine='~/Applications/wine/bin/nihonshu '
 
   #brew
-  #for removing the warning
-  # alias br="brew"
-  # compdef br=brew
-  # compdef '_dispatch brew brew' br
-  # compdef _brew br
 
-#alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
+  #alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
   # Go
   alias gob='go build'
