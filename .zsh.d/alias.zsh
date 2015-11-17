@@ -85,6 +85,8 @@ case ${OSTYPE} in
 
   alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC --intf=rc'
 
+  alias ipn='ipython notebook'
+
   #autojump
   alias j="autojump"
   if [ -f `brew --prefix`/etc/autojump ]; then
