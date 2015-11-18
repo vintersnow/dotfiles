@@ -1,12 +1,6 @@
 ###peco
 #pecoでhistory検索
 function peco-select-history() {
-  # local tac
-  # if which tac > /dev/null; then
-  #   tac="tac"
-  # else
-  #   tac="tail -r"
-  # fi
   BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle clear-screen
@@ -46,6 +40,30 @@ alias pk="peco-pkill"
 
 # cool-peco
 # [ -f ~/Projects/github/cool-peco/cool-peco ] && source ~/Projects/github/cool-peco/cool-peco ]
+function ghq-fullpath() {
+  ghq_root=`ghq root`
+  repo=`(ghq list | peco)`
+  if [[ -n "$repo" ]]; then
+    echo "${ghq_root}/${repo}"
+  fi
+}
+alias gh='cd $(ghq-fullpath)'
+alias gho='gh-open $(ghq-fullpath)'
 
-alias gh='cd $(ghq list -p | peco)'
-alias gho='gh-open $(ghq list -p | peco)'
+
+#pecoでsublime-projectを開く
+function sublime-projects() {
+  subl_root='~/Projects/sublime_projects'
+  files=`(ls -l ~/Projects/sublime_projects | grep project | cut -d " " -f 10)`
+  # echo "$files"
+  if [[ -n "$files" ]]; then
+    project=`echo $files | peco`
+    # echo "${subl_root}/${project}"
+    if [[ -n "$project" ]]; then
+      subl "${subl_root}/${project}"
+    fi
+  else
+    echo "no projects"
+  fi
+}
+alias subp='sublime-projects'
