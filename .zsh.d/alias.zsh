@@ -138,3 +138,16 @@ elif which putclip >/dev/null 2>&1 ; then
   # Cygwin
   alias -g C='| putclip'
 fi
+
+
+function except_rm() {
+  if [[ $# -eq 0 ]]; then
+    return
+  fi
+  files=`\ls`
+  for file in $*; do
+    files=`echo $files | grep -v -E $file`
+  done
+  echo $files | xargs rm
+}
+alias erm='except_rm'
