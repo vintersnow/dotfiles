@@ -6,5 +6,6 @@
   "undef" : true,    // グローバル変数へのアクセスを禁止 明示的に宣言していない変数へのアクセス禁止
   "devel" : true,     // console、alertを許可
   "node":true,
-  "jquery":true
+  "jquery":true,
+  "esnext":true
 }
