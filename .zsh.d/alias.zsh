@@ -112,6 +112,7 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| grep'
 alias -g W='| wc'
+alias -g Te='| tee'
 
 #suffix alias
 alias -s hs=runhaskell
