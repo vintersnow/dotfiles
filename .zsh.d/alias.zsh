@@ -63,6 +63,7 @@ case ${OSTYPE} in
   alias wine='~/Applications/wine/bin/nihonshu '
 
   #brew
+  # alias brew='env PATH=${PATH/\/user\/local\/var\/\.pyenv\/shims:/} brew'
 
   #alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
