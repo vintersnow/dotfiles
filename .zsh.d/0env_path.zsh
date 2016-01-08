@@ -30,6 +30,8 @@ case ${OSTYPE} in
   #for chromium
   export PATH=/Users/izuku/Projects/UTLecture/2015practice/big_software/chromium/depot_tools:$PATH
 
+  # Android sdk
+  export ANDROID_HOME=/usr/local/opt/android-sdk
   #PYTHON
 
   ;;
