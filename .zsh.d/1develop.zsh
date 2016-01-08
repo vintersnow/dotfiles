@@ -3,8 +3,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 #rbenv
 if which rbenv > /dev/null; then
-  # eval "$(rbenv init -)";
-  eval "$(rbenv init - --no-rehash)"
+  eval "$(rbenv init -)";
+  # eval "$(rbenv init - --no-rehash)"
 fi
 
 #Added by the Heroku Toolbelt
