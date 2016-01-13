@@ -1,0 +1,33 @@
+# This file overrides https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+# Limit lines to 80 characters.
+LineLength:
+  Enabled: false
+
+# Avoid methods longer than 10 lines of code
+MethodLength:
+  Enabled: false
+ClassLength:
+  Enabled: false
+ModuleLength:
+  Enabled: false
+
+# Don't use semicolons to terminate expressions.
+Semicolon:
+  Enabled: false
+
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+# Do not introduce global variables.
+AvoidGlobalVars:
+  Enabled: false
+
+# うぜやつ
+AbcSize:
+  Enabled: false
+CyclomaticComplexity:
+  Enabled: false
+PerceivedComplexity:
+  Enabled: false
