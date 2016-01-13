@@ -5,3 +5,11 @@ fish_history
 *.db
 .config/iruby/profile_default/security
 
+#atom
+.atom/.apm
+.atom/.node-gyp
+.atom/dev
+.atom/compile-cache
+.atom/packages
+.atom/blob-store
+.atom/storage
