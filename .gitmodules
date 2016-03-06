@@ -7,3 +7,6 @@
 [submodule ".dotfiles/dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule ".zplug"]
+	path = .zplug
+	url = https://github.com/b4b4r07/zplug
