@@ -23,6 +23,24 @@ atom-text-editor .cursor {
 atom-text-editor::shadow {
   .selection .region {
     background-color: yellow;
-    opacity:0.3;
+    opacity:0.5;
+  }
+}
+
+atom-text-editor.is-focused::shadow .cursors.blink-off .cursor {
+  opacity: 0.9;
+}
+atom-text-editor.vim-mode.normal-mode,
+atom-text-editor.vim-mode.operator-pending-mode,
+atom-text-editor.vim-mode.visual-mode.is-focused {
+  &.is-focused::shadow
+  {
+    .cursor {
+      background-color: @text-color;
+      opacity:0.3;
+    }
+    .blink-off .cursor{
+      opacity:0.3;
+    }
   }
 }

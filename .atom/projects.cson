@@ -3,3 +3,13 @@ emotion_point:
   paths: [
     "/Users/izuku/Projects/server/emotion_point"
   ]
+manual:
+  title: "manual"
+  paths: [
+    "/Users/izuku/Dropbox/Write/manual"
+  ]
+".dotfiles":
+  title: ".dotfiles"
+  paths: [
+    "/Users/izuku/.dotfiles"
+  ]

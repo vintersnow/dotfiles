@@ -1,35 +1,38 @@
 "*":
-  editor:
-    invisibles: {}
-    fontFamily: "Ricty"
-    showIndentGuide: true
-    showInvisibles: true
+  "atom-beautify":
+    _analyticsUserId: "7749e08c-4189-4a54-9490-1b76fd31a4f7"
+  "autocomplete-clang":
+    preCompiledHeaders: {}
+    std: {}
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    navigateCompletions: "ctrl-p,ctrl-n"
   core:
-    themes: [
-      "atom-dark-ui"
-      "dracula-theme"
-    ]
     disabledPackages: [
       "vim-mode"
       "wrap-guide"
       "highlight-line"
     ]
+    themes: [
+      "atom-dark-ui"
+      "dracula-theme"
+    ]
+  editor:
+    fontFamily: "Ricty"
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
   "exception-reporting":
     userId: "a98ee687-f96d-fd93-1f3e-4f32e8a8d5bc"
-  welcome:
-    showOnStartup: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
-  "autocomplete-plus":
-    confirmCompletion: "enter"
-    navigateCompletions: "ctrl-p,ctrl-n"
-  "autocomplete-clang":
-    preCompiledHeaders: {}
-    std: {}
   linter:
     errorPanelHeight: 216
     showErrorPanel: false
   "markdown-preview-plus":
     enableLatexRenderingByDefault: true
-  "atom-beautify":
-    _analyticsUserId: "7749e08c-4189-4a54-9490-1b76fd31a4f7"
+  "rst-preview-pandoc":
+    pandocOpts: "-frst -thtml --webtex"
+  tablr: {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
