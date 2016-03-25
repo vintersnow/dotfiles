@@ -21,6 +21,9 @@ alias ...='cd ../..'
 
 alias du='du -sh'
 
+# git
+
+
 #OS別alias
 case ${OSTYPE} in
   darwin*)
@@ -127,6 +130,8 @@ alias -s cpp=runcpp
 
 #git
 alias gref='git reflog'
+alias glog='git log --oneline --decorate --color --graph'
+
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1

@@ -26,7 +26,6 @@
     userId: "a98ee687-f96d-fd93-1f3e-4f32e8a8d5bc"
   linter:
     errorPanelHeight: 216
-    showErrorPanel: false
   "markdown-preview-plus":
     enableLatexRenderingByDefault: true
   "rst-preview-pandoc":
