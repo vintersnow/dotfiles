@@ -16,7 +16,7 @@
       1,
       "always"
     ],
-    "strict": [2, "global"],
+    "strict": [1,"global"],
     "no-console":0,
     "no-unused-vars":1
   },
