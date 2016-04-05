@@ -21,6 +21,8 @@ alias ...='cd ../..'
 
 alias du='du -sh'
 
+alias v='nvim'
+
 # git
 
 

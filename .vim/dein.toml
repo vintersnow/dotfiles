@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo='zenorocha/dracula-theme'
+
+# color scheme
+[[plugins]] # hybrid
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] # solarized
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+  set background=dark
+'''
+
