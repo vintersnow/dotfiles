@@ -31,6 +31,5 @@
     "experimentalObjectRestSpread": true
   },
   "plugins": [
-    "react"
   ]
 }
