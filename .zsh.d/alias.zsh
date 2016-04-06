@@ -100,6 +100,9 @@ case ${OSTYPE} in
   fi
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+  # gcc
+  alias gc='/usr/local/bin/gcc-5'
+
   ;;
   linux*)
   #Linux用の設定

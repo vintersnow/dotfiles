@@ -42,3 +42,5 @@ case ${OSTYPE} in
   #Linux用の設定
   ;;
 esac
+
+
