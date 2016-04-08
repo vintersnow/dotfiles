@@ -24,6 +24,7 @@ alias du='du -sh'
 alias v='nvim'
 
 # git
+alias g='git'
 
 
 #OS別alias
