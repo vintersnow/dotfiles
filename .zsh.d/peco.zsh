@@ -12,6 +12,9 @@ bindkey '^r' peco-select-history
 function peco-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
+  awk '{c=gsub("/","/"); print c,length($0),$0}' | \
+  sort -n | \
+  cut -d' ' -f3- | \
   peco --query "$LBUFFER"
 }
 
