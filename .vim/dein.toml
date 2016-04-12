@@ -4,10 +4,11 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+# color scheme
+
 [[plugins]]
 repo='zenorocha/dracula-theme'
 
-# color scheme
 [[plugins]] # hybrid
 repo = 'w0ng/vim-hybrid'
 
@@ -16,4 +17,5 @@ repo = 'altercation/vim-colors-solarized'
 hook_add = '''
   set background=dark
 '''
+
 

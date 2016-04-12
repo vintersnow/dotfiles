@@ -3,8 +3,10 @@ if &compatible
   set nocompatible
 endif
 
-" allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
-filetype indent plugin on
+" filetype off for plugin setting
+filetype off
+filetype plugin indent off
+
 
 " Enable syntax highlighting and colorscheme
 syntax on
@@ -87,3 +89,6 @@ endif
 
 " colorscheme
 colorscheme solarized
+
+" allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
+filetype indent plugin on
