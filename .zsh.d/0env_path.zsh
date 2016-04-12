@@ -4,7 +4,7 @@ typeset -U path PATH cdpath fpath manpath
 ### 環境変数
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-PATH=${HOME}/.cabal/bin:$PATH
+# PATH=${HOME}/.cabal/bin:$PATH
 export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -42,5 +42,3 @@ case ${OSTYPE} in
   #Linux用の設定
   ;;
 esac
-
-
