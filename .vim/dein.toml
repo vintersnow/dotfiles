@@ -17,5 +17,14 @@ repo = 'altercation/vim-colors-solarized'
 hook_add = '''
   set background=dark
 '''
+[[plugins]]
+repo = 'kakkyz81/evervim'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add= '''
+  let g:deoplete#enable_at_startup = 1
+'''

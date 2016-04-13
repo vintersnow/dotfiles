@@ -15,3 +15,6 @@ fish_history
 .atom/storage
 .atom/config.cson
 
+
+# pw
+pw.vim

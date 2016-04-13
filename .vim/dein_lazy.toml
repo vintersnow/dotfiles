@@ -1,8 +1,9 @@
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
 
 

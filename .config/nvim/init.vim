@@ -60,6 +60,10 @@ set visualbell
 " Display line numbers on the left
 set number
 
+" commadline completion
+set wildmenu
+set wildmode=longest:full,full
+
 "dein Scripts-----------------------------
 
 let s:dein_dir = expand('~/.cache/dein')
@@ -89,6 +93,11 @@ endif
 
 " colorscheme
 colorscheme solarized
+
+if filereadable(expand('~/.config/nvim/pw.vim'))
+  source ~/.config/nvim/pw.vim
+endif
+
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
 filetype indent plugin on
