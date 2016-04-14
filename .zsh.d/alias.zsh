@@ -18,6 +18,9 @@ alias sz='source ~/.zshrc'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 alias du='du -sh'
 
