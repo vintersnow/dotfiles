@@ -36,6 +36,7 @@ set showcmd
 " Use case insensitive search, except when using capital letters
 set ignorecase
 " set smartcase
+set smartcase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
