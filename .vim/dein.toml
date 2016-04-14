@@ -2,7 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
+repo = 'Shougo/vimproc'
 hook_post_update = '''
   if dein#util#_is_windows()
     let cmd = 'tools\\update-dll-mingw'
@@ -16,36 +16,22 @@ hook_post_update = '''
   let g:dein#plugin.build = cmd
 '''
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
 # color scheme
-
 [[plugins]]
 repo='zenorocha/dracula-theme'
-
-[[plugins]] # hybrid
-repo = 'w0ng/vim-hybrid'
 
 [[plugins]] # solarized
 repo = 'altercation/vim-colors-solarized'
 hook_add = '''
   set background=dark
 '''
-[[plugins]]
-repo = 'kakkyz81/evervim'
 
+# other
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add= '''
-  let g:deoplete#enable_at_startup = 1
-'''
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'wakatime/vim-wakatime'
+repo = 'kakkyz81/evervim'
