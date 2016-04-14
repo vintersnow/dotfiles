@@ -35,3 +35,6 @@ repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'kakkyz81/evervim'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
