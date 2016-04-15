@@ -38,3 +38,10 @@ repo = 'kakkyz81/evervim'
 
 [[plugins]]
 repo = 'wakatime/vim-wakatime'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
