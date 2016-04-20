@@ -34,6 +34,11 @@
   'ctrl-t \\': 'pane:split-right'
   'ctrl-t -': 'pane:split-down'
   'ctrl-t o': 'window:focus-next-pane'
+  # moving tabs
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
 
 
 # Default Keymaps for Markdown Writer
@@ -62,3 +67,4 @@
   "cmd-j cmd-n": "markdown-writer:jump-to-next-heading"
   "cmd-j cmd-d": "markdown-writer:jump-to-reference-definition"
   "cmd-j cmd-t": "markdown-writer:jump-to-next-table-cell"
+
