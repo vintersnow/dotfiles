@@ -23,3 +23,10 @@ on_i = 1
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
 on_ft = 'js'
+
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+hook_add='''
+  let g:calendar_google_calendar = 1
+  let g:calendar_google_task = 1
+'''
