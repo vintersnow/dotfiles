@@ -14,6 +14,10 @@ export PATH=/Users/izuku/.local/bin:$PATH
 export PATH=~/usr/local/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 
+# change brew cask install place
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+
+
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 
