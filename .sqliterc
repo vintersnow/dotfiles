@@ -1,0 +1,5 @@
+.headers ON
+.mode column
+.nullvalue "(null)"
+.timer ON
+.tables
