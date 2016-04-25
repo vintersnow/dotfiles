@@ -31,7 +31,7 @@ case ${OSTYPE} in
   fpath=(/usr/local/share/zsh-completions $fpath)
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
   #Sheet EDITOR
-  export EDITOR=/usr/local/bin/vim
+  export EDITOR=/usr/local/bin/nvim
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
 
