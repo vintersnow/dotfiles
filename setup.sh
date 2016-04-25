@@ -12,6 +12,8 @@ if [ -d $DOTFILES -a -r $DOTFILES -a -x $DOTFILES ]; then
        continue;;
        .gitignore)
        continue;;
+       .gitmodules)
+	continue;;
        *)
        ln -sfn "$DOTFILES/$i" "$HOME/$i";;
       esac
