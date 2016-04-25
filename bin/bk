@@ -1,0 +1,7 @@
+#!/bin/sh
+# move backup
+if [[ $# == 0 ]]; then
+	echo "this command needs 1 parameter"
+else
+	cp $1{,.bk}
+fi

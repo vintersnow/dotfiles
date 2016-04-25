@@ -59,15 +59,6 @@ case ${OSTYPE} in
   alias fa='find . -name 'alias fa='find . -name '
   alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
-  # script
-  alias imgCrawler='~/Projects/script/imgCrawler/imgCrawler.sh '
-  alias aoencoder='~/Projects/script/aozoraEncoder.sh'
-  alias gitAC='~/Projects/script/gitAddCommit.sh'
-  alias f='~/Projects/script/f.sh'
-  alias bk='~/Projects/script/backup.sh'
-  alias xrand='~/Projects/script/xorshift'
-  alias stthesis="~/.dotfiles/shellscripts/setup_thesis.sh"
-
   #wine
   alias wine='~/Applications/wine/bin/nihonshu '
 

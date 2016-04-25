@@ -1,0 +1,10 @@
+#!/bin/sh
+git add --all .
+if [[ $# == 0 ]]; then
+	git commit
+else
+	argv=("$@")
+	IFS=" "
+	msg="${argv[*]}"
+	git commit -m "${msg}"
+fi

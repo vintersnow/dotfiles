@@ -1,0 +1,6 @@
+#!/bin/sh
+# http://qiita.com/vintersnow/items/9a7df61117c256d28c97
+
+nkf -w -Lu $1 > m.txt
+cat m.txt | ruby -e 'puts ARGF.read.gsub(/｜/, "").gsub(/《.+?》/,"").gsub(/［.+?］/,"").gsub(/[\s\n　]+/,"")'
+rm -f m.txt
