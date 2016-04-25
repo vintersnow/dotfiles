@@ -185,7 +185,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup() "
 " """""""""""""""""""""
 syntax enable
 set background=dark
-colorscheme dracula
+" colorscheme dracula
 
 """"""""""""""""""""""""
 " colorscheme
