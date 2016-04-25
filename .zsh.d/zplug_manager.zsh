@@ -1,6 +1,8 @@
+if [ ! -e ~/.zplug/zplug ];then
+  curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+fi
 source ~/.zplug/zplug
 
-# zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions"
 zplug "b4b4r07/easy-oneliner", if:"which fzf"
 zplug "zsh-users/zsh-syntax-highlighting"
