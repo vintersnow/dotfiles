@@ -1,11 +1,14 @@
-#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-#rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-  # eval "$(rbenv init - --no-rehash)"
+# anyenv
+export ANYENV_ROOT="$HOME/.ghq/github.com/riywo/anyenv"
+if [ -d $ANYENV_ROOT ]; then
+  export PATH="$ANYENV_ROOT/bin:$PATH"
+  eval "$(anyenv init -)"
+  for D in `ls $ANYENV_ROOT/envs`
+  do
+    export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
+  done
 fi
+
 
 #Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -20,26 +23,7 @@ if [ -f $GOROOT/misc/zsh/go ]; then
   # error ocured
 fi
 
-# pyenv
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then
-  eval "$(pyenv init -)";
-fi
-
 # export PYTHON=python2
 export PYTHON=/Users/izuku/.pyenv/shims:$PATH
 export PYTHON=/usr/bin/python2.7:$PATH
 
-
-# nvmの遅延読み込み
-nvm() {
-  # まず仮の nvm コマンドを unset
-  unset -f nvm
-
-  # nvm.sh をロード
-  # ここで本物の nvm コマンドが定義される
-  source "${NVM_DIR:-$HOME/.nvm}/nvm.sh"
-
-  # 仮の nvm コマンドに渡された引数を本物に受け渡す
-  nvm "$@"
-}

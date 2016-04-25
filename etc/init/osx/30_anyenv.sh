@@ -16,14 +16,9 @@ if has ghq; then
     ghq get riywo/anyenv
     exec $SHELL -l
   fi
-  for i in $(anyenv envs) 
-  do
-    echo $i
-  done
-
 else
   log_fail "error: require: ghq"
   exit 1
 fi
 
-log_pass "anyenv: setting successfully"
+log_pass "anyenv: installing successfully"
