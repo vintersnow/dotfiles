@@ -3,7 +3,7 @@
 	email = ankasandora@gmail.com
 [core]
 	excludesfile = /Users/izuku/.gitignore_global
-	editor = vim -c \"set fenc=utf-8\"
+	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
