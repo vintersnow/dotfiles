@@ -17,8 +17,6 @@ hook_post_update = '''
 '''
 
 # color scheme
-[[plugins]]
-repo='zenorocha/dracula-theme'
 
 [[plugins]] # solarized
 repo = 'altercation/vim-colors-solarized'

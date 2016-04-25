@@ -8,7 +8,7 @@ if isdirectory(expand('~/.config/nvim/user_autoload'))
 endif
 
 " colorscheme
-" colorscheme solarized
+colorscheme solarized
 
 " secret
 if filereadable(expand('~/.config/nvim/pw.vim'))
