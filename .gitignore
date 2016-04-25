@@ -2,6 +2,8 @@ fish_history
 .vim/bundle/*
 !.vim/bundle/neobundle.vim
 # .vim/colors/dracula.vim
+.init.vim-rplugin*
+.vim/.netrwhist
 *.db
 .config/iruby/profile_default/security
 

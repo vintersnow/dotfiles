@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/izuku/Incompatible Software'
-let g:netrw_dirhist_2='/Users/izuku'
-let g:netrw_dirhist_3='/Users'
-let g:netrw_dirhist_4='/'
-let g:netrw_dirhist_5='/Users/izuku/.vim'
-let g:netrw_dirhist_6='/Users/izuku/.ipython'
-let g:netrw_dirhist_7='/home/denjo/.dotfiles/.vim'
