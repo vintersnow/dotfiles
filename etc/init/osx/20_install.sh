@@ -20,4 +20,4 @@ else
   exit 1
 fi
 
-log_pass "brew: formula install successfully finished!!"
+log_pass "brew: formula install successfully installed!!"
