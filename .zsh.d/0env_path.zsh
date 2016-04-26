@@ -4,15 +4,12 @@ typeset -U path PATH cdpath fpath manpath
 ### 環境変数
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-# PATH=${HOME}/.cabal/bin:$PATH
 export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/texbin:$PATH
 export PATH=~/.dotfiles/bin:$PATH
-export PATH=/Users/vinter/.local/bin:$PATH
-export PATH=~/usr/local/bin:$PATH
-export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+export PATH=~/.local/bin:$PATH
 
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
@@ -27,20 +24,11 @@ export LC_ALL=ja_JP.UTF-8
 case ${OSTYPE} in
   darwin*)
   #Mac用の設定
-  export PATH=$PATH:/Users/izuku/Library/Android/sdk/platform-tools
-  fpath=(/usr/local/share/zsh-completions $fpath)
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/nvim
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
-
-  #for chromium
-  export PATH=/Users/izuku/Projects/UTLecture/2015practice/big_software/chromium/depot_tools:$PATH
-
-  # Android sdk
-  export ANDROID_HOME=/usr/local/opt/android-sdk
-  #PYTHON
 
   ;;
   linux*)

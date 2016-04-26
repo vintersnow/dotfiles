@@ -27,3 +27,7 @@ fi
 export PYTHON=/Users/izuku/.pyenv/shims:$PATH
 export PYTHON=/usr/bin/python2.7:$PATH
 
+# brew setting
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
