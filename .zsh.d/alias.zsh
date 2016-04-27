@@ -29,6 +29,9 @@ alias v='nvim'
 # git
 alias g='git'
 
+# fzf
+alias fzf=fzf-tmux
+
 
 #OS別alias
 case ${OSTYPE} in

@@ -19,6 +19,7 @@ brew neovim
 brew ghq
 brew coreutils
 brew tig
+brew fzf
 
 cask iterm2
 cask karabiner
