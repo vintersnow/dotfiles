@@ -83,17 +83,6 @@ function md(){
   mkdir -p "$1" && cd "$1"
 }
 
-### powerline
-case ${OSTYPE} in
-  darwin*)
-    #Mac用の設定
-    powerline-daemon -q
-    . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-    ;;
-  linux*)
-    #Linux用の設定
-    ;;
-esac
 
 if [[ -r /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
