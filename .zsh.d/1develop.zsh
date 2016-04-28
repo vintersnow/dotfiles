@@ -1,5 +1,5 @@
 # anyenv
-export ANYENV_ROOT="$HOME/.ghq/github.com/riywo/anyenv"
+export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
   eval "$(anyenv init -)"

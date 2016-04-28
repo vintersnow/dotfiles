@@ -6,7 +6,7 @@ set -eu
 . "$DOTPATH"/etc/libs.sh
 
 if has "ghq"; then
-  if [ ! -d ~/.ghq/github.com/tmux-plugins/tpm ]; then
+  if [ ! -d $(ghq root)/github.com/tmux-plugins/tpm ]; then
     ghq get tmux-plugins/tpm
   fi
 else
