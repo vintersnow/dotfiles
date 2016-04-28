@@ -1,0 +1,53 @@
+#!/bin/bash
+
+show-help () {
+  echo "outdated  : show outdated repos"
+  echo "update      : update outdated repos"
+}
+
+
+outdated () {
+  local ghq_root=$(ghq root)
+  local list=()
+  for l in $(ghq list)
+  do
+    status=$(cd $ghq_root/$l; git rev-list --right-only --count HEAD...@'{u}')
+    test $status -gt 0 && list+=$l
+  done
+  test ${#list[@]} -ne 0 && echo ${list[@]}
+}
+
+show-outdated () {
+  local list=(`outdated`)
+  if [ ${#list[@]} -eq 0 ]; then
+    echo  "No outdated repository!"
+  else
+    echo "There are ${#list[@]} outdated repository(s)."
+    echo ""
+    echo ${list[@]}
+  fi
+}
+
+update () {
+  list=(`outdated`)
+  test ${#list[@]} -eq 0 && echo "Already up to date!!" && return
+
+  echo "update outdated list" 
+  echo ${list[@]} | sed -e "s/^[^\/]*\///" | xargs -n 1 -P 10 ghq get -u
+  echo "${#list[@]} repo(s) updated"
+}
+
+if [ $# == 0 ]; then
+  show-help
+  exit 0
+else
+  case $1 in
+    "outdated" ) show-outdated ;;
+    "update" ) update ;;
+    * )
+      echo "no such command"
+      show-help
+      ;;
+  esac
+fi
+
