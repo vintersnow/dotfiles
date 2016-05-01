@@ -31,3 +31,7 @@ export PYTHON=/usr/bin/python2.7:$PATH
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+  
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/bash_autocomplete
