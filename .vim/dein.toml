@@ -46,7 +46,7 @@ repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
 repo = 'tyru/caw.vim'
-hook_post_source='''
-nmap <C-k> <Plug>(caw:hatpos:toggle)
-vmap <C-k> <Plug>(caw:hatpos:toggle)
+hook_add='''
+nmap <C-_> <Plug>(caw:hatpos:toggle)
+vmap <C-_> <Plug>(caw:hatpos:toggle)
 '''
