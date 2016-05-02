@@ -27,11 +27,12 @@ fi
 export PYTHON=/Users/izuku/.pyenv/shims:$PATH
 export PYTHON=/usr/bin/python2.7:$PATH
 
-# brew setting
+# brew file setting
+# something wrong. stop here
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
+  # source $(brew --prefix)/etc/brew-wrap
 fi
 
   
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/bash_autocomplete
+source /usr/local/Bluemix/bx/zsh_autocomplete
