@@ -21,9 +21,16 @@ atom-text-editor .cursor {
 }
 
 atom-text-editor::shadow {
-  .selection .region {
-    background-color: yellow;
-    opacity:0.5;
+  .gutter .cursor-line {
+     background-color: fade(cyan, 14%);
+  }
+  .highlights {
+    .selection .region {
+      background: fade(yellow, 30%);
+    }
+    .find-result .region {
+      border: 1px solid fade(yellow, 80%);
+    }
   }
 }
 
