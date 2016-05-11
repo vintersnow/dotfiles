@@ -25,6 +25,7 @@ alias ......='cd ../../../../..'
 alias du='du -sh'
 
 alias v='nvim'
+alias vim='nvim'
 
 # git
 alias g='git'
