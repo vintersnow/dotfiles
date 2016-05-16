@@ -1,15 +1,15 @@
 [user]
-	name = izuku
+	name = vinter
 	email = ankasandora@gmail.com
 [core]
-	excludesfile = /Users/izuku/.gitignore_global
+	excludesfile = /Users/vinter/.gitignore_global
 	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.2.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [color]
 	ui = true
