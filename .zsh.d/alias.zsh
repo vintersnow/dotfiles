@@ -44,8 +44,8 @@ case ${OSTYPE} in
   alias uc='ulimit -c '
   alias ucu='ulimit -c unlimited'
 
-  alias ls='gls -Fh  --color=auto'
-  alias la='gls -A --color=auto'
+  alias ls='gls -F  --color=auto'
+  alias la='gls -AF --color=auto'
   alias ll='gls -slhF --color=auto'
   alias lly='gls -slhF --color=auto --time-style=long-iso'
 
