@@ -33,6 +33,6 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   # source $(brew --prefix)/etc/brew-wrap
 fi
 
-  
+
 ### Added by the Bluemix CLI
 source /usr/local/Bluemix/bx/zsh_autocomplete
