@@ -43,3 +43,7 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+
+### pads
+export PADS_HOME=~/Projects/UTLecture/2016tau/pads/pads
+source $PADS_HOME/scripts/Q_DO_SETENV.sh
