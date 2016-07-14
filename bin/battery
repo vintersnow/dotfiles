@@ -1,7 +1,6 @@
 #!/bin/bash
 
-. "$(dotfiles)"/etc/libs.sh
-
+. $DOTFILES/etc/libs.sh
 
 # If the current_bat is less than the BATTERY_DANGER,
 # output color will be red

@@ -43,6 +43,38 @@ get_os(){
 }
 
 
+# is_osx returns true if running OS is Macintosh
+is_osx() {
+  os_detect
+  if [ "$PLATFORM" = "osx" ]; then
+      return 0
+  else
+      return 1
+  fi
+}
+alias is_mac=is_osx
+
+# is_linux returns true if running OS is GNU/Linux
+is_linux() {
+  os_detect
+  if [ "$PLATFORM" = "linux" ]; then
+      return 0
+  else
+      return 1
+  fi
+}
+
+# is_bsd returns true if running OS is FreeBSD
+is_bsd() {
+  os_detect
+  if [ "$PLATFORM" = "bsd" ]; then
+      return 0
+  else
+      return 1
+  fi
+}
+
+
 
 ############################################################
 # log functions
