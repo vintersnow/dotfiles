@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# for c in `brew cask list`; do
+#   brew cask info $c | grep -qF "Not installed"
+# done
+
+brew cask list | xargs -P 10 -I{} brew cask info {} | grep -F "Not installed"
