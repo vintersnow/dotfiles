@@ -1,9 +1,12 @@
-if [ ! -e ~/.zplug/zplug ];then
-  curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+export ZPLUG_HOME=~/.zplug
+if [ ! -d "$ZPLUG_HOME" ];then
+  # curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
-source ~/.zplug/zplug
 
-zplug "b4b4r07/zplug"
+source $ZPLUG_HOME/init.zsh
+
+# zplug "b4b4r07/zplug"
 
 
 zplug "zsh-users/zsh-completions"
