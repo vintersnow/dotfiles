@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CDRFILE=~/.chpwd-recent-dirs
+TMPFILE="$CDRFILE-tmp"
+# exec < $CDRFILE
+while read line; do
+  dir=$(echo $line | sed -e 's/\$//g')
+  # sed -e 's/'\''/"/g' |sed -e 's/\$//g')
+  eval test -d $dir
+  if [ $? -eq 0 ]; then
+    echo $line
+  fi
+done < $CDRFILE > $TMPFILE
+
+mv -f $TMPFILE $CDRFILE
