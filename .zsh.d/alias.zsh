@@ -104,6 +104,9 @@ case ${OSTYPE} in
   # gcc
   alias gc='/usr/local/bin/gcc-5'
 
+  # wkhtml
+  alias wkhtmltopdf='wkhtmltopdf --print-media-type --header-right "[date]" --header-spacing 2 --header-font-name Times --footer-center "[page]/[topage]" --footer-spacing 2 --footer-font-name Times --margin-top 12 --margin-right 5 --margin-left 5 --margin-bottom 12'
+
   ;;
   linux*)
   #Linux用の設定
