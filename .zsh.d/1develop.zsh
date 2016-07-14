@@ -24,8 +24,8 @@ if [ -f $GOROOT/misc/zsh/go ]; then
 fi
 
 # export PYTHON=python2
-export PYTHON=/Users/izuku/.pyenv/shims:$PATH
-export PYTHON=/usr/bin/python2.7:$PATH
+# export PYTHON=/Users/izuku/.pyenv/shims:$PATH
+# export PYTHON=/usr/bin/python2.7:$PATH
 
 # brew file setting
 # something wrong. stop here
@@ -47,3 +47,10 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ### pads
 export PADS_HOME=~/Projects/UTLecture/2016tau/pads/pads
 source $PADS_HOME/scripts/Q_DO_SETENV.sh
+
+### rust
+export RUST_SRC_PATH=~/.rust/rustc-1.9.0/src
+if [ -f ~/.cargo/env ]; then
+  source ~/.cargo/env
+fi
+

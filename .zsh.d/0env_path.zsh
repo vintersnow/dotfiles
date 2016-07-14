@@ -9,7 +9,7 @@ export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/texbin:$PATH
 export PATH=~/.dotfiles/bin:$PATH
-export PATH=~/.local/bin:$PATH
+export PATH=~/bin:$PATH
 
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
@@ -29,6 +29,10 @@ case ${OSTYPE} in
   export EDITOR=/usr/local/bin/nvim
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
+
+  export PATH=~/.local/bin:$PATH
+  export CPATH=$CPATH:~/.local/include
+  export LIBRARY_PATH=$LIBRARY_PATH:~/.local/lib
 
   ;;
   linux*)
