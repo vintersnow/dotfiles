@@ -191,3 +191,12 @@ die() {
   log_fail "$1" 1>&2
   exit "${2:-1}"
 }
+
+
+shell_has_started_interactively() {
+  [ ! -z "$PS1" ];
+}
+
+function is_ssh_running() {
+  [ ! -z "$SSH_CONECTION" ];
+}
