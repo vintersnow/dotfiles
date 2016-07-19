@@ -8,6 +8,7 @@ if isdirectory(expand('~/.config/nvim/user_autoload'))
 endif
 
 " colorscheme
+set background=dark
 colorscheme solarized
 
 " secret

@@ -18,11 +18,13 @@ hook_post_update = '''
 
 # color scheme
 
-[[plugins]] # solarized
-repo = 'altercation/vim-colors-solarized'
-hook_add = '''
-  set background=dark
-'''
+# [[plugins]] # solarized
+# repo = 'altercation/vim-colors-solarized'
+# hook_add = '''
+#   set background=dark
+# '''
+[[plugins]]
+repo = 'frankier/neovim-colors-solarized-truecolor-only'
 
 # other
 [[plugins]]

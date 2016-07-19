@@ -9,8 +9,8 @@ endif
 " Required:
 execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir,':p')
 
-let s:toml = '~/.vim/dein.toml'
-let s:toml_lazy= '~/.vim/dein_lazy.toml'
+let s:toml = './config/dein.toml'
+let s:toml_lazy= './config/dein_lazy.toml'
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir,[expand('<sfile>'),s:toml,s:toml_lazy])
