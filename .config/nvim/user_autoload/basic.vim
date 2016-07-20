@@ -64,3 +64,5 @@ set number
 set wildmenu
 set wildmode=longest:full,full
 
+" fold
+" let javaScript_fold=1

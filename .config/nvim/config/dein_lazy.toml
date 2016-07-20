@@ -5,12 +5,6 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'osyo-manga/vim-monster'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add= '''
-  let g:deoplete#enable_at_startup = 1
-'''
-on_i = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -19,10 +13,21 @@ on_i = 1
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 on_i = 1
+hook_add = '''
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-[[plugins]]
-repo = 'jelera/vim-javascript-syntax'
-on_ft = 'js'
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+'''
+
 
 [[plugins]]
 repo = 'itchyny/calendar.vim'
@@ -31,8 +36,25 @@ hook_add='''
   let g:calendar_google_task = 1
 '''
 
-[[plugins]] # js syntax
-# repo = 'othree/yajs.vim'
-repo = 'jelera/vim-javascript-syntax'
-on_ft = 'js'
 
+##########################################################
+# JS settings
+
+[[plugins]] # js syntax
+repo = 'othree/yajs.vim'
+# repo = 'jelera/vim-javascript-syntax'
+on_ft = ['js', 'ts']
+
+[[plugins]] # js syntax
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['js', 'ts']
+
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = 'js'
+depends = 'deoplete'
+hook_add = '''
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 0
+'''
