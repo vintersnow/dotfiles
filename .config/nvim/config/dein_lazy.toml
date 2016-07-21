@@ -1,32 +1,12 @@
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
 [[plugins]]
 repo = 'osyo-manga/vim-monster'
-
+on_ft = 'rb'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
-on_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_i = 1
-hook_add = '''
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-'''
+depends = 'neosnippet-snippets'
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
 
 
 [[plugins]]
@@ -36,25 +16,71 @@ hook_add='''
   let g:calendar_google_task = 1
 '''
 
-
-##########################################################
-# JS settings
-
-[[plugins]] # js syntax
-repo = 'othree/yajs.vim'
-# repo = 'jelera/vim-javascript-syntax'
-on_ft = ['js', 'ts']
-
-[[plugins]] # js syntax
-repo = 'othree/javascript-libraries-syntax.vim'
-on_ft = ['js', 'ts']
-
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_path = '.*'
 
 [[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = 'js'
-depends = 'deoplete'
+repo = 'editorconfig/editorconfig-vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_event = ['FocusLost', 'CursorHold', 'BufWritePre']
 hook_add = '''
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 0
+let g:syntastic_javascript_checkers=['eslint']
+
+" エラー行に sign を表示
+let g:syntastic_enable_signs = 1
+" location list を常に更新
+let g:syntastic_always_populate_loc_list = 0
+" location list を常に表示
+let g:syntastic_auto_loc_list = 0
+" ファイルを開いた時にチェックを実行する
+" "let g:syntastic_check_on_open = 1
+" :wq で終了する時もチェックする
+let g:syntastic_check_on_wq = 0
+'''
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+hook_add = '''
+let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
+'''
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_add = '''
+" insert modeで開始
+" let g:unite_enable_start_insert = 1
+
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
+endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_if = "isdirectory(bufname('%'))"
+hook_add = '''
+let g:vimfiler_as_default_explorer = 1
+'''
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_path = '.*'
+hook_add='''
+nmap <C-_> <Plug>(caw:hatpos:toggle)
+vmap <C-_> <Plug>(caw:hatpos:toggle)
 '''

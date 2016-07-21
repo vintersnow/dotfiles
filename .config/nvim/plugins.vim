@@ -11,11 +11,15 @@ execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir,':p')
 
 let s:toml = '~/.config/nvim/config/dein.toml'
 let s:toml_lazy= '~/.config/nvim/config/dein_lazy.toml'
+let s:toml_neo= '~/.config/nvim/config/deineo.toml'
 
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir,[expand('<sfile>'),s:toml,s:toml_lazy])
+  call dein#begin(s:dein_dir, [expand('<sfile>'), s:toml, s:toml_lazy, s:toml_neo])
   call dein#load_toml(s:toml,{'lazy':0})
   call dein#load_toml(s:toml_lazy,{'lazy':1})
+  if has('nvim')
+    call dein#load_toml(s:toml_neo, {})
+  endif
 
   call dein#end()
   call dein#save_state()
@@ -24,4 +28,3 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-

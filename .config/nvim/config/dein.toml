@@ -16,22 +16,30 @@ hook_post_update = '''
   let g:dein#plugin.build = cmd
 '''
 
-# color scheme
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+hook_add = '''
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-# [[plugins]] # solarized
-# repo = 'altercation/vim-colors-solarized'
-# hook_add = '''
-#   set background=dark
-# '''
+" SuperTab like snippets behavior.
+" imap <expr><TAB>
+"  \ pumvisible() ? "\<C-n>" :
+"  \ neosnippet#expandable_or_jumpable() ?
+"  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+'''
+
+
+# color scheme
 [[plugins]]
 repo = 'frankier/neovim-colors-solarized-truecolor-only'
 
-# other
 # [[plugins]]
 # repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'kakkyz81/evervim'
@@ -46,68 +54,22 @@ repo = 'itchyny/lightline.vim'
 repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
-repo = 'tyru/caw.vim'
-hook_add='''
-nmap <C-_> <Plug>(caw:hatpos:toggle)
-vmap <C-_> <Plug>(caw:hatpos:toggle)
-'''
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
-hook_add = '''
-" insert modeで開始
-" let g:unite_enable_start_insert = 1
-
-" 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
-endif
-
-'''
-
-[[plugins]]
 repo = 'Shougo/unite-build'
 depends = 'unite.vim'
 
-[[plugins]]
-repo = 'scrooloose/syntastic'
-hook_add = '''
-let g:syntastic_javascript_checkers=['eslint']
+##################################################################
+# syntax
 
-" エラー行に sign を表示
-let g:syntastic_enable_signs = 1
-" location list を常に更新
-let g:syntastic_always_populate_loc_list = 0
-" location list を常に表示
-let g:syntastic_auto_loc_list = 0
-" ファイルを開いた時にチェックを実行する
-let g:syntastic_check_on_open = 1
-" :wq で終了する時もチェックする
-let g:syntastic_check_on_wq = 0
-'''
+[[plugins]] # js syntax
+repo = 'othree/yajs.vim'
+# repo = 'jelera/vim-javascript-syntax'
+on_ft = ['js', 'ts']
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add= '''
-  let g:deoplete#enable_at_startup = 1
-'''
+[[plugins]] # js syntax
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['js', 'ts']
 
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
-hook_add = '''
-let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
-'''
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
 
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
-hook_add = '''
-let g:vimfiler_as_default_explorer = 1
-'''

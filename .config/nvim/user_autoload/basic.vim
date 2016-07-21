@@ -66,3 +66,6 @@ set wildmode=longest:full,full
 
 " fold
 " let javaScript_fold=1
+
+" 折り返し
+set nowrap
