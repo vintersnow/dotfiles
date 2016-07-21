@@ -9,9 +9,9 @@ endif
 " Required:
 execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir,':p')
 
-let s:toml = '~/.config/nvim/config/dein.toml'
-let s:toml_lazy= '~/.config/nvim/config/dein_lazy.toml'
-let s:toml_neo= '~/.config/nvim/config/deineo.toml'
+let s:toml = '~/.config/nvim/dein.toml'
+let s:toml_lazy= '~/.config/nvim/dein_lazy.toml'
+let s:toml_neo= '~/.config/nvim/deineo.toml'
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir, [expand('<sfile>'), s:toml, s:toml_lazy, s:toml_neo])
