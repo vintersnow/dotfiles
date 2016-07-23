@@ -19,20 +19,8 @@ hook_post_update = '''
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 hook_add = '''
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" imap <expr><TAB>
-"  \ pumvisible() ? "\<C-n>" :
-"  \ neosnippet#expandable_or_jumpable() ?
-"  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+source ~/.config/nvim/plugins/neosnippet.rc.vim
 '''
-
 
 # color scheme
 [[plugins]]
@@ -57,17 +45,19 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'Shougo/unite-build'
 depends = 'unite.vim'
 
+
 ##################################################################
 # syntax
 
 [[plugins]] # js syntax
 repo = 'othree/yajs.vim'
 # repo = 'jelera/vim-javascript-syntax'
-on_ft = ['js', 'ts']
+# repo = 'pangloss/vim-javascript'
+on_ft = ['js', 'ts', 'html']
 
-[[plugins]] # js syntax
-repo = 'othree/javascript-libraries-syntax.vim'
-on_ft = ['js', 'ts']
+# [[plugins]] # js syntax
+# repo = 'othree/javascript-libraries-syntax.vim'
+# on_ft = ['js', 'ts']
 
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
