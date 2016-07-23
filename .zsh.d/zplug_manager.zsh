@@ -10,7 +10,7 @@ source $ZPLUG_HOME/init.zsh
 
 
 zplug "zsh-users/zsh-completions"
-zplug "b4b4r07/easy-oneliner", if:"which fzf"
+# zplug "b4b4r07/easy-oneliner", if:"which fzf"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
