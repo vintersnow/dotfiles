@@ -24,23 +24,12 @@ on_path = '.*'
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
 
-[[plugins]]
-repo = 'scrooloose/syntastic'
-on_event = ['FocusLost', 'CursorHold', 'BufWritePre']
-hook_add = '''
-let g:syntastic_javascript_checkers=['eslint']
-
-" エラー行に sign を表示
-let g:syntastic_enable_signs = 1
-" location list を常に更新
-let g:syntastic_always_populate_loc_list = 0
-" location list を常に表示
-let g:syntastic_auto_loc_list = 0
-" ファイルを開いた時にチェックを実行する
-" "let g:syntastic_check_on_open = 1
-" :wq で終了する時もチェックする
-let g:syntastic_check_on_wq = 0
-'''
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
+# on_event = ['FocusLost', 'CursorHold', 'BufWritePre']
+# hook_source = '''
+# source ~/.config/nvim/plugins/syntastic.rc.vim
+# '''
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
@@ -88,4 +77,15 @@ vmap <C-_> <Plug>(caw:hatpos:toggle)
 [[plugins]]
 repo = 'tpope/vim-surround'
 on_path = '.*'
+
+[[plugins]]
+repo = 'moll/vim-node'
+on_ft = 'js'
+
+[[plugins]]
+repo = 'neomake/neomake'
+on_path = '.*'
+hook_add = '''
+source  ~/.config/nvim/plugins/neomake.rc.vim
+'''
 
