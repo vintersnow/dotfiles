@@ -32,8 +32,8 @@ repo = 'frankier/neovim-colors-solarized-truecolor-only'
 [[plugins]]
 repo = 'kakkyz81/evervim'
 
-[[plugins]]
-repo = 'wakatime/vim-wakatime'
+# [[plugins]]
+# repo = 'wakatime/vim-wakatime'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
