@@ -47,4 +47,5 @@ let g:Unite_source_grep_recursive_opt = ''
 " Leader-grepの便利キーマップ
 vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
 
-
+" tag back
+nnoremap <C-[> <C-t>
