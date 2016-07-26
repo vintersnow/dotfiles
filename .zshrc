@@ -8,6 +8,11 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
   done
 fi
 
+# zcompile
+if [ $DOTFILES/.zshrc -nt ~/.zshrc.zwc ]; then
+  zcompile ~/.zshrc
+fi
+
 #setting for zprof
 if (which zprof > /dev/null 2>&1) ;then
   zprof
