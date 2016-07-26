@@ -2,7 +2,9 @@
 export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
-  eval "$(anyenv init -)"
+
+  eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
+  # eval "$(anyenv init - --no-rehash)"
   for D in `ls $ANYENV_ROOT/envs`
   do
     export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
@@ -29,13 +31,13 @@ fi
 
 # brew file setting
 # something wrong. stop here
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  # source $(brew --prefix)/etc/brew-wrap
-fi
+# if [ -f $(brew --prefix)/etc/brew-wrap ];then
+#   source $(brew --prefix)/etc/brew-wrap
+# fi
 
 
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
+# source /usr/local/Bluemix/bx/zsh_autocomplete
 
 
 ### golang
@@ -45,8 +47,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
 ### pads
-export PADS_HOME=~/Projects/UTLecture/2016tau/pads/pads
-source $PADS_HOME/scripts/Q_DO_SETENV.sh
+# export PADS_HOME=~/Projects/UTLecture/2016tau/pads/pads
+# source $PADS_HOME/scripts/Q_DO_SETENV.sh
 
 ### rust
 export RUST_SRC_PATH=~/.rust/rustc-1.9.0/src

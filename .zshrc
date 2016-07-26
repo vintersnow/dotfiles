@@ -10,8 +10,5 @@ fi
 
 #setting for zprof
 if (which zprof > /dev/null 2>&1) ;then
-  zprof | less
+  zprof
 fi
-
-### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
