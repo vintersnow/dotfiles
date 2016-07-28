@@ -1,4 +1,5 @@
 [[plugins]]
+# ruby complement
 repo = 'osyo-manga/vim-monster'
 on_ft = 'rb'
 
@@ -17,19 +18,13 @@ hook_add='''
 '''
 
 [[plugins]]
+# Auto close parentheses and repeat by dot dot dot...
 repo = 'cohama/lexima.vim'
 on_path = '.*'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
-
-# [[plugins]]
-# repo = 'scrooloose/syntastic'
-# on_event = ['FocusLost', 'CursorHold', 'BufWritePre']
-# hook_source = '''
-# source ~/.config/nvim/plugins/syntastic.rc.vim
-# '''
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
@@ -45,6 +40,7 @@ source ~/.config/nvim/plugins/unite.rc.vim
 '''
 
 [[plugins]]
+# to use unite file_mru
 repo = 'Shougo/neomru.vim'
 on_source = 'unite.vim'
 
@@ -57,6 +53,7 @@ let g:vimfiler_as_default_explorer = 1
 '''
 
 [[plugins]]
+# comment out easyly
 repo = 'tyru/caw.vim'
 on_path = '.*'
 hook_add='''

@@ -11,4 +11,4 @@ if executable('ag')
 endif
 
 " show hidden file
-call unite#custom#source('file', 'matchers', "matcher_default")
+" call unite#custom#source('file', 'matchers', "matcher_default")

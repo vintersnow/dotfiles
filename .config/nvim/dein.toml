@@ -26,26 +26,18 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 [[plugins]]
 repo = 'frankier/neovim-colors-solarized-truecolor-only'
 
-# [[plugins]]
-# repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'kakkyz81/evervim'
-
-# [[plugins]]
-# repo = 'wakatime/vim-wakatime'
-
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+# [[plugins]]
+# repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
 repo = 'Shougo/unite-build'
 depends = 'unite.vim'
 
 [[plugins]]
+# make ctags
 repo = 'ludovicchabant/vim-gutentags'
 hook_add = '''
 let g:gutentags_generate_on_missing=0
