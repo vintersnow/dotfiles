@@ -6,7 +6,7 @@ augroup neomake_run
   autocmd! BufWritePost,BufEnter * Neomake
 
   " インサートモードを抜けた時もlint
-  autocmd! InsertLeave *.js Neomake 
+  " autocmd! InsertLeave *.js Neomake 
 
   " vim終了時にeslint_dを終了
   autocmd! VimLeave *.js  !eslint_d stop
