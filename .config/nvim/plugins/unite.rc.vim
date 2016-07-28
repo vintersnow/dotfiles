@@ -7,7 +7,10 @@ let g:unite_enable_smart_case = 1
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
+  let g:unite_source_rec_async_command = ['ag', '--nogroup', '--nocolor', '--column', '-g', '']
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
 endif
 
 " show hidden file
