@@ -1,18 +1,3 @@
-# anyenv
-export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
-if [ -d $ANYENV_ROOT ]; then
-  export PATH="$ANYENV_ROOT/bin:$PATH"
-
-  # eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
-  # eval "$(anyenv init - --no-rehash)"
-  for D in `ls $ANYENV_ROOT/envs`
-  do
-    export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
-  done
-fi
-alias envup='eval "$(anyenv init - --no-rehash)"'
-
-
 #Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -56,4 +41,24 @@ export RUST_SRC_PATH=~/.rust/rustc-1.9.0/src
 if [ -f ~/.cargo/env ]; then
   source ~/.cargo/env
 fi
+
+# anyenv
+export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
+function anyenv_init() {
+  eval "$(anyenv init - --no-rehash)"
+}
+if [ -d $ANYENV_ROOT ]; then
+  export PATH="$ANYENV_ROOT/bin:$PATH"
+
+  # eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
+  # async_job any eval "$(anyenv init - --no-rehash)"
+  # async_start_worker any
+  # async_job any anyenv_init
+  for D in `ls $ANYENV_ROOT/envs`
+  do
+    export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
+  done
+fi
+alias envup='eval "$(anyenv init - --no-rehash)"'
+
 
