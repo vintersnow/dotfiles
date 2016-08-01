@@ -69,3 +69,6 @@ set wildmode=longest:full,full
 
 " 折り返し
 set nowrap
+
+" canceal conceal
+set conceallevel=0
