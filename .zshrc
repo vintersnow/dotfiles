@@ -25,6 +25,7 @@ loadlib $ZSHHOME/peco.zsh
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
 loadlib $ZSHHOME/zplug_manager.zsh
+
 # loadlib $ZSHHOME/zgen_setting.zsh
 
 #setting for zprof
