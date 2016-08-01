@@ -2,13 +2,13 @@ export ZPLUG_HOME=~/.zplug
 if [ ! -d "$ZPLUG_HOME" ];then
   # curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
   # git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  echo "install zplug"
   curl -sL zplug.sh/installer | zsh
 fi
 
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-completions"
-# zplug "b4b4r07/easy-oneliner", if:"which fzf"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 
