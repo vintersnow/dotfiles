@@ -3,13 +3,14 @@ export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
 
-  eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
+  # eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
   # eval "$(anyenv init - --no-rehash)"
   for D in `ls $ANYENV_ROOT/envs`
   do
     export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
   done
 fi
+alias envup='eval "$(anyenv init - --no-rehash)"'
 
 
 #Added by the Heroku Toolbelt

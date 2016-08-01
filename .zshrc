@@ -11,7 +11,7 @@ ZSHHOME="${DOTFILES}/.zsh.d"
 function loadlib() {
   lib=${1:?"You have to specify a library file"}
   if [ -f "$lib" ];then
-          . "$lib"
+    . "$lib"
   fi
 }
 
