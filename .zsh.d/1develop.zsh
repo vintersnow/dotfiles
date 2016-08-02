@@ -2,14 +2,14 @@
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # setting for GO
-export GOPATH=$HOME/gopath
+# export GOPATH=$HOME/gopath
 # export GOROOT=/usr/local/opt/go/libexec もう必要ないらしい
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # Go completion
-if [ -f $GOROOT/misc/zsh/go ]; then
+# if [ -f $GOROOT/misc/zsh/go ]; then
   #  source $GOROOT/misc/zsh/go
   # error ocured
-fi
+# fi
 
 # export PYTHON=python2
 # export PYTHON=/Users/izuku/.pyenv/shims:$PATH
@@ -27,9 +27,9 @@ fi
 
 
 ### golang
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOROOT="/usr/local/opt/go/libexec"
+export GOPATH="$HOME/go"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 
 ### pads
@@ -54,11 +54,10 @@ if [ -d $ANYENV_ROOT ]; then
   # async_job any eval "$(anyenv init - --no-rehash)"
   # async_start_worker any
   # async_job any anyenv_init
-  for D in `ls $ANYENV_ROOT/envs`
+  for D in `command ls $ANYENV_ROOT/envs`
   do
     export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
   done
 fi
-alias envup='eval "$(anyenv init - --no-rehash)"'
-
+alias envup='anyenv_init'
 

@@ -17,6 +17,7 @@ function loadlib() {
 
 # loadfiles
 loadlib $ZSHHOME/0env_path.zsh
+loadlib $ZSHHOME/1develop.zsh
 loadlib $ZSHHOME/2normal_option.zsh
 loadlib $ZSHHOME/alias.zsh
 loadlib $ZSHHOME/os.zsh
@@ -24,7 +25,6 @@ loadlib $ZSHHOME/peco.zsh
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
 loadlib $ZSHHOME/zplug_manager.zsh
-loadlib $ZSHHOME/1develop.zsh
 
 # loadlib $ZSHHOME/zgen_setting.zsh
 

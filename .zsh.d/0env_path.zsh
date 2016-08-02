@@ -1,6 +1,3 @@
-## 重複パスを登録しない
-typeset -U path PATH cdpath fpath manpath
-
 ### 環境変数
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
