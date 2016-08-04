@@ -1,31 +1,6 @@
 #Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# setting for GO
-# export GOPATH=$HOME/gopath
-# export GOROOT=/usr/local/opt/go/libexec もう必要ないらしい
-# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-# Go completion
-# if [ -f $GOROOT/misc/zsh/go ]; then
-  #  source $GOROOT/misc/zsh/go
-  # error ocured
-# fi
-
-# export PYTHON=python2
-# export PYTHON=/Users/izuku/.pyenv/shims:$PATH
-# export PYTHON=/usr/bin/python2.7:$PATH
-
-# brew file setting
-# something wrong. stop here
-# if [ -f $(brew --prefix)/etc/brew-wrap ];then
-#   source $(brew --prefix)/etc/brew-wrap
-# fi
-
-
-### Added by the Bluemix CLI
-# source /usr/local/Bluemix/bx/zsh_autocomplete
-
-
 ### golang
 export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
@@ -44,20 +19,29 @@ fi
 
 # anyenv
 export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
-function anyenv_init() {
-  eval "$(anyenv init - --no-rehash)"
-}
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
-
-  # eval "$(env PATH="$ANYENV_ROOT/libexec:$PATH" $ANYENV_ROOT/libexec/anyenv-init - --no-rehash)"
-  # async_job any eval "$(anyenv init - --no-rehash)"
-  # async_start_worker any
-  # async_job any anyenv_init
   for D in `command ls $ANYENV_ROOT/envs`
   do
     export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
   done
 fi
-alias envup='anyenv_init'
+
+function anyenv_init() {
+  eval "$(anyenv init - --no-rehash)"
+}
+function anyenv_unset() {
+  unset -f ndenv
+  unset -f rbenv
+}
+function ndenv() {
+  anyenv_unset
+  anyenv_init
+  ndenv "$@"
+}
+function rbenv() {
+  anyenv_unset
+  anyenv_init
+  rbenv "$@"
+}
 

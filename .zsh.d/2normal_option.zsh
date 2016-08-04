@@ -37,7 +37,7 @@ zstyle ':zle:*' word-style unspecified
 # 補完
 # 補完機能を有効にする
 # zplug で呼ばれている？
-# autoload -Uz compinit
+autoload -Uz compinit
 # compinit -C #セキュリティチェックスキップ
 
 # 補完で小文字でも大文字にマッチさせる
