@@ -2,9 +2,9 @@
 source ~/.config/nvim/plugins.vim
 
 " settings
-if isdirectory(expand('~/.config/nvim/user_autoload'))
+if isdirectory(expand('~/.config/nvim/vimrc.d'))
   set runtimepath+=~/.config/nvim/
-  runtime! user_autoload/*.vim
+  runtime! vimrc.d/*.vim
 endif
 
 " colorscheme
