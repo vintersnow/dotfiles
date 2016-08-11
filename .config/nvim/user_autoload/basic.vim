@@ -11,11 +11,15 @@ filetype plugin indent off
 " Enable syntax highlighting and colorscheme
 syntax on
 
+" max column for highlighting
+set synmaxcol=200
+
 " disable highlighting when searching
 set nohlsearch
 
 " enable highlighting the cursor line
-set cursorline
+" this make vim too slow
+" set cursorline
 
 " use true color
 if has('nvim')
