@@ -25,6 +25,9 @@ on_path = '.*'
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
+hook_add = '''
+let g:EditorConfig_core_mode = 'python_external'
+'''
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
