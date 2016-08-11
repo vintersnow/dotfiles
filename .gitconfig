@@ -17,10 +17,17 @@
 	status = auto
 	diff = auto
 [alias]
+[alias]
 	co = checkout
 	st = status
+  ss = status -s
 	br = branch
 	ci = commit
+  cia = commit --amend
+  d  = diff
+  d1 = diff HEAD~
+  d2 = diff HEAD~2
+  d3 = diff HEAD~3
 [merge]
 	ff = false
 [push]
