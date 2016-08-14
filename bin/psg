@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo "what do you want to search for?"
+  exit 1
+fi
+
+ps aux | head -n1
+
+if  type ag > /dev/null 2>&1; then
+  ps aux | ag "$@"
+elif type grep > /dev/null 2>&1; then
+  ps aux | grep "$@"
+fi
