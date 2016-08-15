@@ -6,8 +6,8 @@ nmap    <Space> [Leader]
 " nomal bindings
 
 " 分割
-nnoremap [Leader]s :<C-u>sp<CR>
-nnoremap [Leader]v :<C-u>vs<CR>
+nnoremap [Leader]- :<C-u>sp<CR>
+nnoremap [Leader]\ :<C-u>vs<CR>
 
 " 画面resize
 " 同じに揃える
@@ -18,8 +18,11 @@ nnoremap [Leader]v :<C-u>vs<CR>
 " tab new
 nnoremap [Leader]t :<C-u>tabnew<CR>
 
+" copy and paste from clipboard
+nnoremap [Leader]p "+p<CR>
+nnoremap [Leader]y "+y<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Leader Keymap
 
 " Leader.vim keymap
 let g:Leader_source_history_yank_enable =1
@@ -36,9 +39,9 @@ nnoremap <silent> [Leader]c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " vinarise
 let g:vinarise_enable_auto_detect = 1 
 " Leader-build map
-nnoremap <silent> ,vb :Unite build<CR>
-nnoremap <silent> ,vcb :Unite build:!<CR>
-nnoremap <silent> ,vch :UniteBuildClearHighlight<CR>
+nnoremap <silent> [Leader]vb :Unite build<CR>
+nnoremap <silent> [Leader]vcb :Unite build:!<CR>
+nnoremap <silent> [Leader]vch :UniteBuildClearHighlight<CR>
 
 " Leader-grepの便利キーマップ
 " vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
