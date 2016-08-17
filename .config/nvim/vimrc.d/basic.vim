@@ -75,4 +75,7 @@ set wildmode=longest:full,full
 set nowrap
 
 " canceal conceal
-set conceallevel=0
+if has('conceal')
+  set conceallevel=0
+endif
+let g:vim_json_syntax_conceal = 0

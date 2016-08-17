@@ -9,7 +9,6 @@ depends = 'neosnippet-snippets'
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
 
-
 [[plugins]]
 repo = 'itchyny/calendar.vim'
 hook_add='''
@@ -96,6 +95,8 @@ repo = 'Yggdroot/indentLine'
 on_path = '.*'
 hook_add = '''
 let g:indentLine_enabled = 1
+let g:indentLine_fileTypeExclude = ['help', 'json']
+let g:indentLine_conceallevel=1
 '''
 
 [[plugins]]
