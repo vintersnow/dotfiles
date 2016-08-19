@@ -19,8 +19,8 @@ nnoremap [Leader]\ :<C-u>vs<CR>
 nnoremap [Leader]t :<C-u>tabnew<CR>
 
 " copy and paste from clipboard
-nnoremap [Leader]p "+p<CR>
-nnoremap [Leader]y "+y<CR>
+noremap [Leader]p "+p<CR>
+noremap [Leader]y "+y<CR>
 
 " tag back
 nnoremap <C-[> <C-t>
