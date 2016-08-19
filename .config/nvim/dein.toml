@@ -66,3 +66,6 @@ on_ft = ['js', 'ts', 'html']
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rs'
