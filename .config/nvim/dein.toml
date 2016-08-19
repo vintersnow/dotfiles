@@ -27,6 +27,9 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 repo = 'frankier/neovim-colors-solarized-truecolor-only'
 
 [[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 
 # [[plugins]]

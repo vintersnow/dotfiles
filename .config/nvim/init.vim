@@ -9,7 +9,8 @@ endif
 
 " colorscheme
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme hybrid
 
 " secret
 if filereadable(expand('~/.config/nvim/pw.vim'))
