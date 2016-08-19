@@ -22,9 +22,21 @@ nnoremap [Leader]t :<C-u>tabnew<CR>
 nnoremap [Leader]p "+p<CR>
 nnoremap [Leader]y "+y<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tag back
+nnoremap <C-[> <C-t>
 
-" Leader.vim keymap
+" term
+if has('nvim')
+  nnoremap [Leader]t- :split<Space>term://.//zsh<CR>
+  nnoremap [Leader]t\ :vsplit<Space>term://.//zsh<CR>
+
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugins
+
+" unite
 let g:Leader_source_history_yank_enable =1
 nnoremap <silent> [Leader]f :<C-u>Unite<Space>file<CR>
 nnoremap <silent> [Leader]u :<C-u>Unite<Space>-start-insert<Space>file_rec/async<CR>
@@ -45,6 +57,3 @@ nnoremap <silent> [Leader]vch :UniteBuildClearHighlight<CR>
 
 " Leader-grepの便利キーマップ
 " vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
-
-" tag back
-nnoremap <C-[> <C-t>
