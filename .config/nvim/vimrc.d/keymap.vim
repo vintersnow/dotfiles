@@ -16,7 +16,7 @@ nnoremap [Leader]\ :<C-u>vs<CR>
 " nnoremap [Leader]o <C-w>_<C-w>|
 
 " tab new
-nnoremap [Leader]t :<C-u>tabnew<CR>
+nnoremap [Leader]tt :<C-u>tabnew<CR>
 
 " copy and paste from clipboard
 noremap [Leader]p "+p<CR>
