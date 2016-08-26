@@ -28,7 +28,7 @@ if [ -d $ANYENV_ROOT ]; then
 fi
 
 function anyenv_init() {
-  eval "$(anyenv init - --no-rehash)"
+  eval "$(anyenv init -)"
 }
 function anyenv_unset() {
   unset -f ndenv
