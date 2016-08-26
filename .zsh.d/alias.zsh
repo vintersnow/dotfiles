@@ -54,9 +54,9 @@ case ${OSTYPE} in
   alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
 
   #emacs deamon
-  alias E='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-  alias emacs="TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
-  alias ekill="emacsclient -e '(kill-emacs)'"
+  # alias E='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+  # alias emacs="TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+  # alias ekill="emacsclient -e '(kill-emacs)'"
 
   #purge
   alias purge='sudo purge'
