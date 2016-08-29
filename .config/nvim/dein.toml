@@ -72,3 +72,7 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = 'rs'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'ts'
