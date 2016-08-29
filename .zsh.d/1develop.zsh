@@ -2,9 +2,12 @@
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### golang
-export GOROOT="/usr/local/opt/go/libexec"
+# export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+if [ ! -d $GOPATH ];then
+  mkdir $GOPATH
+fi
 
 
 ### pads

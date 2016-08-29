@@ -24,7 +24,7 @@ update:
 	git submodule update
 	git submodule foreach git pull origin master
 
-install: update deploy init
+install: update init deploy 
 	@exec $$SHELL
 
 clean:
