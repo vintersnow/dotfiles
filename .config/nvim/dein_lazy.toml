@@ -68,10 +68,6 @@ repo = 'tpope/vim-surround'
 on_path = '.*'
 
 [[plugins]]
-repo = 'moll/vim-node'
-on_ft = 'js'
-
-[[plugins]]
 repo = 'neomake/neomake'
 on_path = '.*'
 hook_add = '''

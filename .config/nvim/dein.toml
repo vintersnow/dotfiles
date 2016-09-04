@@ -51,6 +51,8 @@ depends = 'unite.vim'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'moll/vim-node'
 
 ##################################################################
 # syntax
