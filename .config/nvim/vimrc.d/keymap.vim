@@ -65,6 +65,8 @@ augroup filetype_keymap
   autocmd!
   " help
   autocmd FileType help nnoremap <buffer> q :q<CR>
+  " qf
+  autocmd FileType qf nnoremap <buffer> q :q<CR>
 
   " js
   autocmd  FileType javascript nnoremap <buffer> <C-]> :TernDef<CR>
