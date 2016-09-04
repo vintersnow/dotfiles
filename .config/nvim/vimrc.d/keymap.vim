@@ -57,3 +57,18 @@ nnoremap <silent> [Leader]vch :UniteBuildClearHighlight<CR>
 
 " Leader-grepの便利キーマップ
 " vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" filetype
+augroup filetype_keymap
+  autocmd!
+  " help
+  autocmd FileType help nnoremap <buffer> q :q<CR>
+
+  " js
+  autocmd  FileType javascript nnoremap <buffer> <C-]> :TernDef<CR>
+  autocmd  FileType javascript nnoremap <buffer> <C-[> <C-o>
+augroup END
+
+
