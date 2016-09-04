@@ -68,7 +68,7 @@ augroup filetype_keymap
 
   " js
   autocmd  FileType javascript nnoremap <buffer> <C-]> :TernDef<CR>
-  autocmd  FileType javascript nnoremap <buffer> <C-[> <C-o>
+  " autocmd  FileType javascript nnoremap <buffer> <C-[> <C-o>
 augroup END
 
 
