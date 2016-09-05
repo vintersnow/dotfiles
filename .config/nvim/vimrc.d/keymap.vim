@@ -40,7 +40,7 @@ endif
 let g:Leader_source_history_yank_enable =1
 nnoremap <silent> [Leader]f :<C-u>Unite<Space>file<CR>
 nnoremap <silent> [Leader]u :<C-u>Unite<Space>-start-insert<Space>file_rec/async<CR>
-nnoremap <silent> [Leader]g :<C-u>Unite<Space>grep:.<CR>
+nnoremap <silent> [Leader]g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [Leader]bu :<C-u>Unite<Space>buffer<CR>
 nnoremap <silent> [Leader]bm :<C-u>Unite<Space>bookmark<CR>
 nnoremap <silent> [Leader]a :<C-u>UniteBookmarkAdd<CR>
