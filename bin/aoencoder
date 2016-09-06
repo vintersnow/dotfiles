@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # http://qiita.com/vintersnow/items/9a7df61117c256d28c97
 
 nkf -w -Lu $1 > m.txt
