@@ -48,3 +48,11 @@ function rbenv() {
   rbenv "$@"
 }
 
+### pads
+export PADS_HOME=~/share/pads/pads
+source $PADS_HOME/scripts/Q_DO_SETENV.sh
+
+### sml
+export SMLROOT=/usr/local/sml
+export SML=$SMLROOT/bin/sml
+
