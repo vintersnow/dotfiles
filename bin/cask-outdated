@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # for c in `brew cask list`; do
 #   brew cask info $c | grep -qF "Not installed"
