@@ -41,7 +41,13 @@ case ${OSTYPE} in
   darwin*)
   #Mac用の設定
 
-  alias o='open .'
+  function o() {
+    if [ $# -gt 0 ]; then
+      open $1
+    else
+      open .
+    fi
+  }
 
   alias uc='ulimit -c '
   alias ucu='ulimit -c unlimited'
