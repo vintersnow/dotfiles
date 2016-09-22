@@ -1,9 +1,9 @@
 export ZPLUG_HOME=~/.zplug
 if [ ! -d "$ZPLUG_HOME" ];then
-  # curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
-  # git clone https://github.com/zplug/zplug $ZPLUG_HOME
   echo "install zplug"
-  curl -sL zplug.sh/installer | zsh
+  # curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  #curl -sL zplug.sh/installer | zsh
 fi
 
 source $ZPLUG_HOME/init.zsh

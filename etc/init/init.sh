@@ -11,6 +11,7 @@ fi
 
 
 . "$DOTPATH"/etc/libs.sh
+. "$DOTPATH"/.bash_profile
 
 for i in "$DOTPATH"/etc/init/"$(get_os)"/*.sh
 do

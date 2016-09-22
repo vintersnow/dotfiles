@@ -19,9 +19,20 @@ package=(nvim)
 
 update() {
   if has "apt-get"; then
-    sudo apt-get update
+    yes | sudo apt-get update
   elif has "yum"; then
-    sudo yum update
+    yes | sudo yum update
+  else
+    log_fail "error: no package manager found"
+    exit 1
+  fi
+}
+
+upgrade () {
+  if has "apt-get"; then
+    yes | sudo apt-get upgrade
+  elif has "yum"; then
+    yes | sudo yum upgrade
   else
     log_fail "error: no package manager found"
     exit 1
@@ -33,26 +44,15 @@ install_nvim() {
     return
   fi
 
+  log_info "install nvim"
   if has "apt-get"; then
-    sudo apt-get -y install software-properties-common
-    sudo add-apt-repository ppa:neovim-ppa/unstable
-    sudo apt-get -y install neovim
-    sudo apt-get -y install python-dev python-pip python3-dev python3-pip
+    yes | sudo apt-get install software-properties-common
+    yes | sudo apt-get update
+    yes | sudo add-apt-repository ppa:neovim-ppa/unstable
+    yes | sudo apt-get install neovim
+    yes | sudo apt-get install python-dev python-pip python3-dev python3-pip
   elif has "yum"; then
     log_fail "neovim: yum not support"
-  fi
-}
-
-install_go() {
-  if has "go"; then
-    return
-  fi
-
-  if has "apt-get"; then
-    sudo apt-get -y install golang
-  elif has "yum"; then
-    log_fail "golang: yum not support"
-    exit 1
   fi
 }
 
@@ -61,6 +61,7 @@ install_ghq() {
     return
   fi
 
+  log_info "install ghq"
   if has "go"; then
     go get github.com/motemen/ghq
   else
@@ -68,10 +69,37 @@ install_ghq() {
   fi
 }
 
+normal_install () {
+  if [ $# -eq 1 ]; then
+    command_name=$1
+    pckg_name=$1
+  elif [ $# -eq 2 ]; then
+    command_name=$1
+    pckg_name=$2
+  else
+    return 
+  fi
+
+  if has "$1"; then
+    return
+  fi
+
+  log_info "install $command_name"
+  if has "apt-get"; then
+    yes | sudo apt-get install $pckg_name
+  elif has "yum"; then
+    log_fail "golang: yum not support"
+    exit 1
+  fi
+}
+
 update
+upgrade
 
 install_nvim
-install_go
+normal_install go golang
 install_ghq
+normal_install tree
+normal_install zsh
 
 log_pass "install: package install successfully installed!!"
