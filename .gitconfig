@@ -51,4 +51,4 @@
 	smudge = git-lfs smudge %f
 	required = true
 [ghq]  
-  root = ~/ghq
+  root = ~/.ghq
