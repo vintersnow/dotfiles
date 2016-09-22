@@ -200,3 +200,19 @@ shell_has_started_interactively() {
 function is_ssh_running() {
   [ ! -z "$SSH_CONECTION" ];
 }
+
+# loader
+function loadlib() {
+  lib=${1:?"You have to specify a library file"}
+  if [ -f "$lib" ];then
+    source $lib
+  fi
+}
+
+function export_path () {
+  dir=${1:?"You have to specify a path"}
+  if [ -d "$dir" ];then
+    export PATH="$dir:$PATH"
+  fi
+}
+

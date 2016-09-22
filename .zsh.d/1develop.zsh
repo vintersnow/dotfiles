@@ -1,10 +1,16 @@
+function export_path () {
+  dir=${1:?"You have to specify a path"}
+  if [ -d "$dir" ];then
+    export PATH="$dir:$PATH"
+  fi
+}
+
 #Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export_path /usr/local/heroku/bin
 
 ### golang
-# export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 if [ ! -d $GOPATH ];then
   mkdir $GOPATH
 fi

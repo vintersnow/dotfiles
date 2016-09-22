@@ -1,16 +1,16 @@
 ### 環境変数
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/git/bin:$PATH
-export PATH=/usr/local/bin:/usr/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/texbin:$PATH
-export PATH=~/.dotfiles/bin:$PATH
-export PATH=~/bin:$PATH
+
+export_path /opt/local/bin:/opt/local/sbin
+export_path /usr/local/bin
+export_path /usr/local/git/bin
+export_path /usr/local/bin:/usr/bin
+export_path /usr/local/sbin
+export_path /usr/texbin
+export_path ~/.dotfiles/bin
+export_path ~/bin
 
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-
 
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
@@ -24,6 +24,7 @@ case ${OSTYPE} in
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/nvim
+
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
 
