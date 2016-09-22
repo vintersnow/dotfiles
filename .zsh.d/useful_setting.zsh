@@ -83,7 +83,3 @@ function md(){
   mkdir -p "$1" && cd "$1"
 }
 
-
-function dic() {
-  grep $1 ~/.dotfiles/lib/gene.txt -A 1 -wi --color
-}

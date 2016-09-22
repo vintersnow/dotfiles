@@ -1,0 +1,19 @@
+  #!/bin/bash
+
+case $1 in
+  '-j') 
+    shift
+    grep $1 ~/.dotfiles/lib/gene.txt -B 1 -wi --color
+    break
+    ;;
+  '-e')
+    shift
+    grep $1 ~/.dotfiles/lib/gene.txt -A 1 -wi --color
+    break
+    ;;
+  *)
+    grep $1 ~/.dotfiles/lib/gene.txt -A 1 -wi --color
+    break
+    ;;
+esac
+

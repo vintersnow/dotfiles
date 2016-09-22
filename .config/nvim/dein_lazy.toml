@@ -99,7 +99,6 @@ let g:indentLine_conceallevel=1
 repo = 'airblade/vim-gitgutter'
 on_path = '.*'
 
-[[plugins]]
-repo = 'Quramy/tsuquyomi'
-on_ft = 'typescript'
-
+# [[plugins]]
+# repo = 'Quramy/tsuquyomi'
+# on_ft = 'typescript'
