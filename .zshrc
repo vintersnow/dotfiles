@@ -7,13 +7,8 @@ ZSHHOME="${DOTFILES}/.zsh.d"
 #       [ \( -f $i -o -h $i \) -a -r $i ] && . $i
 #   done
 # fi
-
-function loadlib() {
-  lib=${1:?"You have to specify a library file"}
-  if [ -f "$lib" ];then
-    . "$lib"
-  fi
-}
+#
+. $DOTFILES/etc/libs.sh
 
 # loadfiles
 loadlib $ZSHHOME/0env_path.zsh
