@@ -12,7 +12,6 @@ case $1 in
     break
     ;;
   *)
-    echo $1
     grep $1 ~/.dotfiles/lib/gene.txt -A 1 -wi --color
     break
     ;;
