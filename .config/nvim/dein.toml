@@ -78,3 +78,10 @@ on_ft = 'rs'
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = 'ts'
+
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'
+on_ft = 'cpp'
+hook_add = '''
+let g:cpp_class_scope_highlight = 1
+'''
