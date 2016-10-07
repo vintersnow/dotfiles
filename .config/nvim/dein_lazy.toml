@@ -103,3 +103,14 @@ on_path = '.*'
 # repo = 'Quramy/tsuquyomi'
 # on_ft = 'typescript'
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+# hook_add ```
+# ```
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+hook_post_update = '''
+  let g:dein#plugin.build = 'make'
+'''
