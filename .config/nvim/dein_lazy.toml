@@ -106,8 +106,14 @@ on_path = '.*'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
-# hook_add ```
-# ```
+hook_add = '''
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
