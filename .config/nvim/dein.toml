@@ -54,6 +54,9 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'moll/vim-node'
 
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
+
 ##################################################################
 # syntax
 
