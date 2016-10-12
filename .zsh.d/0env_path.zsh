@@ -9,6 +9,8 @@ export_path /usr/texbin
 export_path ~/.dotfiles/bin
 export_path ~/bin
 
+export_path $HOME/.yarn/bin
+
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
