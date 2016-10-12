@@ -19,6 +19,8 @@ brew ghq
 brew coreutils
 brew tig
 brew fzf
+brew rename
+brew jq
 
 cask iterm2
 cask karabiner
@@ -26,3 +28,11 @@ cask alfred
 cask evernote
 cask clipy
 cask shiftit
+cask caffeine
+cask intel-power-gadget
+
+# qucik look
+cask betterzipql
+cask qlmarkdown
+cask qlstephen
+cask quciklook-json
