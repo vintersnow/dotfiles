@@ -47,14 +47,6 @@ repo = 'Shougo/neomru.vim'
 on_source = 'unite.vim'
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-on_if = "isdirectory(bufname('%'))"
-hook_add = '''
-let g:vimfiler_as_default_explorer = 1
-'''
-
-[[plugins]]
 # comment out easyly
 repo = 'tyru/caw.vim'
 on_path = '.*'
