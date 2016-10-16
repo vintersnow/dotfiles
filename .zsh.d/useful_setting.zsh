@@ -79,3 +79,5 @@ esac
 }
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
+# less option
+export LESS='-gj10 --no-init --quit-if-one-screen --RAW-CONTROL-CHARS -W -S'
