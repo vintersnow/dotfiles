@@ -35,6 +35,8 @@ alias fzf=fzf-tmux
 
 alias labmem='ssh vega command ../hnakazawa/labmem/labmem.py'
 
+alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
+
 
 #OS別alias
 case ${OSTYPE} in
@@ -101,11 +103,11 @@ case ${OSTYPE} in
   alias ipn='ipython notebook'
 
   #autojump
-  alias j="autojump"
-  if [ -f `brew --prefix`/etc/autojump ]; then
-    . `brew --prefix`/etc/autojump
-  fi
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  # alias j="autojump"
+  # if [ -f `brew --prefix`/etc/autojump ]; then
+  #   . `brew --prefix`/etc/autojump
+  # fi
+  # [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
   # gcc
   alias gc='/usr/local/bin/gcc-5'

@@ -1,10 +1,3 @@
-function export_path () {
-  dir=${1:?"You have to specify a path"}
-  if [ -d "$dir" ];then
-    export PATH="$dir:$PATH"
-  fi
-}
-
 #Added by the Heroku Toolbelt
 export_path /usr/local/heroku/bin
 
@@ -27,7 +20,7 @@ if [ -f ~/.cargo/env ]; then
 fi
 
 # anyenv
-export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
+export ANYENV_ROOT="$HOME/.ghq/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
   for D in `command ls $ANYENV_ROOT/envs`

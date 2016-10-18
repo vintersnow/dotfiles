@@ -23,7 +23,7 @@ export LC_ALL=ja_JP.UTF-8
 case ${OSTYPE} in
   darwin*)
   #Mac用の設定
-  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
   #Sheet EDITOR
   export EDITOR=/usr/local/bin/nvim
 
