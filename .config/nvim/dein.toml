@@ -23,8 +23,8 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 '''
 
 # color scheme
-[[plugins]]
-repo = 'frankier/neovim-colors-solarized-truecolor-only'
+# [[plugins]]
+# repo = 'frankier/neovim-colors-solarized-truecolor-only'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
@@ -38,15 +38,6 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'Shougo/unite-build'
 depends = 'unite.vim'
-
-# make ctags
-# [[plugins]]
-# repo = 'ludovicchabant/vim-gutentags'
-# hook_add = '''
-# let g:gutentags_generate_on_missing=0
-# let g:gutentags_add_default_project_roots = 0
-# let g:gutentags_project_root = ['tags']
-# '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -69,8 +60,6 @@ let g:vimfiler_as_default_explorer = 1
 
 [[plugins]] # js syntax
 repo = 'othree/yajs.vim'
-# repo = 'jelera/vim-javascript-syntax'
-# repo = 'pangloss/vim-javascript'
 on_ft = ['js', 'ts', 'html']
 
 # [[plugins]] # js syntax

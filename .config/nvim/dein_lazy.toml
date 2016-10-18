@@ -1,7 +1,7 @@
-[[plugins]]
-# ruby complement
-repo = 'osyo-manga/vim-monster'
-on_ft = 'rb'
+# [[plugins]]
+# # ruby complement
+# repo = 'osyo-manga/vim-monster'
+# on_ft = 'rb'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -9,12 +9,12 @@ depends = 'neosnippet-snippets'
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
 
-[[plugins]]
-repo = 'itchyny/calendar.vim'
-hook_add='''
-  let g:calendar_google_calendar = 1
-  let g:calendar_google_task = 1
-'''
+# [[plugins]]
+# repo = 'itchyny/calendar.vim'
+# hook_add='''
+#   let g:calendar_google_calendar = 1
+#   let g:calendar_google_task = 1
+# '''
 
 [[plugins]]
 # Auto close parentheses and repeat by dot dot dot...
@@ -28,11 +28,11 @@ hook_add = '''
 let g:EditorConfig_core_mode = 'python_external'
 '''
 
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
-hook_add = '''
-let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
-'''
+# [[plugins]]
+# repo = 'Chiel92/vim-autoformat'
+# hook_add = '''
+# let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
+# '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
