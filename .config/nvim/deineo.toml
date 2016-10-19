@@ -1,18 +1,18 @@
 ##################################################################
 # deoplete
 
-[[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-lazy = 0
-hook_add = '''
-  let g:tern_request_timeout = 1
-  " let g:tern_show_signature_in_pum = 0
-'''
+# [[plugins]]
+# repo = 'carlitux/deoplete-ternjs'
+# lazy = 0
+# depends = 'tern_for_vim'
 
-[[plugins]]
-# Required: run 'npm install' in the plugin dir.
-repo = 'ternjs/tern_for_vim'
-lazy = 0
+# [[plugins]]
+# # Required: run 'npm install' in the plugin dir.
+# repo = 'ternjs/tern_for_vim'
+# lazy = 0
+# hook_add = '''
+# let tern#is_show_argument_hints_enabled = 1
+# '''
 
 [[plugins]]
 repo = 'justmao945/vim-clang'
