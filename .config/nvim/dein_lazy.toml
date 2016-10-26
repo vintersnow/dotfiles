@@ -3,18 +3,11 @@
 # repo = 'osyo-manga/vim-monster'
 # on_ft = 'rb'
 
-[[plugins]]
-repo = 'Shougo/neosnippet'
-depends = 'neosnippet-snippets'
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
-
 # [[plugins]]
-# repo = 'itchyny/calendar.vim'
-# hook_add='''
-#   let g:calendar_google_calendar = 1
-#   let g:calendar_google_task = 1
-# '''
+# repo = 'Shougo/neosnippet'
+# depends = 'neosnippet-snippets'
+# on_event = 'InsertCharPre'
+# on_ft = 'snippet'
 
 [[plugins]]
 # Auto close parentheses and repeat by dot dot dot...
@@ -25,14 +18,12 @@ on_path = '.*'
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
 hook_add = '''
-let g:EditorConfig_core_mode = 'python_external'
+if has('mac')
+  let g:EditorConfig_core_mode = 'external_command'
+else
+  let g:EditorConfig_core_mode = 'python_external'
+endif
 '''
-
-# [[plugins]]
-# repo = 'Chiel92/vim-autoformat'
-# hook_add = '''
-# let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
-# '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -58,13 +49,6 @@ vmap <C-_> <Plug>(caw:hatpos:toggle)
 [[plugins]]
 repo = 'tpope/vim-surround'
 on_path = '.*'
-
-[[plugins]]
-repo = 'neomake/neomake'
-on_path = '.*'
-hook_add = '''
-source  ~/.config/nvim/plugins/neomake.rc.vim
-'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -105,10 +89,4 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-hook_post_update = '''
-  let g:dein#plugin.build = 'make'
 '''

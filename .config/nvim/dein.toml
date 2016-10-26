@@ -16,11 +16,11 @@ hook_post_update = '''
   let g:dein#plugin.build = cmd
 '''
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-hook_add = '''
-source ~/.config/nvim/plugins/neosnippet.rc.vim
-'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
+# hook_add = '''
+# source ~/.config/nvim/plugins/neosnippet.rc.vim
+# '''
 
 # color scheme
 # [[plugins]]
@@ -29,15 +29,17 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
+#[[plugins]]
+#repo = 'itchyny/lightline.vim'
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo = 'vim-airline/vim-airline'
 
 # [[plugins]]
 # repo = 'nathanaelkane/vim-indent-guides'
 
-[[plugins]]
-repo = 'Shougo/unite-build'
-depends = 'unite.vim'
+#[[plugins]]
+#repo = 'Shougo/unite-build'
+#depends = 'unite.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -59,7 +61,9 @@ let g:vimfiler_as_default_explorer = 1
 # syntax
 
 [[plugins]] # js syntax
-repo = 'othree/yajs.vim'
+# repo = 'othree/yajs.vim'
+# repo = 'pangloss/vim-javascript'
+repo = 'jelera/vim-javascript-syntax'
 on_ft = ['js', 'ts', 'html']
 
 # [[plugins]] # js syntax
@@ -87,3 +91,6 @@ let g:cpp_class_scope_highlight = 1
 
 [[plugins]]
 repo = 'kylef/apiblueprint.vim'
+
+[[plugins]]
+repo = 'keith/swift.vim'
