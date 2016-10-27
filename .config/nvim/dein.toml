@@ -22,6 +22,17 @@ hook_post_update = '''
 # source ~/.config/nvim/plugins/neosnippet.rc.vim
 # '''
 
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
 # color scheme
 # [[plugins]]
 # repo = 'frankier/neovim-colors-solarized-truecolor-only'
@@ -76,27 +87,34 @@ on_ft = ['js', 'ts', 'html']
 # repo = 'othree/javascript-libraries-syntax.vim'
 # on_ft = ['js', 'ts']
 
-[[plugins]] # toml syntax
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rs'
-
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = 'ts'
-
-[[plugins]]
-repo = 'octol/vim-cpp-enhanced-highlight'
-on_ft = 'cpp'
-hook_add = '''
-let g:cpp_class_scope_highlight = 1
-'''
-
 [[plugins]]
 repo = 'kylef/apiblueprint.vim'
 
 [[plugins]]
-repo = 'keith/swift.vim'
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+" vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+'''
+
+# polyglot includes these
+
+# [[plugins]] # toml syntax
+# repo = 'cespare/vim-toml'
+# on_ft = 'toml'
+
+# [[plugins]]
+# repo = 'rust-lang/rust.vim'
+# on_ft = 'rs'
+
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
+# on_ft = 'ts'
+
+# [[plugins]]
+# repo = 'octol/vim-cpp-enhanced-highlight'
+# on_ft = 'cpp'
+# hook_add = '''
+# let g:cpp_class_scope_highlight = 1
+# '''
+#
