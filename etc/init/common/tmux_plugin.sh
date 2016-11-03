@@ -4,9 +4,10 @@ trap 'echo Error: $0:$LINENO stopped; exit 1' ERR INT
 set -eu
 
 . "$DOTPATH"/etc/libs.sh
+. "$DOTPATH"/.zsh.d/1develop.zsh
 
-if has "ghq"; then
-  if [ ! -d $(ghq root)/github.com/tmux-plugins/tpm ]; then
+if has "ghq" || -x $GOAPTH/bin/ghq ; then
+  if [ ! -d $($GOPATH/bin/ghq root)/github.com/tmux-plugins/tpm ]; then
     ghq get tmux-plugins/tpm
   fi
 else
