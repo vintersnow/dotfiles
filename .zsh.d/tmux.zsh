@@ -36,7 +36,12 @@ function tmux_automatically_attach_session()
         fi
       fi
     else
-      tmux new-session && echo "tmux created new session"
+      echo "No tmux session found."
+      echo -n "Do you want to create new session? (Y/n) "
+      read
+      if [[ ! "$REPLY" =~ ^[nN]$ ]]; then
+        tmux new-session && echo "tmux created new session"
+      fi
     fi
   fi
 }
