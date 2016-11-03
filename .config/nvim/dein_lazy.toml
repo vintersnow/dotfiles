@@ -1,20 +1,13 @@
-[[plugins]]
-# ruby complement
-repo = 'osyo-manga/vim-monster'
-on_ft = 'rb'
+# [[plugins]]
+# # ruby complement
+# repo = 'osyo-manga/vim-monster'
+# on_ft = 'rb'
 
-[[plugins]]
-repo = 'Shougo/neosnippet'
-depends = 'neosnippet-snippets'
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
-
-[[plugins]]
-repo = 'itchyny/calendar.vim'
-hook_add='''
-  let g:calendar_google_calendar = 1
-  let g:calendar_google_task = 1
-'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet'
+# depends = 'neosnippet-snippets'
+# on_event = 'InsertCharPre'
+# on_ft = 'snippet'
 
 [[plugins]]
 # Auto close parentheses and repeat by dot dot dot...
@@ -25,13 +18,11 @@ on_path = '.*'
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
 hook_add = '''
-let g:EditorConfig_core_mode = 'python_external'
-'''
-
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
-hook_add = '''
-let g:formatdef_jsbeautify_javascript = '"js-beautify --config ~/.jsbeautifyrc"'
+if has('mac')
+  let g:EditorConfig_core_mode = 'external_command'
+else
+  let g:EditorConfig_core_mode = 'python_external'
+endif
 '''
 
 [[plugins]]
@@ -47,14 +38,6 @@ repo = 'Shougo/neomru.vim'
 on_source = 'unite.vim'
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-on_if = "isdirectory(bufname('%'))"
-hook_add = '''
-let g:vimfiler_as_default_explorer = 1
-'''
-
-[[plugins]]
 # comment out easyly
 repo = 'tyru/caw.vim'
 on_path = '.*'
@@ -66,13 +49,6 @@ vmap <C-_> <Plug>(caw:hatpos:toggle)
 [[plugins]]
 repo = 'tpope/vim-surround'
 on_path = '.*'
-
-[[plugins]]
-repo = 'neomake/neomake'
-on_path = '.*'
-hook_add = '''
-source  ~/.config/nvim/plugins/neomake.rc.vim
-'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -99,7 +75,18 @@ let g:indentLine_conceallevel=1
 repo = 'airblade/vim-gitgutter'
 on_path = '.*'
 
-[[plugins]]
-repo = 'Quramy/tsuquyomi'
-on_ft = 'typescript'
+# [[plugins]]
+# repo = 'Quramy/tsuquyomi'
+# on_ft = 'typescript'
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+hook_add = '''
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+'''

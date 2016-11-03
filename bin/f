@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [[ $# == 0 ]]; then
 	echo "this command needs unless 1 parameter"
 else

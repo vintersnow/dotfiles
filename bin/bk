@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # move backup
 if [[ $# == 0 ]]; then
 	echo "this command needs 1 parameter"

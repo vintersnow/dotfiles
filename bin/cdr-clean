@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CDRFILE=~/.chpwd-recent-dirs
 TMPFILE="$CDRFILE-tmp"

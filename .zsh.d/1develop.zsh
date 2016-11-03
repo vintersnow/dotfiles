@@ -1,10 +1,9 @@
 #Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export_path /usr/local/heroku/bin
 
 ### golang
-# export GOROOT="/usr/local/opt/go/libexec"
 export GOPATH="$HOME/go"
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 if [ ! -d $GOPATH ];then
   mkdir $GOPATH
 fi
@@ -21,7 +20,7 @@ if [ -f ~/.cargo/env ]; then
 fi
 
 # anyenv
-export ANYENV_ROOT="$(ghq root)/github.com/riywo/anyenv"
+export ANYENV_ROOT="$HOME/.ghq/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
   for D in `command ls $ANYENV_ROOT/envs`

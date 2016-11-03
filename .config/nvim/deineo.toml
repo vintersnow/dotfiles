@@ -3,27 +3,45 @@
 
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
-lazy = 0
-hook_add = '''
-  let g:tern_request_timeout = 1
-  " let g:tern_show_signature_in_pum = 0
-'''
+# lazy = 0
+on_ft = 'js'
+# depends = 'tern_for_vim'
+
+# [[plugins]]
+# # Required: run 'npm install' in the plugin dir.
+# # usefull but too slow
+# repo = 'ternjs/tern_for_vim'
+# lazy = 0
+# on_ft = 'js'
+# hook_add = '''
+# let tern#is_show_argument_hints_enabled = 1
+# '''
 
 [[plugins]]
-# Required: run 'npm install' in the plugin dir.
-repo = 'ternjs/tern_for_vim'
-lazy = 0
+repo = 'justmao945/vim-clang'
+on_ft = ['c', 'cpp']
 
-# doesn't work
-# [[plugins]]
-# Required:
-# libclang
-# repo = 'zchee/deoplete-clang'
-# on_ft = ['c', 'cpp']
+[[plugins]]
+repo = 'xaizek/vim-inccomplete'
+on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 lazy = 0
 hook_add = '''
   source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'neomake/neomake'
+on_path = '.*'
+lazy = 1
+hook_add = '''
+source  ~/.config/nvim/plugins/neomake.rc.vim
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+hook_post_update = '''
+  let g:dein#plugin.build = 'make'
 '''

@@ -29,7 +29,7 @@ function peco-cdr() {
   fi
 }
 zle -N peco-cdr
-bindkey '^x' peco-cdr
+bindkey '^u' peco-cdr
 
 #pecoでkill
 function peco-pkill() {

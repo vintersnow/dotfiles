@@ -79,11 +79,5 @@ esac
 }
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
-function md(){
-  mkdir -p "$1" && cd "$1"
-}
-
-
-function dic() {
-  grep $1 ~/.dotfiles/lib/gene.txt -A 1 -wi --color
-}
+# less option
+export LESS='-gj10 --no-init --quit-if-one-screen --RAW-CONTROL-CHARS -W -S'

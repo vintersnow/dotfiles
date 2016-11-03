@@ -1,7 +1,5 @@
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 bind C-y run-shell 'reattach-to-user-namespace tmux-pbcopy'
-# Use vim keybindings in copy mode
-set-window-option -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
 bind-key -t vi-copy v begin-selection

@@ -17,3 +17,4 @@ make install
 + make update: pull repository and submodules.
 + make clean: remove dot files from home directory.
 + make install: update deploy init
++ make zsh: copy only zsh setting

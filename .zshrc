@@ -7,13 +7,8 @@ ZSHHOME="${DOTFILES}/.zsh.d"
 #       [ \( -f $i -o -h $i \) -a -r $i ] && . $i
 #   done
 # fi
-
-function loadlib() {
-  lib=${1:?"You have to specify a library file"}
-  if [ -f "$lib" ];then
-    . "$lib"
-  fi
-}
+#
+. $DOTFILES/etc/libs.sh
 
 # loadfiles
 loadlib $ZSHHOME/0env_path.zsh
@@ -21,7 +16,11 @@ loadlib $ZSHHOME/1develop.zsh
 loadlib $ZSHHOME/2normal_option.zsh
 loadlib $ZSHHOME/alias.zsh
 loadlib $ZSHHOME/os.zsh
-loadlib $ZSHHOME/peco.zsh
+
+if has 'peco'; then
+  loadlib $ZSHHOME/peco.zsh
+fi
+
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
 loadlib $ZSHHOME/zplug_manager.zsh
