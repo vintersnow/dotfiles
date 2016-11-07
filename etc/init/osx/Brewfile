@@ -21,6 +21,7 @@ brew tig
 brew fzf
 brew rename
 brew jq
+brew terminal-notifier
 
 cask iterm2
 cask karabiner

@@ -4,13 +4,16 @@ case ${OSTYPE} in
     # 一定時間以上かかる処理の場合は終了時に通知してくれる
     local COMMAND=""
     local COMMAND_TIME=""
+    local IGNORE_COMMAND=(v vi vim tmux ssh)
     precmd() {
       if [ "$COMMAND_TIME" -ne "0" ] ; then
         local d=`date +%s`
         d=`expr $d - $COMMAND_TIME`
         if [ "$d" -ge "5" ] ; then
           COMMAND="$COMMAND "
-          which terminal-notifier > /dev/null 2>&1 && terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
+          if has 'terminal-notifier'; then
+            terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
+          fi
         fi
       fi
       COMMAND="0"
@@ -18,7 +21,7 @@ case ${OSTYPE} in
     }
     preexec () {
       COMMAND="${1}"
-      if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
+      if [[ ! " $IGNORE_COMMAND[@] " =~ " $COMMAND_NAME " ]]; then
         COMMAND_TIME=`date +%s`
       fi
     }
