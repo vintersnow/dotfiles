@@ -1,6 +1,8 @@
 " The prefix key.
 nnoremap    [Leader]   <Nop>
 nmap    <Space> [Leader]
+vnoremap    [Leader]   <Nop>
+vmap    <Space> [Leader]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nomal bindings
@@ -20,7 +22,8 @@ nnoremap [Leader]tt :<C-u>tabnew<CR>
 
 " copy and paste from clipboard
 noremap [Leader]p "+p<CR>
-noremap [Leader]y "+y<CR>
+nnoremap [Leader]y "+yy
+vnoremap [Leader]y "+y
 
 " tag back
 nnoremap <C-[> <C-t>
