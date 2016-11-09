@@ -18,14 +18,6 @@ on_ft = 'js'
 # '''
 
 [[plugins]]
-repo = 'justmao945/vim-clang'
-on_ft = ['c', 'cpp']
-
-[[plugins]]
-repo = 'xaizek/vim-inccomplete'
-on_ft = ['c', 'cpp']
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 lazy = 0
 hook_add = '''
@@ -42,6 +34,18 @@ source  ~/.config/nvim/plugins/neomake.rc.vim
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
+on_ft = 'go'
+lazy = 1
 hook_post_update = '''
   let g:dein#plugin.build = 'make'
 '''
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp', 'cc']
+lazy = 1
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_ft = ['c', 'cpp', 'cc']
+lazy = 1
