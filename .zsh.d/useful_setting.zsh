@@ -4,7 +4,7 @@ case ${OSTYPE} in
     # 一定時間以上かかる処理の場合は終了時に通知してくれる
     local COMMAND=""
     local COMMAND_TIME=""
-    local IGNORE_COMMAND=(v vi vim tmux ssh)
+    local IGNORE_COMMAND=(v vi vim tmux ssh man less tail emacs tig)
     precmd() {
       if [ "$COMMAND_TIME" -ne "0" ] ; then
         local d=`date +%s`
