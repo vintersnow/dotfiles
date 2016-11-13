@@ -40,26 +40,24 @@ endif
 " plugins
 
 " unite
-let g:Leader_source_history_yank_enable =1
-nnoremap <silent> [Leader]f :<C-u>Unite<Space>file<CR>
-nnoremap <silent> [Leader]u :<C-u>Unite<Space>-start-insert<Space>file_rec/async<CR>
-nnoremap <silent> [Leader]g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> [Leader]bu :<C-u>Unite<Space>buffer<CR>
-nnoremap <silent> [Leader]bm :<C-u>Unite<Space>bookmark<CR>
-nnoremap <silent> [Leader]a :<C-u>UniteBookmarkAdd<CR>
-nnoremap <silent> [Leader]m :<C-u>Unite<Space>file_mru<CR>
-nnoremap <silent> [Leader]r :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> [Leader]c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" let g:Leader_source_history_yank_enable =1
+" nnoremap <silent> [Leader]f :<C-u>Unite<Space>file<CR>
+" nnoremap <silent> [Leader]u :<C-u>Unite<Space>-start-insert<Space>file_rec/async<CR>
+" nnoremap <silent> [Leader]g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
+" nnoremap <silent> [Leader]bu :<C-u>Unite<Space>buffer<CR>
+" nnoremap <silent> [Leader]bm :<C-u>Unite<Space>bookmark<CR>
+" nnoremap <silent> [Leader]a :<C-u>UniteBookmarkAdd<CR>
+" nnoremap <silent> [Leader]m :<C-u>Unite<Space>file_mru<CR>
+" nnoremap <silent> [Leader]r :<C-u>Unite -buffer-name=register register<CR>
+" nnoremap <silent> [Leader]c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
-" vinarise
-let g:vinarise_enable_auto_detect = 1 
-" Leader-build map
-nnoremap <silent> [Leader]vb :Unite build<CR>
-nnoremap <silent> [Leader]vcb :Unite build:!<CR>
-nnoremap <silent> [Leader]vch :UniteBuildClearHighlight<CR>
-
-" Leader-grepの便利キーマップ
-" vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+" denite
+nnoremap <silent> [Leader]u :<C-u>Denite<Space>file_rec<CR>
+nnoremap <silent> [Leader]g :<C-u>Denite<Space>grep<CR>
+nnoremap <silent> [Leader]m :<C-u>Denite<Space>file_mru<CR>
+nnoremap <silent> [Leader]l :<C-u>Denite<Space>line<CR>
+nnoremap <silent> [Leader]ft :<C-u>Denite<Space>filetype<CR>
+nnoremap <silent> [Leader]h :<C-u>Denite<Space>neoyank<CR>
 
 " quickrun
 nmap [Leader]r <Plug>(quickrun)

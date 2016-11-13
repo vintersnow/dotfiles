@@ -25,11 +25,18 @@ else
 endif
 '''
 
+# [[plugins]]
+# repo = 'Shougo/unite.vim'
+# depends = 'neomru.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/unite.rc.vim
+# '''
+
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo = 'Shougo/denite.nvim'
 depends = 'neomru.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/unite.rc.vim
+hook_post_source = '''
+source ~/.config/nvim/plugins/denite.rc.vim
 '''
 
 [[plugins]]
