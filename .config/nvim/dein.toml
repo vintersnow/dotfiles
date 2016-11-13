@@ -33,15 +33,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 [[plugins]]
 repo = 'honza/vim-snippets'
 
-# color scheme
-# [[plugins]]
-# repo = 'frankier/neovim-colors-solarized-truecolor-only'
-
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
-#[[plugins]]
-#repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 
@@ -50,9 +44,6 @@ repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
 let g:airline_theme='hybrid'
 '''
-
-# [[plugins]]
-# repo = 'nathanaelkane/vim-indent-guides'
 
 #[[plugins]]
 #repo = 'Shougo/unite-build'
@@ -73,6 +64,9 @@ depends = 'unite.vim'
 hook_add = '''
 let g:vimfiler_as_default_explorer = 1
 '''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
 
 ##################################################################
 # syntax
@@ -97,24 +91,10 @@ hook_add = '''
 let g:cpp_class_scope_highlight = 1
 '''
 
+#############################
 # polyglot includes these
-
-# [[plugins]] # toml syntax
 # repo = 'cespare/vim-toml'
-# on_ft = 'toml'
-
-# [[plugins]]
 # repo = 'rust-lang/rust.vim'
-# on_ft = 'rs'
-
-# [[plugins]]
 # repo = 'leafgarland/typescript-vim'
-# on_ft = 'ts'
-
-# [[plugins]]
 # repo = 'octol/vim-cpp-enhanced-highlight'
-# on_ft = 'cpp'
-# hook_add = '''
-# let g:cpp_class_scope_highlight = 1
-# '''
-#
+
