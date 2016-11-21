@@ -32,13 +32,13 @@ hook_add = '''
 source  ~/.config/nvim/plugins/neomake.rc.vim
 '''
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-lazy = 1
-hook_post_update = '''
-  let g:dein#plugin.build = 'make'
-'''
+#[[plugins]]
+#repo = 'zchee/deoplete-go'
+#on_ft = 'go'
+#lazy = 1
+#hook_post_update = '''
+#  let g:dein#plugin.build = 'make'
+#'''
 
 [[plugins]]
 repo = 'zchee/deoplete-clang'
