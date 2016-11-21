@@ -5,8 +5,8 @@ fish_history
 .init.vim-rplugin*
 .vim/.netrwhist
 *.db
-.config/iruby/profile_default/security
-.config/configstore
+
+.gdb_history
 
 #atom
 .atom/.apm
@@ -23,4 +23,10 @@ fish_history
 pw.vim
 
 #.config
-robomongo.json
+.config/*
+!.config/nvim
+!.config/fish
+!.config/git
+!.config/gocode
+!.config/htop
+!.config/peco
