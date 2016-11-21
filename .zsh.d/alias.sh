@@ -45,7 +45,7 @@ case ${OSTYPE} in
 
   function o() {
     if [ $# -gt 0 ]; then
-      open $1
+      open $@
     else
       open .
     fi
