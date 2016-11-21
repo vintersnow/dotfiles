@@ -3,6 +3,7 @@
 " Change mappings.
 call denite#custom#map('insert', '<C-n>', 'move_to_next_line')
 call denite#custom#map('insert', '<C-p>', 'move_to_prev_line')
+call denite#custom#map('insert', '<Tab>', 'choose_action')
 
 
 if executable('ag')

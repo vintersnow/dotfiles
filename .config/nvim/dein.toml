@@ -72,9 +72,6 @@ hook_post_source = '''
 source ~/.config/nvim/plugins/denite.rc.vim
 '''
 
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-
 ##################################################################
 # syntax
 
