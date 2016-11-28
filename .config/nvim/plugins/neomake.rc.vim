@@ -10,7 +10,7 @@ augroup neomake_run
   " autocmd! InsertLeave *.js Neomake 
 
   " vim終了時にeslint_dを終了
-  autocmd VimLeave *.js  !eslint_d stop
+  " autocmd VimLeave *.js  !eslint_d stop
 augroup END
 
 " js

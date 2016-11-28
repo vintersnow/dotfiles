@@ -1,0 +1,165 @@
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_path = '.*'
+
+[[plugins]]
+# Auto close parentheses and repeat by dot dot dot...
+repo = 'cohama/lexima.vim'
+on_path = '.*'
+hook_add = '''
+  inoremap <C-l> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_map = {n = '<Plug>'}
+hook_add = '''
+  nmap w <Plug>(easymotion-lineforward)
+  nnoremap W     w
+  nmap b <Plug>(easymotion-linebackward)
+  nnoremap B     b
+  nmap ' <Plug>(easymotion-overwin-f)
+
+  let g:EasyMotion_startofline = 0
+  let g:EasyMotion_show_prompt = 0
+  let g:EasyMotion_verbose = 0
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+on_path = '.*'
+hook_add = '''
+  if executable('editorconfig')
+    let g:EditorConfig_core_mode = 'external_command'
+  else
+    let g:EditorConfig_core_mode = 'python_external'
+  endif
+'''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+hook_add = '''
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_types = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
+'''
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown', 'rst', 'mkd']
+on_cmd = 'PrevimOpen'
+depends = 'open-browser.vim'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_source = '''
+  source ~/.config/nvim/plugins/denite.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+on_event = 'CompleteDone'
+hook_source = 'call echodoc#enable()'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+on_source = 'denite.nvim'
+hook_add = '''
+  source ~/.config/nvim/plugins/unite.rc.vim
+'''
+
+#[[plugins]]
+#repo = 'Shougo/neoinclude.vim'
+## on_if = 1 # this make deoplete crash
+#on_ft = ['c', 'cpp', 'cc']
+
+[[plugins]]
+# to use unite file_mru
+repo = 'Shougo/neomru.vim'
+on_if = 1
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_source='''
+  source ~/.config/nvim/plugins/neosnippet.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_if = 1
+on_event = 'TextYankPost'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = {n = '<Plug>'}
+on_if = "isdirectory(bufname('%'))"
+hook_add = '''
+  let g:vimfiler_as_default_explorer = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+on_cmd = 'Vinarise'
+hook_add = 'let g:vinarise_enable_auto_detect = 1'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_map = {n = '<Plug>'}
+hook_add = '''
+  let g:quickrun_config = {
+  \   "_" : {
+  \       "runner" : "vimproc",
+  \       "runner/vimproc/updatetime" : 40,
+  \   }
+  \}
+  nmap <silent> <Leader>r <Plug>(quickrun)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_path = '.*'
+
+[[plugins]]
+# comment out easyly
+repo = 'tyru/caw.vim'
+on_map = { nx = '<Plug>' }
+hook_add='''
+  function! InitCaw() abort
+    if !&l:modifiable
+      silent! nunmap <buffer> <C-_>
+      silent! xunmap <buffer> <C-_>
+    else
+      nmap <buffer> <C-_> <Plug>(caw:hatpos:toggle)
+      xmap <buffer> <C-_> <Plug>(caw:hatpos:toggle)
+    endif
+  endfunction
+  autocmd MyAutoCmd FileType * call InitCaw()
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_path = '.*'
+hook_add = '''
+  let g:indentLine_enabled = 1
+  let g:indentLine_fileTypeExclude = ['help', 'json']
+  let g:indentLine_conceallevel=1
+'''

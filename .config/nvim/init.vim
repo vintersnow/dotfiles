@@ -1,3 +1,14 @@
+" Set my augroup.
+augroup MyAutoCmd
+  autocmd!
+  autocmd CursorHold *? syntax sync minlines=300
+augroup END
+
+if has('mac')
+  let g:python3_host_prog = '/usr/local/bin/python3'
+  " let g:python3_host_prog = '~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python'
+endif
+
 " plugins
 source ~/.config/nvim/plugins.vim
 
@@ -6,11 +17,6 @@ if isdirectory(expand('~/.config/nvim/vimrc.d'))
   set runtimepath+=~/.config/nvim/
   runtime! vimrc.d/*.vim
 endif
-
-" colorscheme
-set background=dark
-" colorscheme solarized
-colorscheme hybrid
 
 " secret
 if filereadable(expand('~/.config/nvim/pw.vim'))
