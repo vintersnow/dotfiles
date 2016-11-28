@@ -56,6 +56,17 @@ on_cmd = 'PrevimOpen'
 depends = 'open-browser.vim'
 
 [[plugins]]
+repo = 'mojako/ref-sources.vim'
+on_source = 'vim-ref'
+hook_source= '''
+  if (isdirectory(expand('~/.ghq/github.com/tokuhirom/jsref/htdocs')))
+    let g:ref_javascript_doc_path = expand('~/.ghq/github.com/tokuhirom/jsref/htdocs')
+  endif
+  let g:ref_use_cache = 1
+  let g:ref_wikipedia_lang = {'wiki': 'ja', 'wikie': 'en'}
+'''
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
@@ -129,6 +140,22 @@ hook_add = '''
   \   }
   \}
   nmap <silent> <Leader>r <Plug>(quickrun)
+'''
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+on_map = {n = '<Plug>'}
+hook_source = '''
+  let g:ref_cache_dir = expand('~/.cache/ref')
+  let g:ref_use_vimproc = 1
+
+  autocmd MyAutoCmd FileType ref call s:ref_my_settings()
+  function! s:ref_my_settings() abort "{{{
+    " Overwrite settings.
+    nmap <buffer> [Tag]t  <Plug>(ref-keyword)
+    nmap <buffer> [Tag]p  <Plug>(ref-back)
+    nnoremap <buffer> <TAB> <C-w>w
+  endfunction"}}}
 '''
 
 [[plugins]]
