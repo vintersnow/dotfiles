@@ -58,6 +58,7 @@ nnoremap <silent> [Leader]m :<C-u>Denite<Space>file_mru<CR>
 nnoremap <silent> [Leader]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> [Leader]ft :<C-u>Denite<Space>filetype<CR>
 nnoremap <silent> [Leader]h :<C-u>Denite<Space>neoyank<CR>
+nnoremap <silent> [Leader]b :<C-u>Denite<Space>buffer<CR>
 
 " quickrun
 nmap [Leader]r <Plug>(quickrun)
