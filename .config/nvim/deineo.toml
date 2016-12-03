@@ -1,51 +1,43 @@
 ##################################################################
-# deoplete
+# nvim plugins
 
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
-# lazy = 0
-on_ft = 'js'
-# depends = 'tern_for_vim'
-
-# [[plugins]]
-# # Required: run 'npm install' in the plugin dir.
-# # usefull but too slow
-# repo = 'ternjs/tern_for_vim'
-# lazy = 0
-# on_ft = 'js'
-# hook_add = '''
-# let tern#is_show_argument_hints_enabled = 1
-# '''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-lazy = 0
-hook_add = '''
-  source ~/.config/nvim/plugins/deoplete.rc.vim
-'''
+on_ft = 'javascript'
+on_i = 1
 
 [[plugins]]
 repo = 'neomake/neomake'
-on_path = '.*'
-lazy = 1
-hook_add = '''
+on_event = 'BufEnter'
+hook_source = '''
 source  ~/.config/nvim/plugins/neomake.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+  source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
+# usefull but too slow
+repo = 'ternjs/tern_for_vim'
+lazy = 0
+# on_ft = 'js'
+hook_add = '''
+  let tern#is_show_argument_hints_enabled = 1
+'''
+build = 'npm install'
+
+[[plugins]]
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
-lazy = 1
-hook_post_update = '''
-  let g:dein#plugin.build = 'make'
-'''
+on_i = 1
+build = 'make'
 
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 on_ft = ['c', 'cpp', 'cc']
-lazy = 1
-
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_ft = ['c', 'cpp', 'cc']
-lazy = 1

@@ -13,4 +13,4 @@ let g:tern#command = ['tern', '--no-port-file', '--persistent']
 let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
 
-call deoplete#custom#set('ultisnips', 'rank', 9999)
+" call deoplete#custom#set('ultisnips', 'rank', 9999)

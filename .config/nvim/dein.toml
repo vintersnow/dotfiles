@@ -1,5 +1,11 @@
 [[plugins]]
+repo = 'moll/vim-node'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/vimproc'
@@ -16,25 +22,8 @@ hook_post_update = '''
   let g:dein#plugin.build = cmd
 '''
 
-# [[plugins]]
-# repo = 'Shougo/neosnippet-snippets'
-# hook_add = '''
-# source ~/.config/nvim/plugins/neosnippet.rc.vim
-# '''
-
 [[plugins]]
-repo = 'SirVer/ultisnips'
-hook_add = '''
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-'''
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -42,57 +31,37 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
-let g:airline_theme='hybrid'
+  let g:airline_theme='hybrid'
 '''
 
-#[[plugins]]
-#repo = 'Shougo/unite-build'
-#depends = 'unite.vim'
-
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'moll/vim-node'
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  " lazy seting
+  autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
+'''
 
 [[plugins]]
 repo = 'wakatime/vim-wakatime'
-
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-hook_add = '''
-let g:vimfiler_as_default_explorer = 1
-'''
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
 
 ##################################################################
 # syntax
 
 [[plugins]] # js syntax
+repo = 'jelera/vim-javascript-syntax'
 # repo = 'othree/yajs.vim'
 # repo = 'pangloss/vim-javascript'
-repo = 'jelera/vim-javascript-syntax'
-on_ft = ['js', 'ts', 'html']
-
-# [[plugins]] # js syntax
-# repo = 'othree/javascript-libraries-syntax.vim'
-# on_ft = ['js', 'ts']
-
-[[plugins]]
-repo = 'kylef/apiblueprint.vim'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-" vim-cpp-enhanced-highlight
-let g:cpp_class_scope_highlight = 1
+  " vim-cpp-enhanced-highlight
+  let g:cpp_class_scope_highlight = 1
 '''
-
 #############################
 # polyglot includes these
+#
 # repo = 'cespare/vim-toml'
 # repo = 'rust-lang/rust.vim'
 # repo = 'leafgarland/typescript-vim'

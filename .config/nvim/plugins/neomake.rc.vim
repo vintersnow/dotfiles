@@ -10,7 +10,7 @@ augroup neomake_run
   " autocmd! InsertLeave *.js Neomake 
 
   " vim終了時にeslint_dを終了
-  autocmd VimLeave *.js  !eslint_d stop
+  " autocmd VimLeave *.js  !eslint_d stop
 augroup END
 
 " js
@@ -19,7 +19,7 @@ let g:neomake_jsx_enabled_makers = ['eslint_d']
 
 " c++
 let g:neomake_cpp_enable_markers=['clang']
-let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
+let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall", "-fsanitize=undefined","-g", "-fsyntax-only"]
 
 " let g:neomake_open_list = 2
 
