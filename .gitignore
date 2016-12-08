@@ -27,6 +27,5 @@ pw.vim
 !.config/nvim
 !.config/fish
 !.config/git
-!.config/gocode
 !.config/htop
 !.config/peco
