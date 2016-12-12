@@ -1,6 +1,6 @@
 #include .zsh file from .zsh.d (http://d.hatena.ne.jp/dgdg/20071127/1196179056)
 export DOTFILES="${HOME}/.dotfiles"
-ZSHHOME="${DOTFILES}/.zsh.d"
+export ZSHHOME="${DOTFILES}/.zsh.d"
 # if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
 #   for i in $ZSHHOME/*; do
 #     [[ ${i##*/} = *.zsh ]] &&

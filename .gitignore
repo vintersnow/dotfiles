@@ -29,3 +29,5 @@ pw.vim
 !.config/git
 !.config/htop
 !.config/peco
+
+.emacs.d/games
