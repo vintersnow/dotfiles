@@ -1,5 +1,7 @@
 " load settings
-if isdirectory(expand('~/.config/nvim/vimrc.d'))
-  set runtimepath+=~/.config/nvim/
-  runtime! vimrc.d/*.vim
+if filereadable(expand('~/.config/nvim/init.vim'))
+  source ~/.config/nvim/init.vim
 endif
+
+set background=dark
+colorscheme hybrid
