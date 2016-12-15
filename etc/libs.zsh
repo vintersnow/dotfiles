@@ -13,12 +13,12 @@ function ztrace_start() {
   setopt promptsubst
   PS4='+$EPOCHREALTIME %N:%i> '
   exec 3>&2 2>/tmp/zshprofilelog.$$
-  setopt xtrace prompt_subst
+  trap 'setopt xtrace prompt_subst' EXIT
 }
 
 function ztrace_end() {
   # turn off tracing
-  unsetopt xtrace
+  trap 'unsetopt xtrace' EXIT
   # restore stderr to the value saved in FD 3
   exec 2>&3 3>&-
 }

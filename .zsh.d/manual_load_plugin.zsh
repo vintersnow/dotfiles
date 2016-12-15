@@ -18,4 +18,5 @@ compinit -C
 # { zcompile "~/.zcompdump" } &!
 
 source $ZPLUG_HOME/repos/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.ghq/github.com/vintersnow/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
