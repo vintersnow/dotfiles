@@ -1,13 +1,7 @@
 
 export DOTFILES="${HOME}/.dotfiles"
 export ZSHHOME="${DOTFILES}/.zsh.d"
-# if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
-#   for i in $ZSHHOME/*; do
-#     [[ ${i##*/} = *.zsh ]] &&
-#       [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-#   done
-# fi
-#
+
 . $DOTFILES/etc/libs.zsh
 
 # loadfiles
@@ -23,7 +17,9 @@ fi
 
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
-loadlib $ZSHHOME/zplug_manager.zsh
+
+# loadlib $ZSHHOME/zplug_manager.zsh
+loadlib $ZSHHOME/manual_load_plugin.zsh
 
 # loadlib $ZSHHOME/zim_setting.zsh
 # loadlib $ZSHHOME/zgen_setting.zsh
