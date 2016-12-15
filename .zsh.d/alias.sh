@@ -57,6 +57,7 @@ case ${OSTYPE} in
   alias ls='gls -F  --color=auto'
   alias la='gls -AF --color=auto'
   alias ll='gls -slhF --color=auto'
+  alias lla='gls -salhF --color=auto'
   alias lly='gls -slhF --color=auto --time-style=long-iso'
 
   alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'

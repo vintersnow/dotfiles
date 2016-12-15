@@ -18,7 +18,8 @@ fi
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
 
-# loadlib $ZSHHOME/zplug_manager.zsh
+loadlib $ZSHHOME/zplug_manager.zsh;# zplug load
+
 loadlib $ZSHHOME/manual_load_plugin.zsh
 
 # loadlib $ZSHHOME/zim_setting.zsh
