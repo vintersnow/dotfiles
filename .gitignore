@@ -5,6 +5,7 @@ fish_history
 .init.vim-rplugin*
 .vim/.netrwhist
 *.db
+*.zwc
 
 .gdb_history
 

@@ -6,22 +6,48 @@ if [ ! -d "$ZPLUG_HOME" ];then
   curl -sL zplug.sh/installer | zsh
 fi
 
-source $ZPLUG_HOME/init.zsh
+zplug () {
+  unset -f zplug 
 
-zplug "zsh-users/zsh-completions"
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
+  source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+  zplug "zsh-users/zsh-completions"
+  zplug "sindresorhus/pure"
+  zplug "b4b4r07/enhancd", use:"init.sh"
+
+  zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 
-# Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#   printf "Install? [y/N]: "
-#   if read -q; then
-#     echo; zplug install
-#   fi
-# fi
+  # Install plugins if there are plugins that have not been installed
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+      echo; zplug install
+    fi
+  fi
 
-# Then, source plugins and add commands to $PATH
-zplug load
+  zplug "$@"
+}
+
+# zplug load
+
+#######################################
+# manually loading
+
+# source $ZPLUG_HOME/repos/b4b4r07/enhancd/init.sh
+source ~/.ghq/github.com/vintersnow/enhancd/init.sh
+
+# /pure
+fpath=( "$HOME/.zfunctions" $fpath )
+
+autoload -U promptinit; promptinit
+prompt pure
+
+source $ZPLUG_HOME/repos/zsh-users/zsh-completions/zsh-completions.plugin.zsh
+
+autoload -U compinit;
+compinit -C
+# compinit -i
+# { zcompile "~/.zcompdump" } &!
+
+source $ZPLUG_HOME/repos/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

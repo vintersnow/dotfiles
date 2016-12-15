@@ -1,4 +1,4 @@
-#include .zsh file from .zsh.d (http://d.hatena.ne.jp/dgdg/20071127/1196179056)
+
 export DOTFILES="${HOME}/.dotfiles"
 export ZSHHOME="${DOTFILES}/.zsh.d"
 # if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
@@ -8,7 +8,7 @@ export ZSHHOME="${DOTFILES}/.zsh.d"
 #   done
 # fi
 #
-. $DOTFILES/etc/libs.sh
+. $DOTFILES/etc/libs.zsh
 
 # loadfiles
 loadlib $ZSHHOME/0env_path.zsh
@@ -25,6 +25,7 @@ loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
 loadlib $ZSHHOME/zplug_manager.zsh
 
+# loadlib $ZSHHOME/zim_setting.zsh
 # loadlib $ZSHHOME/zgen_setting.zsh
 
 #setting for zprof
