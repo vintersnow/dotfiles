@@ -29,6 +29,9 @@ if [ -d $ANYENV_ROOT ]; then
   done
 fi
 
+# lazy load anyenv
+# Due to this, when you install global command (ex. npm i --global) you need to 
+# eval "$(anyenv init -)" to validaty
 function anyenv_init() {
   eval "$(anyenv init -)"
 }
