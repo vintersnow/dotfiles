@@ -29,12 +29,16 @@ if [ -d $ANYENV_ROOT ]; then
   done
 fi
 
+# lazy load anyenv
+# Due to this, when you install global command (ex. npm i --global) you need to 
+# eval "$(anyenv init -)" to validaty
 function anyenv_init() {
   eval "$(anyenv init -)"
 }
 function anyenv_unset() {
   unset -f ndenv
   unset -f rbenv
+  unset -f pyenv
 }
 function ndenv() {
   anyenv_unset
@@ -46,4 +50,8 @@ function rbenv() {
   anyenv_init
   rbenv "$@"
 }
-
+function pyenv() {
+  anyenv_unset
+  anyenv_init
+  pyenv "$@"
+}

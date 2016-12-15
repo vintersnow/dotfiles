@@ -1,5 +1,4 @@
 --recurse=yes
---append=yes
 
 --langdef=js
 --langmap=js:.js

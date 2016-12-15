@@ -5,6 +5,7 @@ fish_history
 .init.vim-rplugin*
 .vim/.netrwhist
 *.db
+*.zwc
 
 .gdb_history
 
@@ -27,6 +28,7 @@ pw.vim
 !.config/nvim
 !.config/fish
 !.config/git
-!.config/gocode
 !.config/htop
 !.config/peco
+
+.emacs.d/games

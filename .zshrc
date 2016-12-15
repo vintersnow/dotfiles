@@ -1,14 +1,8 @@
-#include .zsh file from .zsh.d (http://d.hatena.ne.jp/dgdg/20071127/1196179056)
+
 export DOTFILES="${HOME}/.dotfiles"
-ZSHHOME="${DOTFILES}/.zsh.d"
-# if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
-#   for i in $ZSHHOME/*; do
-#     [[ ${i##*/} = *.zsh ]] &&
-#       [ \( -f $i -o -h $i \) -a -r $i ] && . $i
-#   done
-# fi
-#
-. $DOTFILES/etc/libs.sh
+export ZSHHOME="${DOTFILES}/.zsh.d"
+
+. $DOTFILES/etc/libs.zsh
 
 # loadfiles
 loadlib $ZSHHOME/0env_path.zsh
@@ -23,8 +17,12 @@ fi
 
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
-loadlib $ZSHHOME/zplug_manager.zsh
 
+loadlib $ZSHHOME/zplug_manager.zsh;# zplug load
+
+loadlib $ZSHHOME/manual_load_plugin.zsh
+
+# loadlib $ZSHHOME/zim_setting.zsh
 # loadlib $ZSHHOME/zgen_setting.zsh
 
 #setting for zprof
