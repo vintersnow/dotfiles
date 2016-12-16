@@ -39,7 +39,9 @@ repo = 'w0ng/vim-hybrid'
 hook_add = '''
   set background=dark
   " lazy seting
-  autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
+  if has('nvim')
+    autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
+  endif
 '''
 
 [[plugins]]
