@@ -79,3 +79,9 @@ if has('conceal')
   set conceallevel=0
 endif
 let g:vim_json_syntax_conceal = 0
+
+" don't redraw when script is running
+set lazyredraw
+
+" don't show the mode in cmdline
+set noshowmode 
