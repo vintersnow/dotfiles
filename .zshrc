@@ -11,9 +11,9 @@ loadlib $ZSHHOME/2normal_option.zsh
 loadlib $ZSHHOME/alias.zsh
 loadlib $ZSHHOME/os.zsh
 
-if has 'peco'; then
-  loadlib $ZSHHOME/peco.zsh
-fi
+# if has 'peco'; then
+#   loadlib $ZSHHOME/peco.zsh
+# fi
 
 loadlib $ZSHHOME/tmux.zsh
 loadlib $ZSHHOME/useful_setting.zsh
