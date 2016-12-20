@@ -1,8 +1,7 @@
+let $BASE = '~/.config/nvim'
+
 " Set my augroup.
-augroup MyAutoCmd
-  autocmd!
-  autocmd CursorHold *? syntax sync minlines=300
-augroup END
+execute 'source' expand('$BASE/myautocmd.vim')
 
 if has('mac')
   let g:python_host_prog = '/usr/local/bin/python2'
@@ -16,8 +15,6 @@ if has('vim_starting')
     " runtime! vimrc.d/*.vim
   endif
   
-  let $BASE = '~/.config/nvim'
-
   " plugins
   execute 'source' expand('$BASE/plugins.vim')
 
@@ -28,7 +25,6 @@ if has('vim_starting')
 
   " secret
   if filereadable(expand('$BASE/pw.vim'))
-    " source ~/.config/nvim/pw.vim
     execute 'source' expand('$BASE/pw.vim')
   endif
 endif
