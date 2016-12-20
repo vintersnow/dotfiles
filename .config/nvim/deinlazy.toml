@@ -89,10 +89,10 @@ hook_add = '''
   source ~/.config/nvim/plugins/unite.rc.vim
 '''
 
-#[[plugins]]
-#repo = 'Shougo/neoinclude.vim'
-## on_if = 1 # this make deoplete crash
-#on_ft = ['c', 'cpp', 'cc']
+# [[plugins]]
+# repo = 'Shougo/neoinclude.vim'
+# # on_if = 1 # this make deoplete crash
+# on_ft = ['c', 'cpp', 'cc']
 
 [[plugins]]
 # to use unite file_mru

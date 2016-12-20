@@ -4,10 +4,10 @@ augroup MyAutoCmd
   autocmd CursorHold *? syntax sync minlines=300
 augroup END
 
-" if has('mac')
-  " let g:python3_host_prog = '/usr/local/bin/python3'
-  " let g:python3_host_prog = '~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python'
-" endif
+if has('mac')
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
+endif
 
 if has('vim_starting')
   " settings
@@ -17,13 +17,13 @@ if has('vim_starting')
   endif
   
   let $BASE = '~/.config/nvim'
+
+  " plugins
+  execute 'source' expand('$BASE/plugins.vim')
+
   execute 'source' expand('$BASE/vimrc.d/basic.vim')
   execute 'source' expand('$BASE/vimrc.d/keymap.vim')
   execute 'source' expand('$BASE/vimrc.d/lang_setting.vim')
-
-  " plugins
-  " source ~/.config/nvim/plugins.vim
-  execute 'source' expand('$BASE/plugins.vim')
 
 
   " secret

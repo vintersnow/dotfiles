@@ -31,7 +31,7 @@ hook_source = '''
 # usefull but too slow
 repo = 'ternjs/tern_for_vim'
 lazy = 0
-# on_ft = 'js'
+on_ft = 'javascript'
 hook_add = '''
   let tern#is_show_argument_hints_enabled = 1
 '''
@@ -56,4 +56,4 @@ let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-on_ft = 'py'
+on_ft = 'pyhton'
