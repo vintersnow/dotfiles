@@ -199,3 +199,7 @@ on_source = 'slack-memo-vim'
 repo = 'tsuyoshiwada/slack-memo-vim'
 depends = 'webapi-vim'
 on_cmd = ['SlackMemoPost', 'SlackMemoList']
+
+[[plugins]]
+repo = 'takac/vim-hardtime'
+on_cmd = 'HardTimeOn'
