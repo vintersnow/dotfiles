@@ -12,7 +12,8 @@ prompt pure
 
 loadlib $ZPLUG_HOME/repos/zsh-users/zsh-completions/zsh-completions.plugin.zsh
 
-loadlib $ZPLUG_HOME/repos/mollifier/anyframe/anyframe.plugin.zsh
+# loadlib $ZPLUG_HOME/repos/mollifier/anyframe/anyframe.plugin.zsh
+loadlib $ZPLUG_HOME/repos/vintersnow/anyframe/anyframe.plugin.zsh
 loadlib $DOTFILES/.zsh.d/any_frame.zsh
 
 autoload -U compinit;

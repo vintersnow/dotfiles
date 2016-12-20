@@ -1,5 +1,9 @@
 
-if has "fzf"; then
+if has "fzf-tmux"; then
+ zstyle ":anyframe:selector:" use fzf-tmux
+elif has "fzy"; then
+ zstyle ":anyframe:selector:" use fzy
+elif has "fzf"; then
  zstyle ":anyframe:selector:" use fzf
 elif has "peco"; then
  zstyle ":anyframe:selector:" use peco
