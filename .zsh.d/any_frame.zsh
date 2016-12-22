@@ -14,5 +14,5 @@ bindkey '^u' anyframe-widget-cdr
 bindkey '^s' anyframe-widget-tmux-attach
 
 alias any='anyframe-widget-select-widget'
-alias gh='anyframe-widget-cd-ghq-repository	'
+alias gh='anyframe-widget-cd-ghq-repository'
 
