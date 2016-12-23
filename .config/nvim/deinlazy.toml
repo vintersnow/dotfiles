@@ -4,12 +4,9 @@ repo = 'airblade/vim-gitgutter'
 on_path = '.*'
 
 [[plugins]]
-# Auto close parentheses and repeat by dot dot dot...
-repo = 'cohama/lexima.vim'
+repo = 'jiangmiao/auto-pairs'
 on_path = '.*'
-hook_add = '''
-  inoremap <C-l> <C-r>=lexima#insmode#leave(1, '<LT>C-G>U<LT>RIGHT>')<CR>
-'''
+on_i = 1
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -89,10 +86,10 @@ hook_add = '''
   source ~/.config/nvim/plugins/unite.rc.vim
 '''
 
-#[[plugins]]
-#repo = 'Shougo/neoinclude.vim'
-## on_if = 1 # this make deoplete crash
-#on_ft = ['c', 'cpp', 'cc']
+# [[plugins]]
+# repo = 'Shougo/neoinclude.vim'
+# # on_if = 1 # this make deoplete crash
+# on_ft = ['c', 'cpp', 'cc']
 
 [[plugins]]
 # to use unite file_mru
@@ -199,3 +196,7 @@ on_source = 'slack-memo-vim'
 repo = 'tsuyoshiwada/slack-memo-vim'
 depends = 'webapi-vim'
 on_cmd = ['SlackMemoPost', 'SlackMemoList']
+
+[[plugins]]
+repo = 'takac/vim-hardtime'
+on_cmd = 'HardTimeOn'

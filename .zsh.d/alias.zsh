@@ -1,6 +1,6 @@
 
 # load common alias
-. $ZSHHOME/alias.sh
+loadlib $ZSHHOME/alias.sh
 
 # global alias
 alias -g L='| less -R'

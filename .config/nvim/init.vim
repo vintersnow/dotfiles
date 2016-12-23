@@ -1,26 +1,32 @@
+let $BASE = '~/.config/nvim'
+
 " Set my augroup.
-augroup MyAutoCmd
-  autocmd!
-  autocmd CursorHold *? syntax sync minlines=300
-augroup END
+execute 'source' expand('$BASE/myautocmd.vim')
 
 if has('mac')
-  let g:python3_host_prog = '/usr/local/bin/python3'
-  " let g:python3_host_prog = '~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python'
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
 endif
 
-" plugins
-source ~/.config/nvim/plugins.vim
+if has('vim_starting')
+  " settings
+  if isdirectory(expand('~/.config/nvim'))
+    set runtimepath+=~/.config/nvim/
+    " runtime! vimrc.d/*.vim
+  endif
+  
+  " plugins
+  execute 'source' expand('$BASE/plugins.vim')
 
-" settings
-if isdirectory(expand('~/.config/nvim/vimrc.d'))
-  set runtimepath+=~/.config/nvim/
-  runtime! vimrc.d/*.vim
-endif
+  execute 'source' expand('$BASE/vimrc.d/basic.vim')
+  execute 'source' expand('$BASE/vimrc.d/keymap.vim')
+  execute 'source' expand('$BASE/vimrc.d/lang_setting.vim')
 
-" secret
-if filereadable(expand('~/.config/nvim/pw.vim'))
-  source ~/.config/nvim/pw.vim
+
+  " secret
+  if filereadable(expand('$BASE/pw.vim'))
+    execute 'source' expand('$BASE/pw.vim')
+  endif
 endif
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.

@@ -12,7 +12,8 @@ function ztrace_start() {
   zmodload zsh/datetime
   setopt promptsubst
   PS4='+$EPOCHREALTIME %N:%i> '
-  exec 3>&2 2>/tmp/zshprofilelog.$$
+  local logfile="${1:-"zsh_profile"}.$$"
+  exec 3>&2 2>$logfile
   trap 'setopt xtrace prompt_subst' EXIT
 }
 

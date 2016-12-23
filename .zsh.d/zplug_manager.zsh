@@ -15,8 +15,10 @@ zplug () {
   zplug "mafredri/zsh-async"
   zplug "sindresorhus/pure"
   zplug "b4b4r07/enhancd", use:"init.sh"
+  # zplug "mollifier/anyframe"
+  zplug "vintersnow/anyframe"
   
-  zplug "zsh-users/zsh-syntax-highlighting", nice:10
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 
   # Install plugins if there are plugins that have not been installed
