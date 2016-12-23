@@ -85,3 +85,6 @@ set lazyredraw
 
 " don't show the mode in cmdline
 set noshowmode 
+
+" match < and >
+set matchpairs+=<:>
