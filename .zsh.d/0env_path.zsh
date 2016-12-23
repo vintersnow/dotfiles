@@ -1,13 +1,16 @@
 ### 環境変数
 
-export_path /opt/local/bin:/opt/local/sbin
+export_path /opt/local/bin
+export_path /opt/local/sbin
 export_path /usr/local/bin
 export_path /usr/local/git/bin
 export_path /usr/local/bin:/usr/bin
 export_path /usr/local/sbin
 export_path /usr/texbin
-export_path ~/.dotfiles/bin
-export_path ~/bin
+export_path $HOME/.dotfiles/bin
+export_path $HOME/bin
+export_path $HOME/.cabal/bin
+export_path $HOME/.egison/bin
 
 export_path $HOME/.yarn/bin
 
@@ -31,7 +34,7 @@ case ${OSTYPE} in
   export PATH=/usr/local/bin:$PATH
 
   export PATH=~/.local/bin:$PATH
-  export CPATH=$CPATH:~/.local/include
+  export CPATH=$CPATH:$HOME/.local/include
   export LIBRARY_PATH=$LIBRARY_PATH:~/.local/lib
 
   ;;
