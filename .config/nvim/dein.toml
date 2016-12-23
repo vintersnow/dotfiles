@@ -58,6 +58,7 @@ repo = 'jelera/vim-javascript-syntax'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
+  let g:polyglot_disabled = ['javascript']
   " vim-cpp-enhanced-highlight
   let g:cpp_class_scope_highlight = 1
 '''
