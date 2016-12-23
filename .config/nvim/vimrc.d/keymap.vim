@@ -36,6 +36,9 @@ if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
 endif
 
+" move right in insert mode
+inoremap <C-l> <C-g>U<Right>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugins
 
