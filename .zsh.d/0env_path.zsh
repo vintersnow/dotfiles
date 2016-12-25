@@ -9,9 +9,14 @@ export_path /usr/local/sbin
 export_path /usr/texbin
 export_path $HOME/.dotfiles/bin
 export_path $HOME/bin
+
+# haskell
 export_path $HOME/.cabal/bin
+export_path $HOME/Library/Haskell/bin
+# egison
 export_path $HOME/.egison/bin
 
+# js
 export_path $HOME/.yarn/bin
 
 # change brew cask install place
