@@ -86,6 +86,10 @@ hook_add = '''
   source ~/.config/nvim/plugins/unite.rc.vim
 '''
 
+[[plugins]]
+repo = 'Shougo/unite-outline'
+on_source = 'unite.nvim'
+
 # [[plugins]]
 # repo = 'Shougo/neoinclude.vim'
 # # on_if = 1 # this make deoplete crash
