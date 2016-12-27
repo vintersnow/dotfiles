@@ -193,8 +193,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
-on_source = 'slack-memo-vim'
+on_source = ['slack-memo-vim', 'gist-vim']
 
 [[plugins]]
 repo = 'tsuyoshiwada/slack-memo-vim'

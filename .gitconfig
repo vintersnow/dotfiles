@@ -52,3 +52,5 @@
 	required = true
 [ghq]  
   root = ~/.ghq
+[github]
+	user = vintersnow
