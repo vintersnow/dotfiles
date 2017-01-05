@@ -25,6 +25,9 @@ zstyle ':notify:*' command-complete-timeout 5
 loadlib $ZPLUG_HOME/repos/vintersnow/anyframe/anyframe.plugin.zsh
 loadlib $DOTFILES/.zsh.d/any_frame.zsh
 
+### zsh-colors
+loadlib $ZPLUG_HOME/repos/Tarrasch/zsh-colors/colors.plugin.zsh
+
 autoload -U compinit;
 compinit -C
 # compinit -i

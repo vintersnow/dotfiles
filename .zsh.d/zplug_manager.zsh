@@ -13,6 +13,7 @@ zplug () {
 
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-autosuggestions"
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
   zplug "mafredri/zsh-async"
   zplug "sindresorhus/pure"
@@ -22,8 +23,8 @@ zplug () {
   zplug "vintersnow/anyframe"
 
   zplug "marzocchi/zsh-notify"
-  
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+  zplug "Tarrasch/zsh-colors"
 
   # Install plugins if there are plugins that have not been installed
 
