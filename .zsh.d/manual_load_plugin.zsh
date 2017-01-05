@@ -13,7 +13,12 @@ prompt pure
 loadlib $ZPLUG_HOME/repos/zsh-users/zsh-completions/zsh-completions.plugin.zsh
 
 ### zsh-autosuggestions
-loadlib $ZPLUG_HOME/repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# crapped
+# loadlib $ZPLUG_HOME/repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+### zsh-notify
+loadlib $ZPLUG_HOME/repos/marzocchi/zsh-notify/notify.plugin.zsh
+zstyle ':notify:*' command-complete-timeout 5
 
 ### anyframe
 # loadlib $ZPLUG_HOME/repos/mollifier/anyframe/anyframe.plugin.zsh

@@ -1,33 +1,5 @@
 case ${OSTYPE} in
   darwin*)
-    #Mac用の設定
-    # 一定時間以上かかる処理の場合は終了時に通知してくれる
-    local COMMAND=""
-    local COMMAND_TIME=""
-    local IGNORE_COMMAND=(v vi vim tmux ssh man less tail emacs tig)
-    precmd() {
-      if [ "$COMMAND_TIME" -ne "0" ] ; then
-        local d=`date +%s`
-        d=`expr $d - $COMMAND_TIME`
-        if [ "$d" -ge "5" ] ; then
-          COMMAND="$COMMAND "
-          if has 'terminal-notifier'; then
-            terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
-          fi
-        fi
-      fi
-      COMMAND="0"
-      COMMAND_TIME="0"
-    }
-    preexec () {
-      COMMAND="${1}"
-      if [[ ! " $IGNORE_COMMAND[@] " =~ " $COMMAND_NAME " ]]; then
-        COMMAND_TIME=`date +%s`
-      fi
-    }
-
-
-
     # iTerm2のタブ名を変更する
     function title {
       echo -ne "\033]0;"$*"\007"
