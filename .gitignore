@@ -30,5 +30,6 @@ pw.vim
 !.config/git
 !.config/htop
 !.config/peco
+.config/fish/fishd.*
 
 .emacs.d/games
