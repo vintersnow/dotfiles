@@ -28,7 +28,6 @@ pw.vim
 !.config/nvim
 !.config/fish
 !.config/git
-!.config/htop
 !.config/peco
 .config/fish/fishd.*
 
