@@ -209,3 +209,17 @@ on_cmd = ['SlackMemoPost', 'SlackMemoList']
 [[plugins]]
 repo = 'takac/vim-hardtime'
 on_cmd = 'HardTimeOn'
+
+[[plugins]]
+repo = 'sunaku/vim-dasht'
+on_cmd = 'Dasht'
+hook_add = '''
+  let g:dasht_filetype_docsets = {} " filetype => list of docset name regexp
+
+  let g:dasht_filetype_docsets['cpp'] = ['^c$', 'boost', 'OpenGL', 'C\+\+']
+  let g:dasht_filetype_docsets['javascript.jsx'] = ['javascript']
+'''
+
+[[plugins]]
+repo = 'yuratomo/w3m.vim'
+on_cmd = 'W3m'

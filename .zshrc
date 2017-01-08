@@ -10,6 +10,7 @@ loadlib $ZSHHOME/1develop.zsh
 loadlib $ZSHHOME/2normal_option.zsh
 loadlib $ZSHHOME/alias.zsh
 loadlib $ZSHHOME/os.zsh
+loadlib $ZSHHOME/dasht.zsh
 
 # if has 'peco'; then
 #   loadlib $ZSHHOME/peco.zsh
