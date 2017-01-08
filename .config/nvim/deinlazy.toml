@@ -121,6 +121,7 @@ repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
+on_cmd = 'VimFiler'
 hook_add = '''
   let g:vimfiler_as_default_explorer = 1
 '''
