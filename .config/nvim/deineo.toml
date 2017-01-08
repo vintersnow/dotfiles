@@ -57,3 +57,13 @@ let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_ft = 'pyhton'
+
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+on_ft = 'rust'
+hook_add = '''
+let g:deoplete#sources#rust#racer_binary='/Users/vinter/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='~/.ghq/github.com/rust-lang/rust/src'
+
+let g:deoplete#sources#rust#disable_keymap=1
+'''
