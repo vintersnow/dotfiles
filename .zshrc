@@ -24,6 +24,8 @@ loadlib $ZSHHOME/zplug_manager.zsh;
 
 loadlib $ZSHHOME/manual_load_plugin.zsh
 
+loadlib $ZSHHOME/pw.zsh
+
 # loadlib $ZSHHOME/zim_setting.zsh
 # loadlib $ZSHHOME/zgen_setting.zsh
 

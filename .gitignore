@@ -22,6 +22,7 @@ fish_history
 
 # pw
 pw.vim
+pw.zsh
 
 #.config
 .config/*
