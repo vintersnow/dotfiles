@@ -59,11 +59,11 @@ repo = 'zchee/deoplete-jedi'
 on_ft = 'pyhton'
 
 [[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
+repo = 'racer-rust/vim-racer'
 on_ft = 'rust'
 hook_add = '''
-let g:deoplete#sources#rust#racer_binary='/Users/vinter/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='~/.ghq/github.com/rust-lang/rust/src'
-
-let g:deoplete#sources#rust#disable_keymap=1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap K <Plug>(rust-doc)
 '''

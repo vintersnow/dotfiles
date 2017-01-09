@@ -77,10 +77,6 @@ augroup filetype_keymap
 
   " js
   autocmd  FileType javascript nnoremap <buffer> <C-]> :TernDef<CR>
-  " autocmd  FileType javascript nnoremap <buffer> <C-[> <C-o>
-
-  " Rust
-  autocmd FileType rust nnoremap <buffer> <C-]> <plug>DeopleteRustGoToDefinitionDefault
-  autocmd FileType rust nnoremap <buffer> K <plug>DeopleteRustShowDocumentation
+  autocmd  FileType javascript nnoremap <buffer> <C-[> <C-o>
 augroup END
 
