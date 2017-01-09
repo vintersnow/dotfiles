@@ -59,7 +59,7 @@ let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-on_ft = 'pyhton'
+on_ft = 'python'
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
