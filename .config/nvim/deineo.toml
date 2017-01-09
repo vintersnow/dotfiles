@@ -23,6 +23,9 @@ repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 if = "has('nvim')"
 on_i = 1
+hook_add = '''
+let g:deoplete#auto_complete_delay=50
+'''
 hook_source = '''
   source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
