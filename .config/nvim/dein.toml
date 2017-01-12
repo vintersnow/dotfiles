@@ -56,6 +56,9 @@ repo = 'jelera/vim-javascript-syntax'
 # repo = 'pangloss/vim-javascript'
 
 [[plugins]]
+repo = 'kylef/apiblueprint.vim'
+
+[[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
   let g:polyglot_disabled = ['javascript']
