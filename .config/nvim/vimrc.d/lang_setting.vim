@@ -1,6 +1,6 @@
 " set foldmethod=syntax
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=99
 set foldlevel=1
 set foldnestmax=4
 
