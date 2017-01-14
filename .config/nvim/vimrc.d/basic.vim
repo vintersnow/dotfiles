@@ -20,6 +20,8 @@ set nohlsearch
 " enable highlighting the cursor line
 " this make vim too slow
 " set cursorline
+" set cursorline highlighting for denite
+hi CursorLine cterm=None ctermbg=235 ctermfg=red
 
 " use true color
 if has('nvim')
@@ -88,3 +90,5 @@ set noshowmode
 
 " match < and >
 set matchpairs+=<:>
+
+

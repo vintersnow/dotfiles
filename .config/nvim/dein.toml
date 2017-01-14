@@ -36,13 +36,13 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-hook_add = '''
-  set background=dark
-  " lazy seting
-  if has('nvim')
-    autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
-  endif
-'''
+# hook_add = '''
+#   set background=dark
+#   " lazy seting
+#   if has('nvim')
+#     autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
+#   endif
+# '''
 
 [[plugins]]
 repo = 'wakatime/vim-wakatime'

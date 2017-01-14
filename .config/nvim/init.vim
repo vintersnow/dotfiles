@@ -18,6 +18,10 @@ if has('vim_starting')
   " plugins
   execute 'source' expand('$BASE/plugins.vim')
 
+  " colorscheme
+  set background=dark
+  colorscheme hybrid
+
   execute 'source' expand('$BASE/vimrc.d/basic.vim')
   execute 'source' expand('$BASE/vimrc.d/keymap.vim')
   execute 'source' expand('$BASE/vimrc.d/lang_setting.vim')
@@ -28,6 +32,7 @@ if has('vim_starting')
     execute 'source' expand('$BASE/pw.vim')
   endif
 endif
+
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
 filetype indent plugin on
