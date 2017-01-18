@@ -31,6 +31,7 @@
   r = reset
   rb = rebase
   drymerge = merge --no-commit --no-ff
+  conflict = diff --name-only --diff-filter=U
 [merge]
 	ff = false
 [push]
