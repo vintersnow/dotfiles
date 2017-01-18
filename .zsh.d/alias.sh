@@ -24,8 +24,12 @@ alias ......='cd ../../../../..'
 
 alias du='du -sh'
 
-alias v='nvim'
-alias vim='nvim'
+if has 'nvim'; then
+  alias v='nvim'
+  alias vim='nvim'
+else
+  alias v='vim'
+fi
 
 # git
 alias g='git'
