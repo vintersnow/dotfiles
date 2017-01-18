@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CDRFILE=~/.chpwd-recent-dirs
+CDRFILE=$HOME/.chpwd-recent-dirs
 TMPFILE="$CDRFILE-tmp"
 # exec < $CDRFILE
 while read line; do

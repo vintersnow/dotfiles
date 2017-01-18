@@ -1,0 +1,10 @@
+#!/bin/sh
+
+IGNORE_ERRORS=
+#221,E701,E202
+
+type pyflakes > /dev/null || exit 254
+type pep8 > /dev/null || exit 254
+
+pyflakes $*
+pep8 --ignore=$IGNORE_ERRORS --repeat $*

@@ -23,6 +23,9 @@ repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 if = "has('nvim')"
 on_i = 1
+hook_add = '''
+let g:deoplete#auto_complete_delay=50
+'''
 hook_source = '''
   source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
@@ -56,4 +59,14 @@ let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-on_ft = 'pyhton'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = 'rust'
+hook_add = '''
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap K <Plug>(rust-doc)
+'''

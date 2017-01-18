@@ -2,7 +2,7 @@
 	name = vinter
 	email = ankasandora@gmail.com
 [core]
-	excludesfile = 
+	excludesfile = /Users/vinter/.config/git/ignore
 	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
 [difftool "sourcetree"]
@@ -28,6 +28,9 @@
   d1 = diff HEAD~
   d2 = diff HEAD~2
   d3 = diff HEAD~3
+  r = reset
+  rb = rebase
+  drymerge = merge --no-commit --no-ff
 [merge]
 	ff = false
 [push]
@@ -52,3 +55,5 @@
 	required = true
 [ghq]  
   root = ~/.ghq
+[github]
+	user = vintersnow

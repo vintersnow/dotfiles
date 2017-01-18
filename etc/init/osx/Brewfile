@@ -14,7 +14,6 @@ brew zsh
 brew tmux
 brew the_silver_searcher
 brew reattach-to-user-namespace
-brew python3
 brew ghq
 brew coreutils
 brew tig

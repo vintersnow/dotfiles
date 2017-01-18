@@ -24,6 +24,9 @@ function ztrace_end() {
   exec 2>&3 3>&-
 }
 
+
+# overwrite
+
 function loadlib() {
   lib=${1:?"You have to specify a library file"}
   if [ -f "$lib" ];then

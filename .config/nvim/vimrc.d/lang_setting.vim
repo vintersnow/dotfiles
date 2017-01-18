@@ -1,6 +1,6 @@
 " set foldmethod=syntax
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=99
 set foldlevel=1
 set foldnestmax=4
 
@@ -12,3 +12,6 @@ set foldnestmax=4
 " let sh_fold_enabled=1         " sh
 " let vimsyn_folding='af'       " Vim script
 " let xml_syntax_folding=1      " XML
+
+" C not de-indent for label
+:set cinoptions+=L0

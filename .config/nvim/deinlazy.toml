@@ -86,6 +86,10 @@ hook_add = '''
   source ~/.config/nvim/plugins/unite.rc.vim
 '''
 
+[[plugins]]
+repo = 'Shougo/unite-outline'
+on_source = 'unite.nvim'
+
 # [[plugins]]
 # repo = 'Shougo/neoinclude.vim'
 # # on_if = 1 # this make deoplete crash
@@ -117,6 +121,7 @@ repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
+on_cmd = 'VimFiler'
 hook_add = '''
   let g:vimfiler_as_default_explorer = 1
 '''
@@ -130,13 +135,7 @@ hook_add = 'let g:vinarise_enable_auto_detect = 1'
 repo = 'thinca/vim-quickrun'
 on_map = {n = '<Plug>'}
 hook_add = '''
-  let g:quickrun_config = {
-  \   "_" : {
-  \       "runner" : "vimproc",
-  \       "runner/vimproc/updatetime" : 40,
-  \   }
-  \}
-  nmap <silent> <Leader>r <Plug>(quickrun)
+source ~/.config/nvim/plugins/quickrun.rc.vim
 '''
 
 [[plugins]]
@@ -189,8 +188,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
-on_source = 'slack-memo-vim'
+on_source = ['slack-memo-vim', 'gist-vim']
 
 [[plugins]]
 repo = 'tsuyoshiwada/slack-memo-vim'
@@ -200,3 +203,17 @@ on_cmd = ['SlackMemoPost', 'SlackMemoList']
 [[plugins]]
 repo = 'takac/vim-hardtime'
 on_cmd = 'HardTimeOn'
+
+[[plugins]]
+repo = 'sunaku/vim-dasht'
+on_cmd = 'Dasht'
+hook_add = '''
+  let g:dasht_filetype_docsets = {} " filetype => list of docset name regexp
+
+  let g:dasht_filetype_docsets['cpp'] = ['^c$', 'boost', 'OpenGL', 'C\+\+']
+  let g:dasht_filetype_docsets['javascript.jsx'] = ['javascript']
+'''
+
+[[plugins]]
+repo = 'yuratomo/w3m.vim'
+on_cmd = 'W3m'
