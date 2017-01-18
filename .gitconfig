@@ -28,6 +28,9 @@
   d1 = diff HEAD~
   d2 = diff HEAD~2
   d3 = diff HEAD~3
+  r = reset
+  rb = rebase
+  drymerge = merge --no-commit --no-ff
 [merge]
 	ff = false
 [push]
