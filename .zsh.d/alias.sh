@@ -33,6 +33,7 @@ fi
 
 # git
 alias g='git'
+alias deletebranch="git branch --merged | grep -v '*' | xargs -I % git branch -d %"
 
 # fzf
 alias fzf=fzf-tmux
