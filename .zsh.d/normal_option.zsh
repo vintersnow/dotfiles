@@ -29,6 +29,9 @@ setopt hist_ignore_space
 # ヒストリに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
 
+# 失敗したコマンドはヒストリに追加しない。
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
 ###############################################################################
 # プロンプト
 
