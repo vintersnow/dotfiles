@@ -1,5 +1,4 @@
-########################################
-
+################################################################################
 ###基本設定
 
 # 色を使用出来るようにする
@@ -12,19 +11,34 @@ GIT_PAGER=less
 # emacs 風キーバインドにする
 bindkey -e
 
-# ヒストリの設定
+################################################################################
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# 同じコマンドをヒストリに残さない
+setopt hist_ignore_all_dups
+
+# ヒストリファイルに保存するとき、すでに重複したコマンドがあったら古い方を削除する
+setopt hist_save_nodups
+
+# スペースから始まるコマンド行はヒストリに残さない
+setopt hist_ignore_space
+
+# ヒストリに保存するときに余分なスペースを削除する
+setopt hist_reduce_blanks
+
+###############################################################################
 # プロンプト
+
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
 PROMPT="%{${fg[yellow]}%}[%n@%m]%{${reset_color}%} %~
 # $ "
 
-
+###############################################################################
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default
@@ -33,7 +47,7 @@ select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-########################################
+###############################################################################
 # 補完
 # 補完機能を有効にする
 # zplug で呼ばれている？
@@ -54,7 +68,7 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
-########################################
+###############################################################################
 # vcs_info
 
 # autoload -Uz vcs_info
@@ -68,7 +82,7 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 # RPROMPT="%1(v|%F{green}%1v%f|)"
 
 
-########################################
+###############################################################################
 # オプション
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -96,32 +110,14 @@ setopt magic_equal_subst
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-
-# ヒストリファイルに保存するとき、すでに重複したコマンドがあったら古い方を削除する
-setopt hist_save_nodups
-
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
-
-# ヒストリに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
-
 # 補完候補が複数あるときに自動的に一覧表示する
 setopt auto_menu
 
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
 
-########################################
-# キーバインド
+###############################################################################
 
-# ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-# bindkey '^e' history-incremental-pattern-search-backward
- #->代わりにpecoをしよう。
-
-############
 autoload -U is-at-least
 
 zstyle ':completion:*' menu select
