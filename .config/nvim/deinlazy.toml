@@ -7,6 +7,9 @@ on_path = '.*'
 repo = 'jiangmiao/auto-pairs'
 on_path = '.*'
 on_i = 1
+hook_add = '''
+let g:AutoPairsMultilineClose = 0
+'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
