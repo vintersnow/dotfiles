@@ -221,3 +221,26 @@ hook_add = '''
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 on_cmd = 'W3m'
+
+# [[plugins]]
+# repo = 'vim-latex/vim-latex'
+# on_ft = 'tex'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_add = '''
+let g:vimtex_latexmk_continuous = 1
+let g:vimtex_latexmk_background = 1
+let g:vimtex_latexmk_options = '-pdfdvi'
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '@line @pdf @tex'
+'''
+
+[[plugins]]
+repo = 'sbdchd/neoformat'
+on_cmd = 'Neoformat'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = 'Deol'

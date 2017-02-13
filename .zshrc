@@ -17,7 +17,6 @@ loadlib $ZSHHOME/dasht.zsh
 # fi
 
 loadlib $ZSHHOME/tmux.zsh
-loadlib $ZSHHOME/useful_setting.zsh
 
 loadlib $ZSHHOME/zplug_manager.zsh;
 # zplug load
@@ -28,6 +27,8 @@ loadlib $ZSHHOME/pw.zsh
 
 # loadlib $ZSHHOME/zim_setting.zsh
 # loadlib $ZSHHOME/zgen_setting.zsh
+
+loadlib $ZSHHOME/useful_setting.zsh
 
 #setting for zprof
 if (which zprof > /dev/null 2>&1) ;then
