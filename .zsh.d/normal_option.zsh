@@ -136,3 +136,6 @@ if is-at-least 4.3.11; then
   zstyle ":chpwd:*" recent-dirs-default true
   zstyle ":completion:*" recent-dirs-insert always
 fi
+
+# for deoplete-zsh
+zmodload zsh/zpty
