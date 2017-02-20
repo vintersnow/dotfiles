@@ -25,6 +25,7 @@ export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 
+export LANGUAGE=ja_JP.UTF-8
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
@@ -33,7 +34,9 @@ case ${OSTYPE} in
   #Mac用の設定
 
   #Sheet EDITOR
-  export EDITOR=/usr/local/bin/nvim
+  if has 'nvim'; then
+    export EDITOR=/usr/local/bin/nvim
+  fi
 
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH

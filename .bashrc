@@ -1,8 +1,9 @@
 export DOTFILES="${HOME}/.dotfiles"
-ZSHHOME="${DOTFILES}/.zsh.d"
+ZSHHOME="${HOME}/.zsh.d"
 
 . $DOTFILES/etc/libs.sh
 
+loadlib $ZSHHOME/env_path.zsh
 loadlib $ZSHHOME/alias.sh
 loadlib $ZSHHOME/os.zsh
 
