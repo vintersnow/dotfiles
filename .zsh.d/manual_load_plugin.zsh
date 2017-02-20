@@ -17,8 +17,10 @@ loadlib $ZPLUG_HOME/repos/zsh-users/zsh-completions/zsh-completions.plugin.zsh
 # loadlib $ZPLUG_HOME/repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ### zsh-notify
-loadlib $ZPLUG_HOME/repos/marzocchi/zsh-notify/notify.plugin.zsh
-zstyle ':notify:*' command-complete-timeout 10
+if has 'terminal-notifier' -o has 'notify-send'; then
+  loadlib $ZPLUG_HOME/repos/marzocchi/zsh-notify/notify.plugin.zsh
+  zstyle ':notify:*' command-complete-timeout 10
+fi
 
 ### anyframe
 # loadlib $ZPLUG_HOME/repos/mollifier/anyframe/anyframe.plugin.zsh

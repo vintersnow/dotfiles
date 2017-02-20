@@ -3,6 +3,9 @@ repo = 'moll/vim-node'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_add = '''
+let g:dein#install_log_filename = '~/.neovim-dein-install.log'
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'

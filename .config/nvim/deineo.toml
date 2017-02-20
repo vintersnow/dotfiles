@@ -2,17 +2,28 @@
 # nvim plugins
 
 [[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = 'rust'
+hook_add = '''
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap K <Plug>(rust-doc)
+'''
+
+[[plugins]]
 repo = 'carlitux/deoplete-ternjs'
 on_ft = 'javascript'
 on_i = 1
 hook_source = '''
 let g:tern_request_timeout = 1
 let g:tern#command = ['tern']
-let g:tern#arguments = ['--no-port-file', '--persistent']
+let g:tern#arguments = ['--persistent']
 '''
 
 [[plugins]]
 repo = 'neomake/neomake'
+if = "has('nvim')"
 on_event = 'BufEnter'
 hook_source = '''
 source  ~/.config/nvim/plugins/neomake.rc.vim
@@ -45,16 +56,25 @@ repo = 'zchee/deoplete-go'
 on_ft = 'go'
 build = 'make'
 
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-# depends = 'deoplete'
-on_ft = ['c', 'cpp', 'cc']
-hook_source = '''
-let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+# # depends = 'deoplete'
+# on_ft = ['c', 'cpp', 'cc']
+# hook_source = '''
+# let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+# let g:deoplete#sources#clang#clang_header='/Library/Developer/CommandLineTools/usr/lib/clang'
+#
+# " libclang default compile flags
+# let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
+# '''
 
-" libclang default compile flags
-let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
+[[plugins]]
+repo = 'tweekmonster/deoplete-clang2'
+on_ft = ['c', 'cpp', 'cc']
+hook_add = '''
+if has('mac')
+  let g:deoplete#sources#clang#flags = ['-darwin=10.11']
+endif
 '''
 
 [[plugins]]
@@ -62,11 +82,10 @@ repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
 [[plugins]]
-repo = 'racer-rust/vim-racer'
-on_ft = 'rust'
-hook_add = '''
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap K <Plug>(rust-doc)
-'''
+repo = 'lambdalisue/lista.nvim'
+# lazy = 0
+on_cmd = ['Lista', 'ListaCursorWord']
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+on_ft = ['sh', 'zsh']

@@ -91,4 +91,5 @@ set noshowmode
 " match < and >
 set matchpairs+=<:>
 
-
+" don't show preview window when completion
+set completeopt-=preview

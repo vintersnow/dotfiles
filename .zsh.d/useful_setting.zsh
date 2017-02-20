@@ -56,3 +56,9 @@ alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 
 # less option
 export LESS='-gj10 --no-init --quit-if-one-screen --RAW-CONTROL-CHARS -W -S'
+
+# git checkout completion style
+# http://stackoverflow.com/questions/12175277/disable-auto-completion-of-remote-branches-in-zsh
+# not working?
+zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+# zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"

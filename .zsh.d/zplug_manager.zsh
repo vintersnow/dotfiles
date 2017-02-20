@@ -22,7 +22,7 @@ zplug () {
   # zplug "mollifier/anyframe"
   zplug "vintersnow/anyframe"
 
-  zplug "marzocchi/zsh-notify"
+  zplug "marzocchi/zsh-notify" if:"has 'terminal-notifier' -o has 'notify-send'"
 
   zplug "Tarrasch/zsh-colors"
 
