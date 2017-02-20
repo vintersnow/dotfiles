@@ -2,11 +2,13 @@
 export_path /usr/local/heroku/bin
 
 ### golang
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
-if [ ! -d $GOPATH ];then
-  mkdir $GOPATH
-fi
+# export GOPATH="$HOME/go"
+# export PATH="$GOPATH/bin:$PATH"
+# if [ ! -d $GOPATH ];then
+#   mkdir $GOPATH
+# fi
+
+[[ -s "/Users/vinter/.gvm/scripts/gvm" ]] && source "/Users/vinter/.gvm/scripts/gvm"
 
 
 ### pads
