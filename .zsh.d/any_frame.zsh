@@ -1,3 +1,4 @@
+anyframe_setup() {
 
 if has "fzf-tmux"; then
  zstyle ":anyframe:selector:" use fzf-tmux
@@ -7,6 +8,8 @@ elif has "peco"; then
  zstyle ":anyframe:selector:" use peco
 elif has "fzy"; then
  zstyle ":anyframe:selector:" use fzy
+else
+  return
 fi
 
 bindkey '^r' anyframe-widget-put-history
@@ -16,3 +19,6 @@ bindkey '^s' anyframe-widget-tmux-attach
 alias any='anyframe-widget-select-widget'
 alias gh='anyframe-widget-cd-ghq-repository'
 
+}
+
+anyframe_setup
