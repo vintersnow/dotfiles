@@ -16,9 +16,6 @@ export_path $HOME/Library/Haskell/bin
 # egison
 export_path $HOME/.egison/bin
 
-# js
-export_path $HOME/.yarn/bin
-
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
