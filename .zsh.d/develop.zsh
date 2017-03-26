@@ -24,7 +24,7 @@ fi
 # anyenv
 export ANYENV_ROOT="$HOME/.ghq/github.com/riywo/anyenv"
 if [ -d $ANYENV_ROOT ]; then
-  # export PATH="$ANYENV_ROOT/bin:$PATH"
+  export PATH="$ANYENV_ROOT/bin:$PATH"
   for D in `command ls $ANYENV_ROOT/envs`
   do
     export PATH="$ANYENV_ROOT/envs/$D/shims:$PATH"
@@ -41,7 +41,6 @@ function anyenv_unset() {
   unset -f ndenv
   unset -f rbenv
   unset -f pyenv
-  unset -f anyenv
 }
 function ndenv() {
   anyenv_unset
@@ -57,9 +56,4 @@ function pyenv() {
   anyenv_unset
   anyenv_init
   pyenv "$@"
-}
-function anyenv() {
-  anyenv_unset
-  anyenv_init
-  anyenv "$@"
 }

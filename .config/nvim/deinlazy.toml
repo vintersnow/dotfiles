@@ -125,7 +125,7 @@ repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
-on_cmd = 'VimFiler'
+on_cmd = ['VimFiler', 'VimFilerExplorer']
 hook_add = '''
   let g:vimfiler_as_default_explorer = 1
 '''
@@ -245,3 +245,28 @@ on_cmd = 'Neoformat'
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+on_cmd = ['MemoNew', 'MemoList', 'MemoGrep']
+hook_add = '''
+let g:memolist_memo_suffix = "md"
+
+" let g:memolist_qfixgrep = 1
+
+let g:memolist_denite = 1
+" let g:memolist_denite_option = "-auto-preview"
+
+let g:memolist_prompt_tags = 0
+let g:memolist_prompt_categories = 1
+
+let g:memolist_delimiter_yaml_start = "---"
+let g:memolist_delimiter_yaml_end  = "---"
+'''
+
+[[plugins]]
+repo = 'francoiscabrol/ranger.vim'
+on_cmd = 'Ranger'
+hook_add = '''
+let g:ranger_map_keys = 0
+'''
