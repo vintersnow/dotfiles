@@ -2,7 +2,6 @@
 	name = vinter
 	email = ankasandora@gmail.com
 [core]
-	excludesfile = /Users/vinter/.config/git/ignore
 	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
 [difftool "sourcetree"]
