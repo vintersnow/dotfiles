@@ -1,6 +1,8 @@
 DOTPATH    := $(PWD)
-TARGET := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .git .gitmodules .gitignore
+DOTS := $(wildcard .??*)
+CONFIG := $(wildcard .config/*)
+TARGET := $(DOTS) $(CONFIG)
+EXCLUSIONS := .DS_Store .git .gitmodules .gitignore .config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(TARGET))
 ZSHFILES	 := .zsh.d .zshrc .zshenv
 
