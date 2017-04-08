@@ -81,3 +81,7 @@ augroup filetype_keymap
   autocmd FileType javascript nnoremap <buffer> <C-[> <C-o>
 augroup END
 
+" bind Ctrl-j to escape
+noremap <C-j> <esc>
+cnoremap <C-j> <esc>
+inoremap <C-j> <esc>
