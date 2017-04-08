@@ -17,7 +17,7 @@ loadlib $ZPLUG_HOME/repos/zsh-users/zsh-completions/zsh-completions.plugin.zsh
 # loadlib $ZPLUG_HOME/repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ### zsh-notify
-if has 'terminal-notifier' -o has 'notify-send'; then
+if has 'terminal-notifier' || has 'notify-send'; then
   loadlib $ZPLUG_HOME/repos/marzocchi/zsh-notify/notify.plugin.zsh
   zstyle ':notify:*' command-complete-timeout 10
 fi

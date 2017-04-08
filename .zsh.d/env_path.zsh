@@ -9,6 +9,8 @@ export_path /usr/local/sbin
 export_path /usr/texbin
 export_path $HOME/.dotfiles/bin
 export_path $HOME/bin
+export_path $HOME/go/bin
+export_path $HOME/bin
 
 # haskell
 export_path $HOME/.cabal/bin
@@ -26,14 +28,19 @@ export LANGUAGE=ja_JP.UTF-8
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
+#Sheet EDITOR
+if has 'nvim'; then
+  export EDITOR=nvim
+  export VISUAL=nvim
+else
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
+
 case ${OSTYPE} in
   darwin*)
   #Mac用の設定
-
-  #Sheet EDITOR
-  if has 'nvim'; then
-    export EDITOR=/usr/local/bin/nvim
-  fi
 
   export PATH=/opt/X11/include:$PATH
   export PATH=/usr/local/bin:$PATH
@@ -44,6 +51,5 @@ case ${OSTYPE} in
 
   ;;
   linux*)
-  #Linux用の設定
   ;;
 esac
