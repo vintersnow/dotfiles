@@ -1,0 +1,43 @@
+#!/bin/bash
+
+get_loadavg() {
+  echo $(uptime | awk '{print gensub(/,/, "", "g", $(NF-2))}')
+}
+
+loadavg_color_ansi() {
+  local avg
+  avg="${1:-$(get_loadavg)}"
+  echo -e "\033[32m${avg}\033[0m"
+}
+
+loadavg_color_tmux() {
+  local avg
+  avg="${1:-$(get_loadavg)}"
+  echo -e "#[fg=color46]${avg}#[default]"
+}
+
+# check arguments
+for i in "$@"
+do
+  case "$i" in
+    "-h"|"--help")
+      echo "usage: loadavg [--help|-h][--ansi|--tmux]" 1>&2
+      echo "  Get load average for this 1 min, then" 1>&2
+      echo "  outputs and colourizes with options" 1>&2
+      exit
+      ;;
+    "--ansi")
+      loadavg_color_ansi "$(get_loadavg)"
+      exit $?
+      ;;
+    "--tmux")
+      loadavg_color_tmux "$(get_loadavg)"
+      exit $?
+      ;;
+    -*|--*)
+      echo "$i: unknown option" 1>&2
+      exit 1
+  esac
+done
+
+get_loadavg
