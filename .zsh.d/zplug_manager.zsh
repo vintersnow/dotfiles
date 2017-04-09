@@ -27,8 +27,11 @@ if [ -d $cache_dir ]; then
 else
   loadlib $HOME/.zsh.d/zplug_plugin.zsh
 fi
+zstyle ':notify:*' command-complete-timeout 10
 
 zplug "$@"
 }
 
-# zplug load
+zplug load
+
+loadlib $DOTFILES/.zsh.d/any_frame.zsh
