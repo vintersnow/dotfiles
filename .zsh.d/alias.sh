@@ -48,14 +48,6 @@ case ${OSTYPE} in
   darwin*)
   #Mac用の設定
 
-  function o() {
-    if [ $# -gt 0 ]; then
-      open $@
-    else
-      open .
-    fi
-  }
-
   alias uc='ulimit -c '
   alias ucu='ulimit -c unlimited'
 
@@ -134,6 +126,19 @@ case ${OSTYPE} in
   ;;
 esac
 
+function o() {
+  local cmd
+  if is_osx; then
+    cmd="open"
+  elif has xdg-open; then
+    cmd="xdg-open"
+  fi
+  if [ $# -gt 0 ]; then
+    $cmd $@
+  else
+    $cmd .
+  fi
+}
 
 function runc () {
   clang $1 && shift && ./a.out $@

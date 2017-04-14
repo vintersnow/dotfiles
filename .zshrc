@@ -19,9 +19,8 @@ loadlib $ZSHHOME/dasht.zsh
 loadlib $ZSHHOME/tmux.zsh
 
 loadlib $ZSHHOME/zplug_manager.zsh;
-# zplug load
 
-loadlib $ZSHHOME/manual_load_plugin.zsh
+# loadlib $ZSHHOME/manual_load_plugin.zsh
 
 loadlib $ZSHHOME/pw.zsh
 
