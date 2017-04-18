@@ -234,7 +234,11 @@ hook_add = '''
 let g:vimtex_latexmk_continuous = 1
 let g:vimtex_latexmk_background = 1
 let g:vimtex_latexmk_options = '-pdfdvi'
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+if has('mac')
+  let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+else
+  let g:vimtex_view_general_viewer = 'xdg-open'
+endif
 let g:vimtex_view_general_options = '@line @pdf @tex'
 '''
 
