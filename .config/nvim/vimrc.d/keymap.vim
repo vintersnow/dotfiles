@@ -39,6 +39,17 @@ endif
 " move right in insert mode
 inoremap <C-l> <C-g>U<Right>
 
+" bind Ctrl-j to escape
+noremap <C-j> <esc>
+cnoremap <C-j> <esc>
+" inoremap <C-j> <esc>
+
+function! InActivateIME()
+  call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-j> <ESC>:call InActivateIME()<CR>
+inoremap <silent> <ESC> <ESC>:call InActivateIME()<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugins
 
@@ -80,8 +91,3 @@ augroup filetype_keymap
   autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :TernDef<CR>
   autocmd FileType javascript nnoremap <buffer> <C-[> <C-o>
 augroup END
-
-" bind Ctrl-j to escape
-noremap <C-j> <esc>
-cnoremap <C-j> <esc>
-inoremap <C-j> <esc>
