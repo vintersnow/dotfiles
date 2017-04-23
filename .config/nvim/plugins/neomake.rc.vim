@@ -14,8 +14,8 @@ augroup neomake_run
 augroup END
 
 " js
-let g:neomake_javascript_enabled_makers = ['eslint_d']
-let g:neomake_jsx_enabled_makers = ['eslint_d']
+" let g:neomake_javascript_enabled_makers = ['eslint_d']
+" let g:neomake_jsx_enabled_makers = ['eslint_d']
 
 " c++
 let g:neomake_cpp_enable_markers=['clang']
