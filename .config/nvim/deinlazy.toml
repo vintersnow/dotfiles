@@ -181,16 +181,7 @@ hook_add='''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-on_path = '.*'
-hook_add = '''
-  let g:indentLine_enabled = 1
-  let g:indentLine_fileTypeExclude = ['help', 'json']
-  let g:indentLine_concealcursor = 'c'
-  let g:indentLine_conceallevel=1
-'''
+########################################################
 
 [[plugins]]
 repo = 'mattn/gist-vim'
