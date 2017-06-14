@@ -15,11 +15,13 @@ zplug "Tarrasch/zsh-colors"
 
 zplug "lukechilds/zsh-nvm"
 
+zplug "greymd/tmux-xpanes"
+
 # Install plugins if there are plugins that have not been installed
 
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
+# if ! zplug check --verbose; then
+#   printf "Install? [y/N]: "
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
