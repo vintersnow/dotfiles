@@ -40,9 +40,6 @@ alias fzf=fzf-tmux
 
 alias labmem='ssh vega command ../hnakazawa/labmem/labmem.py'
 
-alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
-
-
 #OS別alias
 case ${OSTYPE} in
   darwin*)
@@ -123,6 +120,8 @@ case ${OSTYPE} in
   alias la='ls -A --color=auto'
   alias ll='ls -slhF --color=auto'
   alias lly='ls -slhF --color=auto --time-style=long-iso'
+
+  alias rm='mv -f --backup=numbered --target-directory ~/.Trash'
   ;;
 esac
 

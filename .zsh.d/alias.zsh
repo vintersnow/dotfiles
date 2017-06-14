@@ -34,3 +34,12 @@ elif which putclip >/dev/null 2>&1 ; then
   alias -g C='| putclip'
 fi
 
+function zshtime() {
+  n=${1:-10}
+  if [ $n -ge 1 ]; then
+    for i in $(seq 1 $n); do
+      echo -n $i
+      time zsh -i -c exit
+    done
+  fi
+}
