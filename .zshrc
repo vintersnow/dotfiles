@@ -4,7 +4,7 @@ export ZSHHOME="${HOME}/.zsh.d"
 . $DOTFILES/etc/libs.zsh
 
 # version check
-if $(versioncompare $ZSH_VERSION "6.0.0"); then
+if $(versioncompare $ZSH_VERSION "5.0.0"); then
   # loadfiles
   loadlib $ZSHHOME/env_path.zsh
   loadlib $ZSHHOME/develop.zsh
