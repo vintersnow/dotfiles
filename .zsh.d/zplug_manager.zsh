@@ -13,20 +13,20 @@ unset -f zplug
 
 source $ZPLUG_HOME/init.zsh
 
-cache_dir=$HOME/.zplug/cache
+# cache_dir=$HOME/.zplug/cache
 
-if [ -d $cache_dir ]; then
-  plugins=$HOME/.zsh.d/zplug_plugin.zsh
-  cache=$cache_dir/interface
-  plugin_date=$(date -r $plugins +%s)
-  cache_date=$(date -r $cache +%s)
-  # echo $package_date $cache_date
-  if [ ! -d $cache_dir -o $plugin_date -gt $cache_date ]; then
-    loadlib $HOME/.zsh.d/zplug_plugin.zsh
-  fi
-else
+# if [ -d $cache_dir ]; then
+#   plugins=$HOME/.zsh.d/zplug_plugin.zsh
+#   cache=$cache_dir/interface
+#   plugin_date=$(date -r $plugins +%s)
+#   cache_date=$(date -r $cache +%s)
+#   # echo $package_date $cache_date
+#   if [ ! -d $cache_dir -o $plugin_date -gt $cache_date ]; then
+#     loadlib $HOME/.zsh.d/zplug_plugin.zsh
+#   fi
+# else
   loadlib $HOME/.zsh.d/zplug_plugin.zsh
-fi
+# fi
 zstyle ':notify:*' command-complete-timeout 10
 
 zplug "$@"

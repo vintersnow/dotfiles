@@ -21,12 +21,24 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 '''
 
+# [[plugins]]
+# repo = 'neomake/neomake'
+# if = "has('nvim')"
+# on_event = 'BufEnter'
+# hook_source = '''
+# source  ~/.config/nvim/plugins/neomake.rc.vim
+# '''
+#
+# [[plugins]]
+# repo = 'benjie/neomake-local-eslint.vim'
+# depends = 'neomake'
+# on_event = 'BufEnter'
+
 [[plugins]]
-repo = 'neomake/neomake'
-if = "has('nvim')"
+repo = 'w0rp/ale'
 on_event = 'BufEnter'
 hook_source = '''
-source  ~/.config/nvim/plugins/neomake.rc.vim
+source  ~/.config/nvim/plugins/ale.rc.vim
 '''
 
 [[plugins]]

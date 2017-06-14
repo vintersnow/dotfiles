@@ -51,5 +51,8 @@ case ${OSTYPE} in
 
   ;;
   linux*)
+  if has vivaldi-stable;then
+    export BROWSER=vivaldi-stable
+  fi
   ;;
 esac
