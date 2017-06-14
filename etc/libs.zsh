@@ -24,6 +24,22 @@ function ztrace_end() {
   exec 2>&3 3>&-
 }
 
+function versioncompare() {
+  local min val
+
+  val="${1:gs/.//}"
+  min="${2:gs/.//}"
+
+  if [ $#val -gt $#min ]; then
+    min=${(r:$#val::0:)min}
+  elif [ $#val -lt $#min ]; then
+    val=${(r:$#min::0:)val}
+  fi
+
+  test $val -ge $min
+  return $status
+}
+
 
 # overwrite
 

@@ -1,8 +1,13 @@
-
 export DOTFILES="${HOME}/.dotfiles"
 export ZSHHOME="${HOME}/.zsh.d"
 
 . $DOTFILES/etc/libs.zsh
+
+# version check
+if ! $(versioncompare $ZSH_VERSION "5.0.0"); then
+  echo "this zsh version is not supported"
+  exit
+fi
 
 # loadfiles
 loadlib $ZSHHOME/env_path.zsh
