@@ -25,6 +25,9 @@ noremap [Leader]p "+p<CR>
 nnoremap [Leader]y "+yy
 vnoremap [Leader]y "+y
 
+" noremap [Leader]d call
+" nnoremap <silent> [Leader]d :<C-u>call<Space>jedi#goto()<CR>
+
 " tag back
 nnoremap <C-[> <C-t>
 
@@ -90,4 +93,9 @@ augroup filetype_keymap
   " js
   autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :TernDef<CR>
   autocmd FileType javascript nnoremap <buffer> <C-[> <C-o>
+
+  " python
+  autocmd FileType python nnoremap <silent> <buffer> <C-]> :<C-u>call<Space>jedi#goto()<CR>
+  autocmd FileType python nnoremap <silent> <buffer> [Leader]K :<C-u>call<Space>jedi#goto_definitions_command()<CR>
+  autocmd FileType python nnoremap <silent> <buffer> [Leader]n :<C-u>call<Space>jedi#usages()<CR>
 augroup END

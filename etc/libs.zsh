@@ -36,8 +36,10 @@ function versioncompare() {
     val=${(r:$#min::0:)val}
   fi
 
-  test $val -ge $min
-  return $status
+  if [ $val -ge $min ]; then
+    return 0
+  fi
+  return 1
 }
 
 

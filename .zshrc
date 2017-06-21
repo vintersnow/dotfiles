@@ -4,7 +4,7 @@ export ZSHHOME="${HOME}/.zsh.d"
 . $DOTFILES/etc/libs.zsh
 
 # version check
-if $(versioncompare $ZSH_VERSION "5.0.0"); then
+if versioncompare $ZSH_VERSION "5.0.0"; then
   # loadfiles
   loadlib $ZSHHOME/env_path.zsh
   loadlib $ZSHHOME/develop.zsh
@@ -29,6 +29,9 @@ if $(versioncompare $ZSH_VERSION "5.0.0"); then
   # loadlib $ZSHHOME/zgen_setting.zsh
 
   loadlib $ZSHHOME/useful_setting.zsh
+  
+  # load local setting
+  loadlib $HOME/.zsh.local
 else
   echo "this zsh version is not supported"
 fi

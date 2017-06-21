@@ -48,13 +48,15 @@ case ${OSTYPE} in
   alias uc='ulimit -c '
   alias ucu='ulimit -c unlimited'
 
-  alias ls='gls -F  --color=auto'
-  alias la='gls -AF --color=auto'
-  alias ll='gls -slhF --color=auto'
-  alias lla='gls -salhF --color=auto'
-  alias lly='gls -slhF --color=auto --time-style=long-iso'
+  if has gls; then
+    alias ls='gls -F  --color=auto'
+    alias la='gls -AF --color=auto'
+    alias ll='gls -slhF --color=auto'
+    alias lla='gls -salhF --color=auto'
+    alias lly='gls -slhF --color=auto --time-style=long-iso'
 
-  alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
+    alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
+  fi
 
   #emacs deamon
   # alias E='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
@@ -121,7 +123,9 @@ case ${OSTYPE} in
   alias ll='ls -slhF --color=auto'
   alias lly='ls -slhF --color=auto --time-style=long-iso'
 
-  alias rm='mv -f --backup=numbered --target-directory ~/.Trash'
+  if [ -d ~/.Trash ]; then
+    alias rm='mv -f --backup=numbered --target-directory ~/.Trash'
+  fi
   ;;
 esac
 
