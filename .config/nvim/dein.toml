@@ -19,6 +19,12 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+call airline#parts#define_function('ALE', 'ALEGetStatusLine')
+call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
+
+let g:airline_section_error = airline#section#create_right(['ALE'])
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
