@@ -1,5 +1,7 @@
-# エイリアス
+# alias
 
+################################################################################
+# builtin command
 # alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -9,7 +11,7 @@ alias mkdir='mkdir -p'
 #locateコマンドのアップデート用
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
-# sudo の後のコマンドでエイリアスを有効にする
+# sudoの後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
 alias so='source '
@@ -31,19 +33,23 @@ else
   alias v='vim'
 fi
 
+################################################################################
+
 # git
 alias g='git'
 alias deletebranch="git branch --merged | grep -v '*' | grep -v 'master' | xargs -I % git branch -d %"
+alias gref='git reflog'
+alias glog='git log --oneline --decorate --color --graph'
 
 # fzf
 alias fzf=fzf-tmux
 
 alias labmem='ssh vega command ../hnakazawa/labmem/labmem.py'
 
-#OS別alias
+# OS別alias
 case ${OSTYPE} in
   darwin*)
-  #Mac用の設定
+  # Mac用の設定
 
   alias uc='ulimit -c '
   alias ucu='ulimit -c unlimited'
@@ -99,16 +105,6 @@ case ${OSTYPE} in
 
   alias ipn='ipython notebook'
 
-  #autojump
-  # alias j="autojump"
-  # if [ -f `brew --prefix`/etc/autojump ]; then
-  #   . `brew --prefix`/etc/autojump
-  # fi
-  # [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-  # gcc
-  alias gc='/usr/local/bin/gcc-5'
-
   # wkhtml
   alias wkhtmltopdf='wkhtmltopdf --print-media-type --header-right "[date]" --header-spacing 2 --header-font-name Times --footer-center "[page]/[topage]" --footer-spacing 2 --footer-font-name Times --margin-top 12 --margin-right 5 --margin-left 5 --margin-bottom 12'
 
@@ -129,6 +125,9 @@ case ${OSTYPE} in
   ;;
 esac
 
+################################################################################
+# functions
+
 function o() {
   local cmd
   if is_osx; then
@@ -137,9 +136,9 @@ function o() {
     cmd="xdg-open"
   fi
   if [ $# -gt 0 ]; then
-    $cmd $@
+    $cmd $@ >/dev/null 2>&1 &
   else
-    $cmd .
+    $cmd . >/dev/null 2>&1 &
   fi
 }
 
@@ -149,11 +148,6 @@ function runc () {
 function runcpp () {
   clang++ $1 && shift && ./a.out $@
 }
-
-#git
-alias gref='git reflog'
-alias glog='git log --oneline --decorate --color --graph'
-
 
 function except_rm() {
   if [[ $# -eq 0 ]]; then
