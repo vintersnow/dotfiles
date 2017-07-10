@@ -119,8 +119,9 @@ case ${OSTYPE} in
   alias ll='ls -slhF --color=auto'
   alias lly='ls -slhF --color=auto --time-style=long-iso'
 
-  if [ -d ~/.Trash ]; then
-    alias rm='mv -f --backup=numbered --target-directory ~/.Trash'
+  if [ -d ~/.local/share/Trash ]; then
+    # TODO: save info
+    alias trm='mv -f --backup=numbered --target-directory ~/.local/share/Trash/files'
   fi
   ;;
 esac
