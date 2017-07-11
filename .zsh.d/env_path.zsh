@@ -12,12 +12,6 @@ export_path $HOME/bin
 export_path $HOME/go/bin
 export_path $HOME/bin
 
-# haskell
-export_path $HOME/.cabal/bin
-export_path $HOME/Library/Haskell/bin
-# egison
-export_path $HOME/.egison/bin
-
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
