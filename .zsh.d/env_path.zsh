@@ -50,3 +50,5 @@ case ${OSTYPE} in
   fi
   ;;
 esac
+
+export COWPATH=$HOME/.local/share/cows:/usr/share/cows
