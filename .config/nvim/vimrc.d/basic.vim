@@ -95,3 +95,6 @@ set matchpairs+=<:>
 
 " don't show preview window when completion
 set completeopt-=preview
+
+" show space and tabs
+set list

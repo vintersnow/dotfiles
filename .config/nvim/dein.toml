@@ -20,14 +20,14 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-
+"call airline#parts#define_function('ALE', 'ale#statusline#Count()')
+"call airline#parts#define_condition('ALE', 'exists("*ale#statusline#Count()")')
+ 
 let g:airline_section_error = airline#section#create_right(['ALE'])
-
-let g:airline_powerline_fonts = 1
-
-" unicode symbols
+" 
+" let g:airline_powerline_fonts = 1
+" 
+" " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -98,7 +98,7 @@ repo = 'kylef/apiblueprint.vim'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-  let g:polyglot_disabled = ['javascript']
+  let g:polyglot_disabled = ['javascript', 'elm']
   " vim-cpp-enhanced-highlight
   let g:cpp_class_scope_highlight = 1
 '''
@@ -110,3 +110,24 @@ hook_add = '''
 # repo = 'leafgarland/typescript-vim'
 # repo = 'octol/vim-cpp-enhanced-highlight'
 
+[[plugins]]
+repo = 'numirias/semshi'
+on_ft = 'python'
+# lazy = 0
+hook_add = '''
+" guifgは変更していない
+function MyCustomHighlights()
+  " hi semshiLocal           ctermfg=3 guifg=#ff875f " ?
+  hi semshiGlobal          ctermfg=3 guifg=#ffaf00
+  hi semshiImported        ctermfg=3 guifg=#ffaf00
+  hi semshiParameter       ctermfg=12  guifg=#5fafff
+  " hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
+  " hi semshiFree            ctermfg=218 guifg=#ffafd7 " ?
+  hi semshiBuiltin         ctermfg=13 guifg=#ff5fff
+  hi semshiAttribute       ctermfg=14  guifg=#00ffaf
+  " hi semshiSelf            ctermfg=249 guifg=#b2b2b2
+  " hi semshiUnresolved      ctermfg=226 guifg=#ffff00 cterm=underline gui=underline
+  hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=52 guibg=#d7005f
+endfunction
+autocmd FileType python call MyCustomHighlights()
+'''

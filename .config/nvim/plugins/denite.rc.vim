@@ -23,5 +23,5 @@ if executable('rg')
   
 	call denite#custom#var('grep', 'command', ['rg'])
 	call denite#custom#var('grep', 'default_opts',
-			\ ['--vimgrep', '--no-heading', '--hidden'])
+			\ ['--vimgrep', '--hidden'])
 endif

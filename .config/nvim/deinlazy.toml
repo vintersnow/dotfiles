@@ -1,4 +1,3 @@
-
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 on_path = '.*'
@@ -30,11 +29,12 @@ hook_add = '''
 repo = 'editorconfig/editorconfig-vim'
 on_path = '.*'
 hook_add = '''
-  if executable('editorconfig')
-    let g:EditorConfig_core_mode = 'external_command'
-  else
-    let g:EditorConfig_core_mode = 'python_external'
-  endif
+"  if executable('editorconfig')
+"    let g:EditorConfig_core_mode = 'external_command'
+"  else
+"    let g:EditorConfig_core_mode = 'python_external'
+"  endif
+" let g:EditorConfig_verbose = 1
 '''
 
 [[plugins]]
@@ -218,20 +218,20 @@ on_cmd = 'W3m'
 # repo = 'vim-latex/vim-latex'
 # on_ft = 'tex'
 
-[[plugins]]
-repo = 'lervag/vimtex'
-on_ft = 'tex'
-hook_add = '''
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_latexmk_background = 1
-let g:vimtex_latexmk_options = '-pdfdvi'
-if has('mac')
-  let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-else
-  let g:vimtex_view_general_viewer = 'xdg-open'
-endif
-let g:vimtex_view_general_options = '@line @pdf @tex'
-'''
+# [[plugins]]
+# repo = 'lervag/vimtex'
+# on_ft = 'tex'
+# hook_add = '''
+# let g:vimtex_latexmk_continuous = 1
+# let g:vimtex_latexmk_background = 1
+# let g:vimtex_latexmk_options = '-pdfdvi'
+# if has('mac')
+#   let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+# else
+#   let g:vimtex_view_general_viewer = 'xdg-open'
+# endif
+# let g:vimtex_view_general_options = '@line @pdf @tex'
+# '''
 
 [[plugins]]
 repo = 'sbdchd/neoformat'
@@ -266,19 +266,27 @@ hook_add = '''
 let g:ranger_map_keys = 0
 '''
 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = 'python'
-hook_add = '''
-let g:jedi#auto_initialization = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
-" let g:jedi#rename_command = '<Leader>gR'
-" let g:jedi#usages_command = '<Leader>gu'
-let g:jedi#completions_enabled = 0
-"let g:jedi#smart_auto_mappings = 1
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = 'python'
+# hook_add = '''
+# let g:jedi#auto_initialization = 0
+# let g:jedi#auto_vim_configuration = 0
+# let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
+# " let g:jedi#rename_command = '<Leader>gR'
+# " let g:jedi#usages_command = '<Leader>gu'
+# let g:jedi#completions_enabled = 0
+# "let g:jedi#smart_auto_mappings = 1
+#
+# " Unite/ref and pydoc are more useful.
+# " let g:jedi#documentation_command = '<Leader>_K'
+# " let g:jedi#auto_close_doc = 1
+# '''
 
-" Unite/ref and pydoc are more useful.
-" let g:jedi#documentation_command = '<Leader>_K'
-" let g:jedi#auto_close_doc = 1
-'''
+[[plugins]]
+repo = 'ElmCast/elm-vim'
+on_ft = 'elm'
+
+[[plugins]]
+repo = 'KabbAmine/zeavim.vim'
+on_cmd = 'Zeavim'
