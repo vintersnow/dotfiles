@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+set -eu
+
+TEM=$1
+prefix='@'
+
+num_parms=$(($# - 1))
+EXP=$(seq $num_parms | awk -v prefix=$prefix '{print "-e \"s/" prefix $1 "/$" $1 + 1 "/g\""}' | xargs)
+
+EXP="-e $(eval 'echo' "$EXP")"
+echo $EXP
+
+REP=$(echo $TEM | sed ${=EXP})
+echo "Execute: " $REP
+
+eval $REP

@@ -1,0 +1,50 @@
+#!/bin/bash
+
+gpulookup() {
+  COLOR_GREEN="\e[32m"
+  COLOR_OFF="\e[m"
+
+  ph='$'
+  ph0='$0'
+  ph1='$1'
+  ph2='$2'
+  phi='$i'
+  NF='$NF'
+  gid='$gid'
+  pids='$pids'
+  for r in $@
+  do
+    echo -e "$COLOR_GREEN"$r"$COLOR_OFF"
+    ssh -q $r bash << EOF
+    # print gpu name and num
+    nvidia-smi -L | awk '{print substr($ph0, 8, index($ph0, "(")-8) "* " NR}' | tail -n1
+
+    # print gpu usage
+    gpu_user() {
+      for gid in $ph(seq 0 7); do
+        pids=($ph(nvidia-smi -q -d PIDS -i $gid | grep 'Process ID' | sed -e 's/[^0-9]//g'))
+        if [ $ph{#pids[@]} -ne 0 ]; then
+          ps h -o ruser $ph{pids[@]} | sort | uniq | awk -v gid=$gid '{print $ph1 " " gid}'
+        fi
+      done
+    }
+    gpu_user | sort | awk '{users[$ph1] = users[$ph1] $ph2 ","}END{for (i in users) {print i "\t" users[i]}}' | column -t
+EOF
+    echo -e '----------------------------'
+  done
+}
+
+print_help() {
+  CMDNAME=`basename $0`
+  echo "Usage: $CMDNAME [-h] servername [...]" 1>&2
+}
+
+while getopts h OPT
+do
+  case $OPT in
+    'h') print_help
+      exit 0 ;;
+  esac
+done
+
+gpulookup $@

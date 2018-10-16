@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# set -eu
+
+gpu_exisit() {
+  gpu_id=$1
+  nvidia-smi -i $gpu_id > /dev/null 2>&1
+  return $?
+}
+
+gpu_pids() {
+  gpu_ids=$(cat -)
+  for id in $gpu_ids; do
+    nvidia-smi -q -d PIDS -i $id | grep 'Process ID' | sed -e 's/[^0-9]//g'
+  done
+}
+
+gpu_user() {
+  for gid in $(seq 0 7); do
+    pids=($(echo $gid | gpu_pids))
+    if [ ${#pids[@]} -ne 0 ]; then
+      ps h -o ruser ${pids[@]} | sort | uniq | awk -v gid=$gid '{print $1 " " gid}'
+    fi
+  done
+}
+
+gpu_info() {
+  for gid in $(seq 0 7); do
+    if ! gpu_exisit $gid; then
+      continue
+    fi
+    pids=$(echo $gid | gpu_pids)
+    echo $gid
+    ps h -o ruser,args ${pids[@]}
+    echo '-------------------------------------'
+  done
+}
+
+
+print_summary() {
+  verbose=${1:-false}
+  (echo "USER GPU"
+   gpu_user | sort | awk '{users[$1] = users[$1] $2 ","}END{for (i in users) {print i "\t" users[i]}}'
+  ) | column -t
+
+  if $verbose ; then
+    echo '-------------------------------------'
+    gpu_info
+  fi
+}
+
+print_help() {
+  CMDNAME=`basename $0`
+  echo "Usage: $CMDNAME [-h] [-v]" 1>&2
+}
+
+while getopts hv OPT
+do
+  case $OPT in
+    'h') print_help
+      exit 0 ;;
+    'v') print_summary true
+      exit 0 ;;
+     *  ) print_help
+      exit 1 ;;
+  esac
+done
+
+print_summary
