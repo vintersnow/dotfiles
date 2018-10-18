@@ -33,6 +33,8 @@ else
   alias v='vim'
 fi
 
+alias countinode='sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n'
+
 ################################################################################
 
 # git
@@ -64,11 +66,6 @@ case ${OSTYPE} in
     alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
   fi
 
-  #emacs deamon
-  # alias E='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-  # alias emacs="TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
-  # alias ekill="emacsclient -e '(kill-emacs)'"
-
   #purge
   alias purge='sudo purge'
 
@@ -78,11 +75,6 @@ case ${OSTYPE} in
 
   #wine
   alias wine='~/Applications/wine/bin/nihonshu '
-
-  #brew
-  # alias brew='env PATH=${PATH/\/user\/local\/var\/\.pyenv\/shims:/} brew'
-
-  #alias gdb='/usr/local/Cellar/gdb/7.9/bin/gdb'
 
   # Go
   alias gob='go build'
@@ -149,6 +141,9 @@ function runc () {
 function runcpp () {
   clang++ $1 && shift && ./a.out $@
 }
+function rung () {
+  g++ $1 && shift && ./a.out $@
+}
 
 function except_rm() {
   if [[ $# -eq 0 ]]; then
@@ -173,3 +168,4 @@ function prime() {
 function hilbert() {
   l='L${r}FR${l}F${l}RF${r}L' r='R${l}FL${r}F${r}LF${l}R' eval eval eval eval eval eval l= r= eval echo '$l' | { read a; b=${a%%F*}; echo "from turtle import *;speed(0);pensize(2);ms=min(screensize())*0.8;l=2*ms/(2**${#b}-1);up();setpos(-ms,-ms);down();${a}done()"; } | sed 's/L/lt(90);/g;s/R/rt(90);/g;s/F/fd(l);/g' | python
 }
+

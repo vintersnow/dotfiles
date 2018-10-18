@@ -18,3 +18,6 @@ export_path $HOME/Library/Haskell/bin
 
 # egison
 export_path $HOME/.egison/bin
+
+# python
+export PIPENV_VENV_IN_PROJECT=true 
