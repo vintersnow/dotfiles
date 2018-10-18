@@ -18,16 +18,25 @@ build = 'make'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'w0rp/ale'
+on_event = 'BufEnter'
+if = 'has("nvim")'
+hook_source = '''
+source  ~/.config/nvim/plugins/ale.rc.vim
+'''
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
 "call airline#parts#define_function('ALE', 'ale#statusline#Count()')
 "call airline#parts#define_condition('ALE', 'exists("*ale#statusline#Count()")')
+"let g:airline_section_error = airline#section#create_right(['ALE'])
+let g:airline#extensions#ale#enabled = 1
  
-let g:airline_section_error = airline#section#create_right(['ALE'])
-" 
 " let g:airline_powerline_fonts = 1
-" 
+ 
 " " unicode symbols
+let g:airline_symbols = {}
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -63,16 +72,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-# hook_add = '''
-#   set background=dark
-#   " lazy seting
-#   if has('nvim')
-#     autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
-#   endif
-# '''
-
-# [[plugins]]
-# repo = 'edkolev/tmuxline.vim'
 
 # [[plugins]]
 # repo = 'Yggdroot/indentLine'
@@ -89,8 +88,6 @@ repo = 'w0ng/vim-hybrid'
 
 [[plugins]] # js syntax
 repo = 'jelera/vim-javascript-syntax'
-# repo = 'othree/yajs.vim'
-# repo = 'pangloss/vim-javascript'
 
 [[plugins]]
 repo = 'kylef/apiblueprint.vim'
@@ -102,9 +99,7 @@ hook_add = '''
   " vim-cpp-enhanced-highlight
   let g:cpp_class_scope_highlight = 1
 '''
-
 # polyglot includes these
-#
 # repo = 'cespare/vim-toml'
 # repo = 'rust-lang/rust.vim'
 # repo = 'leafgarland/typescript-vim'

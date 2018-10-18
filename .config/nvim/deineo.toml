@@ -12,13 +12,6 @@
 # '''
 
 [[plugins]]
-repo = 'w0rp/ale'
-on_event = 'BufEnter'
-hook_source = '''
-source  ~/.config/nvim/plugins/ale.rc.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 if = "has('nvim')"
@@ -30,16 +23,6 @@ let g:deoplete#auto_complete_delay=50
 hook_source = '''
   source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
-
-# [[plugins]]
-# # usefull but too slow
-# repo = 'ternjs/tern_for_vim'
-# lazy = 0
-# on_ft = 'javascript'
-# hook_add = '''
-#   let tern#is_show_argument_hints_enabled = 1
-# '''
-# build = 'npm install'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'

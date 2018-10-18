@@ -94,11 +94,6 @@ hook_add = '''
 repo = 'Shougo/unite-outline'
 on_source = 'unite.nvim'
 
-# [[plugins]]
-# repo = 'Shougo/neoinclude.vim'
-# # on_if = 1 # this make deoplete crash
-# on_ft = ['c', 'cpp', 'cc']
-
 [[plugins]]
 # to use unite file_mru
 repo = 'Shougo/neomru.vim'
@@ -129,6 +124,10 @@ on_cmd = ['VimFiler', 'VimFilerExplorer']
 hook_add = '''
   let g:vimfiler_as_default_explorer = 1
 '''
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+on_event = 'Defx'
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
@@ -187,14 +186,14 @@ repo = 'tyru/open-browser.vim'
 repo = 'mattn/gist-vim'
 on_cmd = 'Gist'
 
-[[plugins]]
-repo = 'mattn/webapi-vim'
-on_source = ['slack-memo-vim', 'gist-vim']
-
-[[plugins]]
-repo = 'tsuyoshiwada/slack-memo-vim'
-depends = 'webapi-vim'
-on_cmd = ['SlackMemoPost', 'SlackMemoList']
+# [[plugins]]
+# repo = 'mattn/webapi-vim'
+# on_source = ['slack-memo-vim', 'gist-vim']
+#
+# [[plugins]]
+# repo = 'tsuyoshiwada/slack-memo-vim'
+# depends = 'webapi-vim'
+# on_cmd = ['SlackMemoPost', 'SlackMemoList']
 
 [[plugins]]
 repo = 'takac/vim-hardtime'
@@ -233,38 +232,31 @@ on_cmd = 'W3m'
 # let g:vimtex_view_general_options = '@line @pdf @tex'
 # '''
 
-[[plugins]]
-repo = 'sbdchd/neoformat'
-on_cmd = 'Neoformat'
+# [[plugins]]
+# repo = 'sbdchd/neoformat'
+# on_cmd = 'Neoformat'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
 
-[[plugins]]
-repo = 'glidenote/memolist.vim'
-on_cmd = ['MemoNew', 'MemoList', 'MemoGrep']
-hook_add = '''
-let g:memolist_memo_suffix = "md"
-
-" let g:memolist_qfixgrep = 1
-
-let g:memolist_denite = 1
-" let g:memolist_denite_option = "-auto-preview"
-
-let g:memolist_prompt_tags = 0
-let g:memolist_prompt_categories = 1
-
-let g:memolist_delimiter_yaml_start = "---"
-let g:memolist_delimiter_yaml_end  = "---"
-'''
-
-[[plugins]]
-repo = 'francoiscabrol/ranger.vim'
-on_cmd = 'Ranger'
-hook_add = '''
-let g:ranger_map_keys = 0
-'''
+# [[plugins]]
+# repo = 'glidenote/memolist.vim'
+# on_cmd = ['MemoNew', 'MemoList', 'MemoGrep']
+# hook_add = '''
+# let g:memolist_memo_suffix = "md"
+#
+# " let g:memolist_qfixgrep = 1
+#
+# let g:memolist_denite = 1
+# " let g:memolist_denite_option = "-auto-preview"
+#
+# let g:memolist_prompt_tags = 0
+# let g:memolist_prompt_categories = 1
+#
+# let g:memolist_delimiter_yaml_start = "---"
+# let g:memolist_delimiter_yaml_end  = "---"
+# '''
 
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
