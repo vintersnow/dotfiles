@@ -20,5 +20,3 @@ alias any='anyframe-widget-select-widget'
 alias gh='anyframe-widget-cd-ghq-repository'
 
 }
-
-anyframe_setup
