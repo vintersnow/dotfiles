@@ -11,9 +11,9 @@ zplug "vintersnow/anyframe", lazy:true
 
 zplug "marzocchi/zsh-notify", if:"has 'terminal-notifier' || has 'notify-send'"
 
-zplug "Tarrasch/zsh-colors"
+# zplug "Tarrasch/zsh-colors"
 
-# # zplug "lukechilds/zsh-nvm"
+zplug "lukechilds/zsh-nvm"
 
 zplug "greymd/tmux-xpanes", lazy:true, as:command
 
@@ -27,3 +27,6 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 #     echo; zplug install
 #   fi
 # fi
+if ! zplug check --verbose; then
+   zplug install
+fi
