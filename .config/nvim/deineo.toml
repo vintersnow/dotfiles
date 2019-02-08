@@ -11,6 +11,14 @@
 # let g:tern#arguments = ['--persistent']
 # '''
 
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# if = "has('nvim')"
+# on_event = 'BufEnter'
+# hook_add = '''
+# source ~/.config/nvim/plugins/coc.rc.vim
+# '''
+
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
@@ -24,10 +32,10 @@ hook_source = '''
   source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-build = 'make'
+# [[plugins]]
+# repo = 'zchee/deoplete-go'
+# on_ft = 'go'
+# build = 'make'
 
 # [[plugins]]
 # repo = 'tweekmonster/deoplete-clang2'
@@ -38,9 +46,9 @@ build = 'make'
 # endif
 # '''
 
-[[plugins]]
-repo = 'zchee/deoplete-zsh'
-on_ft = ['sh', 'zsh']
+# [[plugins]]
+# repo = 'zchee/deoplete-zsh'
+# on_ft = ['sh', 'zsh']
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
@@ -53,3 +61,23 @@ source  ~/.config/nvim/plugins/lang-client.rc.vim
 '''
 build = 'bash install.sh'
 rev = 'next'
+
+# [[plugins]]
+# repo = 'tbodt/deoplete-tabnine'
+# if = "has('nvim')"
+# depends = 'deoplete'
+# on_event = 'BufEnter'
+# build = 'bash install.sh'
+
+# [[plugins]]
+# repo = 'prabirshrestha/async.vim'
+# on_event = 'BufEnter'
+#
+# [[plugins]]
+# repo = 'prabirshrestha/vim-lsp'
+# if = "has('nvim')"
+# # depends = 'async.vim'
+# on_event = 'BufEnter'
+# hook_add = '''
+# source  ~/.config/nvim/plugins/lsp.rc.vim
+# '''

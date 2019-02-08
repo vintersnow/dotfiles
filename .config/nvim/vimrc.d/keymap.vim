@@ -81,6 +81,9 @@ nnoremap <silent> [Leader]n :<C-u>Denite<Space>
 " quickrun
 nmap [Leader]r <Plug>(quickrun)
 
+" winteract
+nmap gw :InteractiveWindow<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " filetype
 augroup filetype_keymap
@@ -95,7 +98,7 @@ augroup filetype_keymap
   autocmd FileType javascript nnoremap <buffer> <C-[> <C-o>
 
   " python
-  autocmd FileType python nnoremap <silent> <buffer> <C-]> :<C-u>call<Space>jedi#goto()<CR>
-  autocmd FileType python nnoremap <silent> <buffer> [Leader]K :<C-u>call<Space>jedi#goto_definitions_command()<CR>
-  autocmd FileType python nnoremap <silent> <buffer> [Leader]n :<C-u>call<Space>jedi#usages()<CR>
+  "autocmd FileType python nnoremap <silent> <buffer> <C-]> :<C-u>call<Space>jedi#goto()<CR>
+  "autocmd FileType python nnoremap <silent> <buffer> [Leader]K :<C-u>call<Space>jedi#goto_definitions_command()<CR>
+  "autocmd FileType python nnoremap <silent> <buffer> [Leader]n :<C-u>call<Space>jedi#usages()<CR>
 augroup END

@@ -1,5 +1,5 @@
-[[plugins]]
-repo = 'moll/vim-node'
+# [[plugins]]
+# repo = 'moll/vim-node'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
@@ -21,7 +21,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'w0rp/ale'
 on_event = 'BufEnter'
 if = 'has("nvim")'
-hook_source = '''
+hook_add = '''
 source  ~/.config/nvim/plugins/ale.rc.vim
 '''
 
@@ -32,9 +32,9 @@ hook_add = '''
 "call airline#parts#define_condition('ALE', 'exists("*ale#statusline#Count()")')
 "let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline#extensions#ale#enabled = 1
- 
+
 " let g:airline_powerline_fonts = 1
- 
+
 " " unicode symbols
 let g:airline_symbols = {}
 let g:airline_left_sep = '»'
@@ -83,6 +83,12 @@ repo = 'w0ng/vim-hybrid'
 #   let g:indentLine_conceallevel=1
 # '''
 
+[[plugins]]
+repo = 'romgrk/winteract.vim'
+
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
+
 ##################################################################
 # syntax
 
@@ -126,3 +132,6 @@ function MyCustomHighlights()
 endfunction
 autocmd FileType python call MyCustomHighlights()
 '''
+
+[[plugins]]
+repo = 'google/vim-jsonnet'

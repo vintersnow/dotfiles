@@ -94,7 +94,10 @@ set noshowmode
 set matchpairs+=<:>
 
 " don't show preview window when completion
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt=menuone
 
 " show space and tabs
 set list
+
+set encoding=UTF-8
