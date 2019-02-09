@@ -44,7 +44,7 @@ alias gref='git reflog'
 alias glog='git log --oneline --decorate --color --graph'
 
 # fzf
-alias fzf=fzf-tmux
+# alias fzf=fzf-tmux
 
 alias labmem='ssh vega command ../hnakazawa/labmem/labmem.py'
 

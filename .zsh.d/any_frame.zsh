@@ -1,7 +1,8 @@
 anyframe_setup() {
 
 if has "fzf-tmux"; then
- zstyle ":anyframe:selector:" use fzf-tmux
+ # zstyle ":anyframe:selector:" use fzf-tmux
+ zstyle ":anyframe:selector:" use fzf
 elif has "fzf"; then
  zstyle ":anyframe:selector:" use fzf
 elif has "peco"; then
@@ -20,3 +21,4 @@ alias any='anyframe-widget-select-widget'
 alias gh='anyframe-widget-cd-ghq-repository'
 
 }
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border --inline-info'
