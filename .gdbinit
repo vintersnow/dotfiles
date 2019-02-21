@@ -1,1 +1,0 @@
-source ~/peda/peda.py

@@ -19,13 +19,18 @@ if has('vim_starting')
   "   set runtimepath+=~/.config/nvim/
   "   " runtime! vimrc.d/*.vim
   " endif
-  
+ 
   " plugins
   execute 'source' expand('$BASE/plugins.vim')
 
   " colorscheme
   set background=dark
-  colorscheme hybrid
+  try
+      " colorscheme mayormaynotexist
+    colorscheme hybrid
+  catch /^Vim\%((\a\+)\)\=:E185/
+    " deal with it
+  endtry
 
   execute 'source' expand('$BASE/vimrc.d/basic.vim')
   execute 'source' expand('$BASE/vimrc.d/keymap.vim')
@@ -36,7 +41,6 @@ if has('vim_starting')
     execute 'source' expand('$BASE/pw.vim')
   endif
 endif
-
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
 filetype indent plugin on

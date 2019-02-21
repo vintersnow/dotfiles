@@ -1,11 +1,13 @@
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-on_path = '.*'
+# on_path = '.*'
+on_event = 'BufWrite'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
-on_path = '.*'
-on_i = 1
+# on_path = '.*'
+# on_i = 1
+on_event = 'BufEnter'
 hook_add = '''
 let g:AutoPairsMultilineClose = 0
 '''
@@ -27,7 +29,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
-on_path = '.*'
+# on_path = '.*'
+on_i = 1
 hook_add = '''
 "  if executable('editorconfig')
 "    let g:EditorConfig_core_mode = 'external_command'
@@ -94,16 +97,16 @@ hook_source = 'call echodoc#enable()'
 # repo = 'Shougo/unite-outline'
 # on_source = 'unite.nvim'
 
-[[plugins]]
-# to use unite file_mru
-repo = 'Shougo/neomru.vim'
-on_if = 1
-on_source = ['unite.vim', 'denite.nvim']
+# [[plugins]]
+# # to use unite file_mru
+# repo = 'Shougo/neomru.vim'
+# on_if = 1
+# on_source = ['unite.vim', 'denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'BufEnter'
+on_event = 'InsertCharPre'
 on_ft = 'snippet'
 hook_source='''
   source ~/.config/nvim/plugins/neosnippet.rc.vim
@@ -111,9 +114,9 @@ hook_source='''
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
-on_if = 1
+# on_if = 1
 on_event = 'TextYankPost'
-on_source = ['unite.vim', 'denite.nvim']
+on_source = ['denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -291,9 +294,9 @@ on_cmd = 'HardTimeOn'
 # repo = 'KabbAmine/zeavim.vim'
 # on_cmd = 'Zeavim'
 
-[[plugins]]
-repo = 'plytophogy/vim-virtualenv'
-on_ft = 'python'
+# [[plugins]]
+# repo = 'plytophogy/vim-virtualenv'
+# on_ft = 'python'
 
 # [[plugins]]
 # repo = 'PieterjanMontens/vim-pipenv'

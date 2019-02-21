@@ -10,9 +10,9 @@ let g:dein#install_log_filename = '~/.neovim-dein-install.log'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
-[[plugins]]
-repo = 'Shougo/vimproc'
-build = 'make'
+# [[plugins]]
+# repo = 'Shougo/vimproc'
+# build = 'make'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -92,8 +92,8 @@ repo = 'romgrk/winteract.vim'
 ##################################################################
 # syntax
 
-[[plugins]] # js syntax
-repo = 'jelera/vim-javascript-syntax'
+# [[plugins]] # js syntax
+# repo = 'jelera/vim-javascript-syntax'
 
 [[plugins]]
 repo = 'kylef/apiblueprint.vim'
