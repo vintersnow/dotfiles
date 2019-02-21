@@ -6,33 +6,41 @@ execute 'source' expand('$BASE/myautocmd.vim')
 if has('mac')
   let g:python_host_prog = '/usr/local/bin/python2'
   let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
+else
+  let g:python_host_prog = '/usr/bin/python2'
+  " TODO: dynamic versioning
+  " slow: echo -n "$(pyenv root)/versions/$(pyenv global)/bin/python"
+  let g:python3_host_prog = '/home/vinter/.pyenv/versions/3.6.6/bin/python'
 endif
 
 if has('vim_starting')
   " settings
-  if isdirectory(expand('~/.config/nvim'))
-    set runtimepath+=~/.config/nvim/
-    " runtime! vimrc.d/*.vim
-  endif
-  
+  " if isdirectory(expand('~/.config/nvim'))
+  "   set runtimepath+=~/.config/nvim/
+  "   " runtime! vimrc.d/*.vim
+  " endif
+ 
   " plugins
   execute 'source' expand('$BASE/plugins.vim')
 
   " colorscheme
   set background=dark
-  colorscheme hybrid
+  try
+      " colorscheme mayormaynotexist
+    colorscheme hybrid
+  catch /^Vim\%((\a\+)\)\=:E185/
+    " deal with it
+  endtry
 
   execute 'source' expand('$BASE/vimrc.d/basic.vim')
   execute 'source' expand('$BASE/vimrc.d/keymap.vim')
   execute 'source' expand('$BASE/vimrc.d/lang_setting.vim')
-
-
+  
   " secret
   if filereadable(expand('$BASE/pw.vim'))
     execute 'source' expand('$BASE/pw.vim')
   endif
 endif
-
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.
 filetype indent plugin on

@@ -28,3 +28,7 @@ let g:quickrun_config['tex'] = {
 \                      ],
 \ 'exec': '%c %o %a %s',
 \}
+
+let g:quickrun_config['rust'] = {'exec' : 'cargo run'}
+
+let g:quickrun_config['cpp'] = { 'command': 'g++', 'cmdopt': '-std=c++11 -Wall -Wextra' }
