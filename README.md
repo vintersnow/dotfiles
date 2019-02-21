@@ -6,10 +6,11 @@ my dotfiles
 ```
 git clone git@github.com:vintersnow/dotfiles.git .dotfiles
 cd .dotfiles
-make install
+make deploy
 ```
 
 # command
+`Broken`
 
 + make init: initialization for the first time.
 + make deploy: copy dot files to home directory.
