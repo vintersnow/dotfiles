@@ -4,7 +4,8 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'python': ['python',  '-m', 'pyls', '--log-file', '/tmp/pyls.log'],
     \ 'cpp': ['cquery', '--language-server', '--log-file=/tmp/cq.log'],
-    \ 'javascript.jsx': ['/usr/bin/javascript-typescript-stdio']
+    \ 'javascript.jsx': ['/usr/bin/javascript-typescript-stdio'],
+    \ 'java': ['/home/vinter/bin/jdtls', '-data', getcwd()],
     \ }
 
     " \ 'go': ['go-langserver'],

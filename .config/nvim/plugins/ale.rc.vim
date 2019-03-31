@@ -19,9 +19,9 @@ let g:ale_linters = {
 \   'markdown': ['textlint'],
 \}
 
-let g:ale_fixers = {
-    \ 'python': ['autopep8', 'black'],
-    \ }
+" let g:ale_fixers = {
+"    \ 'python': ['autopep8', 'black'],
+"    \ }
 
 " 各ツールの実行オプションを変更してPythonパスを固定
 let g:ale_python_flake8_executable = g:python3_host_prog
