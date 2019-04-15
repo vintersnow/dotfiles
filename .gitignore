@@ -25,11 +25,11 @@ pw.vim
 pw.zsh
 
 #.config
-.config/*
-!.config/nvim
-!.config/fish
-!.config/git
-!.config/peco
+# .config/*
+# !.config/nvim
+# !.config/fish
+# !.config/git
+# !.config/peco
 .config/fish/fishd.*
 
 .emacs.d/games

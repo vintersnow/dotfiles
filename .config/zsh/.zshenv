@@ -1,0 +1,21 @@
+## 重複パスを登録しない
+typeset -U path PATH cdpath fpath manpath
+
+# setting for zprof restart zsh
+# zmodload zsh/zprof && zprof
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.cache
+
+# zsh
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+
+# sqlite
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+
+# vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+
+# PATH
+export PATH="$HOME/.cargo/bin:$PATH"
