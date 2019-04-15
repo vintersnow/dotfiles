@@ -1,7 +1,7 @@
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'python': ['python',  '-m', 'pyls', '--log-file', '/tmp/pyls.log'],
     \ 'cpp': ['cquery', '--language-server', '--log-file=/tmp/cq.log'],
     \ 'javascript.jsx': ['/usr/bin/javascript-typescript-stdio'],

@@ -309,3 +309,7 @@ on_ft = 'tex'
 hook_add = '''
 source  ~/.config/nvim/plugins/vimtex.rc.vim
 '''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
