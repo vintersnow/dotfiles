@@ -53,8 +53,8 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_signs_error = {'text': '✗'}
 let g:lsp_signs_warning = {'text': '‼'}
 
-nnoremap <silent> <C-K>h :LspHover<CR>
-nnoremap <silent> <C-K>d :LspDefinition<CR>
-nnoremap <silent> <C-K>r :LspRename<CR>
+nnoremap <silent> <C-L>h :LspHover<CR>
+nnoremap <silent> <C-L>d :LspDefinition<CR>
+nnoremap <silent> <C-L>r :LspRename<CR>
 nnoremap <silent> <F3> :LspDocumentFormat<CR>
 

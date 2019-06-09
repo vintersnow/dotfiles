@@ -111,7 +111,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 '''
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete-neosnippet.vim'h
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 depends = 'neosnippet.vim'
 hook_add = '''
 call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
