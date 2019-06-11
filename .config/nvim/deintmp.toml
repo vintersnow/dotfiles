@@ -1,4 +1,0 @@
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-if = "has('nvim')"
-on_event = 'BufEnter'
