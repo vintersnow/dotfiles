@@ -4,8 +4,9 @@ let $BASE = '~/.config/nvim'
 execute 'source' expand('$BASE/myautocmd.vim')
 
 if has('mac')
-  let g:python_host_prog = '/usr/local/bin/python2'
-  let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
+  "let g:python_host_prog = '/usr/local/bin/python2'
+  "let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
+  let g:python3_host_prog = '~/.pyenv/shims/python3'
 else
   let g:python_host_prog = '/usr/bin/python2'
   " TODO: dynamic versioning

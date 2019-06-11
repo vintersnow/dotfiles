@@ -103,14 +103,14 @@ hook_source = 'call echodoc#enable()'
 # on_if = 1
 # on_source = ['unite.vim', 'denite.nvim']
 
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
-on_ft = 'snippet'
-hook_source='''
-  source ~/.config/nvim/plugins/neosnippet.rc.vim
-'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# depends = ['neosnippet-snippets', 'context_filetype.vim']
+# on_event = 'InsertCharPre'
+# on_ft = 'snippet'
+# hook_source='''
+#   source ~/.config/nvim/plugins/neosnippet.rc.vim
+# '''
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
@@ -313,3 +313,12 @@ source  ~/.config/nvim/plugins/vimtex.rc.vim
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+'''
+on_event = 'InsertCharPre'

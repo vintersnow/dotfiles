@@ -73,50 +73,67 @@
 # repo = 'prabirshrestha/async.vim'
 # on_event = 'BufEnter'
 
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-if = "has('nvim')"
-depends = 'async.vim'
-on_event = 'BufEnter'
-hook_add = '''
-source  ~/.config/nvim/plugins/lsp.rc.vim
-'''
+# [[plugins]]
+# repo = 'prabirshrestha/vim-lsp'
+# if = "has('nvim')"
+# depends = 'async.vim'
+# on_event = 'BufEnter'
+# hook_add = '''
+# source  ~/.config/nvim/plugins/lsp.rc.vim
+# '''
 
 # [[plugins]]
 # repo = 'lighttiger2505/deoplete-vim-lsp'
 # depends = ['vim-lsp', 'deoplete.nvim']
 # on_event = 'BufEnter'
 
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-'''
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete.vim'
+# hook_add = '''
+# inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+# inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+# inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+# '''
+#
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-lsp.vim'
+# depends = 'asyncomplete.vim'
+
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-file.vim'
+# hook_add = '''
+# call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+#     \ 'name': 'file',
+#     \ 'whitelist': ['*'],
+#     \ 'priority': 10,
+#     \ 'completor': function('asyncomplete#sources#file#completor')
+#     \ }))
+# '''
+
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+# depends = 'neosnippet.vim'
+# hook_add = '''
+# call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+#     \ 'name': 'neosnippet',
+#     \ 'whitelist': ['*'],
+#     \ 'priority': 10,
+#     \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+#     \ }))
+# '''
+
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-ultisnips.vim'
+# depends = ['ultisnips', 'asyncomplete.vim']
+# hook_add = '''
+# call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+# \ 'name': 'ultisnips',
+# \ 'whitelist': ['*'],
+# \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+# \ }))
+# '''
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-depends = 'asyncomplete.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-file.vim'
-hook_add = '''
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
-    \ 'name': 'file',
-    \ 'whitelist': ['*'],
-    \ 'priority': 10,
-    \ 'completor': function('asyncomplete#sources#file#completor')
-    \ }))
-'''
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-neosnippet.vim'h
-depends = 'neosnippet.vim'
-hook_add = '''
-call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
-    \ 'name': 'neosnippet',
-    \ 'whitelist': ['*'],
-    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
-    \ }))
-'''
+repo = 'neoclide/coc.nvim'
+rev = "*"
+build = './install.sh'

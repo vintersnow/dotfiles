@@ -135,6 +135,7 @@ if is-at-least 4.3.11; then
   zstyle ":chpwd:*" recent-dirs-max 2000
   zstyle ":chpwd:*" recent-dirs-default true
   zstyle ":completion:*" recent-dirs-insert always
+  zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 fi
 
 # for deoplete-zsh
