@@ -41,5 +41,10 @@ zplugin ice wait'0' lucid
 zplugin light "lukechilds/zsh-nvm"
 
 ##################################
+### other
+# zplugin light "zdharma/zui"
+# zplugin light "zdharma/zplugin-crasis"
+
+##################################
 ### Prompt
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light "sindresorhus/pure"

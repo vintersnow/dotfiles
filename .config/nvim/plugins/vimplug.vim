@@ -46,8 +46,8 @@ source $PLUGIN_BASE/rc/ultisnips.rc.vim
 
 " nvim
 if has('nvim')
+  source $PLUGIN_BASE/rc/coc.rc.vim
   Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 endif
 
 call plug#end()
-
