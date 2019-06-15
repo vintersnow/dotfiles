@@ -4,7 +4,7 @@ export_path /usr/local/heroku/bin
 [[ -s "/Users/vinter/.gvm/scripts/gvm" ]] && source "/Users/vinter/.gvm/scripts/gvm"
 
 ### rust
-export RUST_SRC_PATH=~/Projects/stuff/Rust/rust/src/
+export RUST_SRC_PATH=''
 if [ -f ~/.cargo/env ]; then
   source ~/.cargo/env
 fi

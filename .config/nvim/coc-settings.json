@@ -1,3 +1,20 @@
 {
-  "coc.preferences.timeout": 5000
+  "python.jediEnabled": false,
+  "diagnostic.virtualText": true,
+  "rust-client.trace.server": "verbose",
+  "rust-client.channel": "stable",
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "trace.server": "verbose",
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": "/tmp/ccls"
+         }
+       },
+       "disableDiagnostics": true
+    }
+  }
 }

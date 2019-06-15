@@ -33,3 +33,5 @@ pw.zsh
 .config/fish/fishd.*
 
 .emacs.d/games
+
+.chpwd-recent-dirs

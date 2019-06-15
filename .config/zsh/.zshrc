@@ -26,7 +26,7 @@ if versioncompare $ZSH_VERSION "5.3.0"; then
   fi
 
   # load local setting
-  if [ -f "$ZSHHOME/.zsh.local" ]; then
+  if [ -f "$HOME/.zsh.local" ]; then
     zplugin snippet "$HOME/.zsh.local"
   fi
   

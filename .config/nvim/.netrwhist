@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/vinter/Projects/tmp/vim-startup/start'
+let g:netrw_dirhist_2='/Users/kazyasud/.config/nvim'
+let g:netrw_dirhist_3='/Users/kazyasud/.dotfiles/.config/nvim/plugins/rc'
