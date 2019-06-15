@@ -1,6 +1,6 @@
 [user]
-	name = kazuhiko yasuda
-	email = kazyasud@yahoo-corp.jp
+	name = vinter
+	email = ankasandora@gmail.com
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
