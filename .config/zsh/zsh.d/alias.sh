@@ -150,7 +150,11 @@ function runcpp () {
   clang++ $1 && shift && ./a.out $@
 }
 function rung () {
-  g++ $1 && shift && ./a.out $@
+  if has 'g++-9'; then
+    g++-9 $1 && shift && ./a.out $@
+  else
+    g++ $1 -Wc++14-extensions && shift && ./a.out $@
+  fi
 }
 
 function except_rm() {

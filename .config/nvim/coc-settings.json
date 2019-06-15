@@ -13,7 +13,8 @@
          "cache": {
            "directory": "/tmp/ccls"
          }
-       }
+       },
+       "disableDiagnostics": true
     }
   }
 }
