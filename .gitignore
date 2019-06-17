@@ -35,3 +35,5 @@ pw.zsh
 .emacs.d/games
 
 .chpwd-recent-dirs
+
+.config/git/config
