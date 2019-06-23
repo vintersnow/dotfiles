@@ -150,10 +150,13 @@ function runcpp () {
   clang++ $1 && shift && ./a.out $@
 }
 function rung () {
+  OPT='-DLOCAL '
   if has 'g++-9'; then
-    g++-9 $1 && shift && ./a.out $@
+    g++-9 $OPT $1 && shift && ./a.out $@
+  elif has 'clang++'; then
+    clang++ $OPT -Wc++14-extensions $1 && shift && ./a.out $@
   else
-    g++ $1 -Wc++14-extensions && shift && ./a.out $@
+    g++ $OPT $1 && shift && ./a.out $@
   fi
 }
 
