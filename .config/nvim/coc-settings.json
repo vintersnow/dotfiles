@@ -13,6 +13,11 @@
            "directory": "/tmp/ccls"
          }
        }
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
     }
   }
 }
