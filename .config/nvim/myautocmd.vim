@@ -5,4 +5,5 @@ augroup MyAutoCmd
 
   " シェルスクリプト１行実行
   autocmd FileType sh :noremap R :.w !$SHELL<Return>
+
 augroup END

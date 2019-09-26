@@ -41,6 +41,7 @@ if has('vim_starting')
   if filereadable(expand('$BASE/pw.vim'))
     execute 'source' expand('$BASE/pw.vim')
   endif
+
 endif
 
 " allow intelligent auto-indenting for each filetype, and for plugins that are filetype specific.

@@ -45,6 +45,8 @@ source $PLUGIN_BASE/rc/ultisnips.rc.vim
 Plug 'pseewald/vim-anyfold'
 source $PLUGIN_BASE/rc/anyfold.rc.vim
 
+Plug 'Shougo/denite.nvim', { 'on': 'Denite' }
+source $PLUGIN_BASE/rc/denite.rc.vim
 
 " filer
 
