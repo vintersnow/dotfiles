@@ -42,6 +42,10 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 source $PLUGIN_BASE/rc/ultisnips.rc.vim
 
+Plug 'pseewald/vim-anyfold'
+source $PLUGIN_BASE/rc/anyfold.rc.vim
+
+
 " filer
 
 " nvim
