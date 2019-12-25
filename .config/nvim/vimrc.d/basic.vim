@@ -12,7 +12,7 @@ filetype plugin indent off
 syntax on
 
 " max column for highlighting
-set synmaxcol=200
+set synmaxcol=500
 
 " disable highlighting when searching
 set nohlsearch
@@ -25,7 +25,8 @@ hi CursorLine cterm=None ctermbg=235 ctermfg=red
 
 " use true color
 if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  set termguicolors
 
   set inccommand=nosplit
   set clipboard+=unnamedplus

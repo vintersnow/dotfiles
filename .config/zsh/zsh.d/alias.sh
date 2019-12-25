@@ -71,7 +71,7 @@ case ${OSTYPE} in
     alias lla='gls -salhF --color=auto'
     alias lly='gls -slhF --color=auto --time-style=long-iso'
 
-    # alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
+    alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
   fi
 
   #purge

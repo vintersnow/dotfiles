@@ -48,12 +48,21 @@ source $PLUGIN_BASE/rc/anyfold.rc.vim
 Plug 'Shougo/denite.nvim', { 'on': 'Denite' }
 source $PLUGIN_BASE/rc/denite.rc.vim
 
+" Plug 'szymonmaszke/vimpyter'
+" Plug 'bfredl/nvim-ipy'
+
+" Markdown
+let g:vim_markdown_new_list_item_indent=1
+let g:vim_markdown_new_list_item_indent = 4
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+
 " filer
 
 " nvim
 if has('nvim')
   source $PLUGIN_BASE/rc/coc.rc.vim
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 call plug#end()

@@ -17,6 +17,8 @@
 	diff = auto
 [alias]
 [alias]
+  sw = switch
+  rt = restore
 	co = checkout
 	st = status
   ss = status -s
