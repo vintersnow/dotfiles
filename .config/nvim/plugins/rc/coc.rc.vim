@@ -58,7 +58,7 @@ set signcolumn=yes
 "      \ pumvisible() ? "\<C-n>" :
 "      \ <SID>check_back_space() ? "\<TAB>" :
 "      \ coc#refresh()
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <C-k>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
