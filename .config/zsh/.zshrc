@@ -6,31 +6,31 @@ export ZSHHOME="$ZDOTDIR/zsh.d"
 # version check
 if versioncompare $ZSH_VERSION "5.3.0"; then
   ### Load Zplugin
-  source "$HOME/.zplugin/bin/zplugin.zsh"
-  autoload -Uz _zplugin
-  (( ${+_comps} )) && _comps[zplugin]=_zplugin
+  source "$HOME/.zinit/bin/zinit.zsh"
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
   ###
   
-  zplugin snippet "$ZSHHOME/env_path.zsh"
-  zplugin snippet "$ZSHHOME/develop.zsh"
-  zplugin snippet "$ZSHHOME/normal_option.zsh"
-  zplugin snippet "$ZSHHOME/alias.sh"
-  zplugin snippet "$ZSHHOME/alias.zsh"
-  zplugin snippet "$ZSHHOME/os.zsh"
-  zplugin snippet "$ZSHHOME/tmux.zsh"  # load after alias.sh
-  zplugin snippet "$ZSHHOME/color.zsh"
-  zplugin snippet "$ZSHHOME/useful_setting.zsh"
+  zinit snippet "$ZSHHOME/env_path.zsh"
+  zinit snippet "$ZSHHOME/develop.zsh"
+  zinit snippet "$ZSHHOME/normal_option.zsh"
+  zinit snippet "$ZSHHOME/alias.sh"
+  zinit snippet "$ZSHHOME/alias.zsh"
+  zinit snippet "$ZSHHOME/os.zsh"
+  zinit snippet "$ZSHHOME/tmux.zsh"  # load after alias.sh
+  zinit snippet "$ZSHHOME/color.zsh"
+  zinit snippet "$ZSHHOME/useful_setting.zsh"
 
   if [ -f "$ZSHHOME/pw.zsh" ]; then
-    zplugin snippet "$ZSHHOME/pw.zsh"
+    zinit snippet "$ZSHHOME/pw.zsh"
   fi
 
   # load local setting
   if [ -f "$HOME/.zsh.local" ]; then
-    zplugin snippet "$HOME/.zsh.local"
+    zinit snippet "$HOME/.zsh.local"
   fi
   
-  # zplugin snippet "$ZSHHOME/tmux.zsh"
+  # zinit snippet "$ZSHHOME/tmux.zsh"
   source "$ZSHHOME/plugins.zsh"
 
 else

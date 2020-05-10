@@ -19,6 +19,16 @@ export_path $HOME/Library/Haskell/bin
 # egison
 export_path $HOME/.egison/bin
 
+
+# C/C++
+if [ -d  $HOME/.local/include ]; then
+  export CPATH=$CPATH:$HOME/.local/include
+fi
+if [ -d  $HOME/.local/lib ]; then
+  export LIBRARY_PATH=$LIBRARY_PATH:$HOME/.local/lib
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+fi
+
 # python
 export PIPENV_VENV_IN_PROJECT=true 
 

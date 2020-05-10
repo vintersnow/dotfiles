@@ -153,12 +153,15 @@ function rung () {
   OPT='-DLOCAL '
   if has 'g++-9'; then
     g++-9 $OPT $1 && shift && ./a.out $@
+  elif has 'g++'; then
+    g++-9 $OPT $1 && shift && ./a.out $@
   elif has 'clang++'; then
     clang++ $OPT -Wc++14-extensions $1 && shift && ./a.out $@
   else
     g++ $OPT $1 && shift && ./a.out $@
   fi
 }
+alias atcg="g++ -DLOCAL -std=c++17"
 
 function except_rm() {
   if [[ $# -eq 0 ]]; then

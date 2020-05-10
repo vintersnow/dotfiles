@@ -1,0 +1,42 @@
+snippet atc "Atcoder template"
+// OURL: $1
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define REP(i,n) for(int i=0,i##_len=(n);i<i##_len;++i)
+#define RREP(i,a,n) for(int i=(a),i##_len=(n);i<i##_len;++i)
+
+// http://beet-aizu.hatenablog.com/entry/2018/04/08/145516
+template<typename T>
+vector<T> make_v(size_t a){return vector<T>(a);}
+template<typename T,typename... Ts>
+auto make_v(size_t a,Ts... ts){ return vector<decltype(make_v<T>(ts...))>(a,make_v<T>(ts...));  }
+
+template<typename T,typename V>
+typename enable_if<is_class<T>::value==0>::type
+fill_v(T &t,const V &v){t=v;}
+template<typename T,typename V>
+typename enable_if<is_class<T>::value!=0>::type
+fill_v(T &t,const V &v){ for(auto &e:t) fill_v(e,v);  }
+
+#ifdef LOCAL
+#include "pprint.hpp"
+pprint::PrettyPrinter printer;
+#define debug(...) cerr << "[L" << __LINE__ << ":" <<#__VA_ARGS__ << "]: ", printer.print(__VA_ARGS__)
+#else
+#define debug(...) 42
+#endif
+
+
+int main() {
+#ifdef LOCAL
+  printer.compact(true);
+#endif
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  $2
+
+  return 0;
+}
+endsnippet
