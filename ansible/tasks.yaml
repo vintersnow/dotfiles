@@ -48,12 +48,6 @@
   shell: "yes | vim +PlugInstall +qall"
 
 - name: Install executables
-  executable:
-    name: "{{ item.key }}"
-    action: "{{ item.value }}"
-  with_dict: "{{ executable }}"
-
-- name: Install executables
   command: "{{ item.value }}"
   args:
     creates: '{{ item.key }}'
