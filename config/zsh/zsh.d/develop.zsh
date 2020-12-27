@@ -26,7 +26,7 @@ if [ -d  $HOME/.local/include ]; then
 fi
 if [ -d  $HOME/.local/lib ]; then
   export LIBRARY_PATH=$LIBRARY_PATH:$HOME/.local/lib
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib:/usr/lib
 fi
 
 # python

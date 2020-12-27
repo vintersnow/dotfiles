@@ -1,0 +1,121 @@
+---
+- name: Include vars
+  include_vars:
+    file: vars.yaml
+
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "~/.cache/vim"
+    - "~/.config"
+    - "~/go"
+    - "~/go/bin"
+
+- block:
+  - name: Manage apt
+    become: yes
+    apt:
+      name: "{{ item.key }}"
+      state: latest
+      # update_cache: yes
+    with_dict:  "{{ apt }}"
+    when: ansible_os_family == "Debian"
+
+- name: Pull dotfiles
+  git:
+    repo: https://github.com/vintersnow/dotfiles.git
+    dest: ~/.dotfiles
+
+- name: Link dotfiles
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop:
+    - { src: "~/.dotfiles/config/git", dest: "~/.config/git"}
+    - { src: "~/.dotfiles/config/nvim", dest: "~/.config/nvim"}
+    - { src: "~/.dotfiles/config/tig", dest: "~/.config/tig"}
+    - { src: "~/.dotfiles/config/tmux", dest: "~/.config/tmux"}
+    - { src: "~/.dotfiles/config/vim", dest: "~/.config/vim"}
+    - { src: "~/.dotfiles/config/zsh", dest: "~/.config/zsh"}
+    - { src: "~/.dotfiles/config/agignore", dest: "~/.agignore"}
+    - { src: "~/.dotfiles/config/editorconfig", dest: "~/.editorconfig"}
+    - { src: "~/.dotfiles/config/zsh/zshenv", dest: "~/.zshenv"}
+
+- name: Install vim plugins
+  shell: "yes | vim +PlugInstall +qall"
+
+- name: Install executables
+  executable:
+    name: "{{ item.key }}"
+    action: "{{ item.value }}"
+  with_dict: "{{ executable }}"
+
+- name: Install executables
+  command: "{{ item.value }}"
+  args:
+    creates: '{{ item.key }}'
+  with_dict: "{{ executable }}"
+
+- name: Get Repos with GHQ
+  command: ~/go/bin/ghq get "{{ item.key }}"
+  args:
+    creates: '~/.ghq/github.com/{{ item.key }}'
+  with_dict:  "{{ ghq }}"
+
+- block:
+  - name: zsh existing check
+    stat: 
+      path: "{{ zsh_path }}"
+    register: result
+
+  - name: change default shell (to zsh)
+    command: "chsh -s {{ zsh_path }} {{ ansible_user }}"
+    become: yes
+
+  - name: create zinit dir
+    file:
+      path: "~/.zinit"
+      state: directory
+
+  - name: install zinit
+    command: git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+    args:
+      creates: '~/.zinit/bin/zinit.zsh'
+
+- block:
+  - name: install pyenv
+    command: git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    args:
+      creates: '~/.pyenv'
+
+  - name: install dependency
+    become: yes
+    apt:
+      name: "{{ item.key }}"
+      state: latest
+      # update_cache: yes
+    with_dict:  "{{ apt_python }}"
+    when: ansible_os_family == "Debian"
+
+  - name: install python3.9
+    command: zsh -c "~/.pyenv/bin/pyenv install 3.9.1 && ~/.pyenv/bin/pyenv global 3.9.1"
+    args:
+      creates: '~/.pyenv/versions/3.9.1'
+
+  - name: set python interpreter
+    set_fact: ansible_python_interpreter=~/.pyenv/shims/python
+
+  - name: upgrade pip
+    pip:
+      name: pip
+      state: latest
+
+  - name: install python packages
+    pip:
+      name:
+        - pynvim
+        - neovim
+        - requests

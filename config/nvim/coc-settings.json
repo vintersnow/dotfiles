@@ -2,7 +2,13 @@
   "python.jediEnabled": false,
   "diagnostic.virtualText": true,
   "rust-client.trace.server": "verbose",
-  "rust-client.channel": "stable",
+  "rust-analyzer.updates.channel": "stable",
+  "rust-analyzer.serverPath": "/usr/sbin/rust-analyzer",
+  "diagnostic.enableHighlightLineNumber": true,
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.trace.server": "verbose",
   "languageserver": {
     "clangd": {
       "command": "clangd",

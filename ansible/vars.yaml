@@ -1,0 +1,37 @@
+apt:
+  automake:
+  cmake:
+  fzf:
+  gcc:
+  git:
+  jq:
+  make:
+  neovim:
+  silversearcher-ag:
+  tig:
+  tmux:
+  mosh:
+  tree:
+  wget:
+  curl:
+  zsh:
+  golang:
+
+apt_python:
+  build-essential:
+  libffi-dev:
+  libssl-dev:
+  zlib1g-dev:
+  liblzma-dev:
+  libbz2-dev:
+  libreadline-dev:
+  libsqlite3-dev:
+
+executable:
+  # ~/go/bin/ghq: curl -sf https://gobinaries.com/github.com/x-motemen/ghq | PREFIX=~/go/bin sh
+  ~/go/bin/ghq: go get github.com/x-motemen/ghq
+
+ghq:
+  tmux-plugin/tpm:
+
+zsh_path: "/usr/bin/zsh"
