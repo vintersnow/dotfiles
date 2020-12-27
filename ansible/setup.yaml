@@ -1,0 +1,5 @@
+---
+- name: private development environment
+  hosts: node
+  tasks:
+    - include: tasks.yaml

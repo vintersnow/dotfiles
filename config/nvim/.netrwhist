@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/vinter/.config'
+let g:netrw_dirhist_7='/home/vinter/Projects/code_sites/tryhackme/advent_of_cyber2/vintersnow/day1/10.10.1.74'
+let g:netrw_dirhist_6='/home/vinter/Projects/code_sites/methods/proco_lib'
+let g:netrw_dirhist_5='/home/vinter/Projects/code_sites/atcoder/contests/tdpc/src/bin'
+let g:netrw_dirhist_4='/home/vinter/Projects/tmp/test_general'
+let g:netrw_dirhist_3='/home/vinter/Projects/code_sites/methods/proco_lib'
+let g:netrw_dirhist_2='/home/vinter/Projects/code_sites/atcoder/contests/abc148'
+let g:netrw_dirhist_1='/home/vinter/Projects/code_sites/atcoder/contests/nikkei2019-2-qual'

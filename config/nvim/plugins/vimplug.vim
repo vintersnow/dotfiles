@@ -22,8 +22,8 @@ let g:polyglot_disabled = ['javascript', 'elm']
 let g:cpp_class_scope_highlight = 1
 Plug 'sheerun/vim-polyglot'
 
-source $PLUGIN_BASE/rc/semshi.rc.vim
-Plug 'numirias/semshi', {'for': 'python'}
+" source $PLUGIN_BASE/rc/semshi.rc.vim
+" Plug 'numirias/semshi', {'for': 'python'}
 
 " other
 Plug 'jiangmiao/auto-pairs'
@@ -38,16 +38,25 @@ Plug 'tpope/vim-surround'
 Plug 'tyru/caw.vim'
 source $PLUGIN_BASE/rc/caw.rc.vim
 
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'Shougo/deoplete.nvim'
+Plug 'lighttiger2505/deoplete-vim-lsp'
+
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-source $PLUGIN_BASE/rc/ultisnips.rc.vim
+
 
 " filer
 
 " nvim
 if has('nvim')
-  source $PLUGIN_BASE/rc/coc.rc.vim
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+  " source $PLUGIN_BASE/rc/coc.rc.vim
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 call plug#end()
+
+source $PLUGIN_BASE/rc/ultisnips.rc.vim
+source $PLUGIN_BASE/rc/vim-lsp.rc.vim
+source $PLUGIN_BASE/rc/deoplete.rc.vim
