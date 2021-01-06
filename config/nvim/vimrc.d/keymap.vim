@@ -69,9 +69,9 @@ inoremap <silent> <ESC> <ESC>:call InActivateIME()<CR>
 " nnoremap <silent> [Leader]c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
 " denite
-nnoremap <silent> [Leader]u :<C-u>Denite<Space>file_rec<CR>
+nnoremap <silent> [Leader]u :<C-u>Denite<Space>file/rec<CR>
 nnoremap <silent> [Leader]g :<C-u>Denite<Space>grep<CR>
-nnoremap <silent> [Leader]m :<C-u>Denite<Space>file_mru<CR>
+nnoremap <silent> [Leader]m :<C-u>Denite<Space>file/mru<CR>
 nnoremap <silent> [Leader]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> [Leader]ft :<C-u>Denite<Space>filetype<CR>
 nnoremap <silent> [Leader]h :<C-u>Denite<Space>neoyank<CR>

@@ -49,7 +49,16 @@ Plug 'SirVer/ultisnips'
 
 " filer
 
-" nvim
+" matcher
+if has('nvim')
+  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/denite.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" coc
 if has('nvim')
   " source $PLUGIN_BASE/rc/coc.rc.vim
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -60,3 +69,4 @@ call plug#end()
 source $PLUGIN_BASE/rc/ultisnips.rc.vim
 source $PLUGIN_BASE/rc/vim-lsp.rc.vim
 source $PLUGIN_BASE/rc/deoplete.rc.vim
+source $PLUGIN_BASE/rc/denite.rc.vim
