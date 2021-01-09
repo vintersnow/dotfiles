@@ -20,6 +20,7 @@
 	co = checkout
 	st = status
   ss = status -s
+  sw = switch
 	br = branch
 	ci = commit
   cia = commit --amend
