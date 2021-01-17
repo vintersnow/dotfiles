@@ -10,7 +10,7 @@ if versioncompare $ZSH_VERSION "5.3.0"; then
   autoload -Uz _zinit
   (( ${+_comps} )) && _comps[zinit]=_zinit
   ###
-  
+
   zinit snippet "$ZSHHOME/env_path.zsh"
   zinit snippet "$ZSHHOME/develop.zsh"
   zinit snippet "$ZSHHOME/normal_option.zsh"

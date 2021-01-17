@@ -2,7 +2,7 @@
 set foldmethod=indent
 set foldlevelstart=99
 set foldlevel=1
-set foldnestmax=4
+set foldnestmax=20
 
 " let javaScript_fold=1         " JavaScript
 " let perl_fold=1               " Perl

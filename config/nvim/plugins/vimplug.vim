@@ -35,6 +35,7 @@ source $PLUGIN_BASE/rc/easymotion.rc.vim
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tpope/vim-surround'
+Plug 'Shougo/context_filetype.vim'
 Plug 'tyru/caw.vim'
 source $PLUGIN_BASE/rc/caw.rc.vim
 
@@ -46,6 +47,9 @@ Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " filer
 
@@ -63,6 +67,10 @@ if has('nvim')
   " source $PLUGIN_BASE/rc/coc.rc.vim
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
+
+" other
+" " Vue.js
+Plug 'posva/vim-vue'
 
 call plug#end()
 
