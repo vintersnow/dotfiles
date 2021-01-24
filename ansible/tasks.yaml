@@ -9,6 +9,7 @@
     state: directory
   loop:
     - "~/.cache/vim"
+    - "~/.cache/shell"
     - "~/.config"
     - "~/go"
     - "~/go/bin"
