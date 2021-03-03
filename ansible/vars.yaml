@@ -16,6 +16,7 @@ apt:
   curl:
   zsh:
   golang:
+  language-pack-ja:
 
 apt_python:
   build-essential:
