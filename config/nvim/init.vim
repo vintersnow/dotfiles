@@ -36,6 +36,7 @@ if has('vim_starting')
   execute 'source' expand('$BASE/vimrc.d/basic.vim')
   execute 'source' expand('$BASE/vimrc.d/keymap.vim')
   execute 'source' expand('$BASE/vimrc.d/lang_setting.vim')
+  execute 'source' expand('$BASE/vimrc.d/clip.vim')
 
   " secret
   if filereadable(expand('$BASE/pw.vim'))
