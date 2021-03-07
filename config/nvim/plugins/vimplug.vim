@@ -78,5 +78,5 @@ call plug#end()
 source $PLUGIN_BASE/rc/ultisnips.rc.vim
 source $PLUGIN_BASE/rc/vim-lsp.rc.vim
 source $PLUGIN_BASE/rc/deoplete.rc.vim
-source $PLUGIN_BASE/rc/denitE.rc.vim
+source $PLUGIN_BASE/rc/denite.rc.vim
 source $PLUGIN_BASE/rc/python.rc.vim
