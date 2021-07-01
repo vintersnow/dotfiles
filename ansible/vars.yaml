@@ -49,7 +49,7 @@ homebrew_packages:
   - zsh
   - ag
   - wget
-  - ghq
+  - go
 
 executable:
   # ~/go/bin/ghq: curl -sf https://gobinaries.com/github.com/x-motemen/ghq | PREFIX=~/go/bin sh
