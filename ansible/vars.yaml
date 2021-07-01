@@ -28,6 +28,28 @@ apt_python:
   libreadline-dev:
   libsqlite3-dev:
 
+homebrew_taps:
+  - homebrew/cask
+  - homebrew/core
+
+
+homebrew_packages:
+  - ansible
+  - awscli
+  - automake
+  - cmake
+  - fzf
+  - git
+  - jq
+  - neovim
+  - tig
+  - tmux
+  - tree
+  - curl
+  - zsh
+  - ag
+  - wget
+
 executable:
   # ~/go/bin/ghq: curl -sf https://gobinaries.com/github.com/x-motemen/ghq | PREFIX=~/go/bin sh
   ~/go/bin/ghq: go get github.com/x-motemen/ghq
