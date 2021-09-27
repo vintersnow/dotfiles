@@ -36,7 +36,7 @@ zinit light "greymd/tmux-xpanes"
 zinit ice wait'0' lucid
 zinit light "Tarrasch/zsh-colors"
 
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 zinit ice wait'0' lucid
 zinit light "lukechilds/zsh-nvm"
 
@@ -47,4 +47,7 @@ zinit light "lukechilds/zsh-nvm"
 
 ##################################
 ### Prompt
-zinit ice pick"async.zsh" src"pure.zsh"; zinit light "sindresorhus/pure"
+# zinit ice pick"async.zsh" src"pure.zsh"; zinit light "sindresorhus/pure"
+if has "starship"; then 
+  eval "$(starship init zsh)"
+fi

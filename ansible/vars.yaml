@@ -50,6 +50,10 @@ homebrew_packages:
   - ag
   - wget
   - go
+  - ripgrep
+  - bat
+  - coreutils
+  - binutils
 
 executable:
   # ~/go/bin/ghq: curl -sf https://gobinaries.com/github.com/x-motemen/ghq | PREFIX=~/go/bin sh
