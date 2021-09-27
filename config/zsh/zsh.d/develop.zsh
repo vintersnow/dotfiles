@@ -36,3 +36,5 @@ export PIPENV_VENV_IN_PROJECT=true
 # zplugin ice wait'[[ -n ${ZLAST_COMMANDS[(r)py*]} ]]'
 # zplugin ice wait'1' lucid
 zplugin snippet "$ZSHHOME/pyenv.zsh"
+
+export_path "$HOME/.poetry/bin"

@@ -14,6 +14,10 @@ export_path $HOME/bin
 export_path $HOME/.local/bin
 export_path $HOME/.gem/ruby/2.5.0/bin
 
+if [ -d "$HOME/.zfunc" ]; then
+  export FPATH="$HOME/.zfunc:$FPATH"
+fi
+
 # change brew cask install place
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
