@@ -11,12 +11,15 @@ let $PLUGIN_BASE = expand('$BASE/plugins')
 Plug 'tpope/vim-fugitive'
 
 " UI
-Plug 'w0ng/vim-hybrid'
+" Plug 'w0ng/vim-hybrid'
+Plug 'marko-cerovac/material.nvim'
 " source $PLUGIN_BASE/rc/airline.rc.vim
 " let g:airline_theme='hybrid'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'hoob3rt/lualine.nvim'
+
+Plug 'folke/trouble.nvim'
 
 " Sytax highlight
 " let g:polyglot_disabled = ['javascript', 'elm']
@@ -47,12 +50,20 @@ Plug 'tyru/caw.vim'
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'nvim-lua/completion-nvim'
+Plug 'tami5/lspsaga.nvim'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'ray-x/lsp_signature.nvim'
 
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

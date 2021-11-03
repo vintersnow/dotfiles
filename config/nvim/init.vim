@@ -28,7 +28,9 @@ if has('vim_starting')
   " colorscheme
   set background=dark
   try
-    colorscheme hybrid
+    " colorscheme hybrid
+    colorscheme material
+    let g:material_style = 'deep ocean'
   catch /^Vim\%((\a\+)\)\=:E185/
     echo 'No hybrid colorscheme'
   endtry
