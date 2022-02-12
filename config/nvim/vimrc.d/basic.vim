@@ -101,3 +101,10 @@ set completeopt=menuone
 set list
 
 set encoding=UTF-8
+
+" spell check
+" Use spelunker
+set nospell
+" set spell
+" set spelllang=en,cjk
+" set spellsuggest=best,9

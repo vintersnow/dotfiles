@@ -21,7 +21,10 @@ Plug 'hoob3rt/lualine.nvim'
 
 Plug 'folke/trouble.nvim'
 
-" Sytax highlight
+" Spell Check
+Plug 'kamykn/spelunker.vim'
+
+" Syntax highlight
 " let g:polyglot_disabled = ['javascript', 'elm']
 " let g:cpp_class_scope_highlight = 1
 " Plug 'sheerun/vim-polyglot'
@@ -34,7 +37,9 @@ Plug 'psf/black'
 Plug 'jiangmiao/auto-pairs'
 let g:AutoPairsMultilineClose = 0
 
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
+Plug 'ggandor/lightspeed.nvim'
+
 " source $PLUGIN_BASE/rc/easymotion.rc.vim
 
 Plug 'editorconfig/editorconfig-vim'
@@ -72,6 +77,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'ThePrimeagen/harpoon'
 " icons
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -99,6 +105,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 " other
 " " Vue.js
 " Plug 'posva/vim-vue'
+
+Plug 'vim-denops/denops.vim'
+Plug 'vim-denops/denops-helloworld.vim'
+Plug 'vim-skk/skkeleton'
+Plug 'delphinus/skkeleton_indicator.nvim'
+
 
 call plug#end()
 

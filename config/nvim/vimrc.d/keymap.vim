@@ -43,15 +43,17 @@ endif
 inoremap <C-l> <C-g>U<Right>
 
 " bind Ctrl-j to escape
-noremap <C-j> <esc>
-cnoremap <C-j> <esc>
-" inoremap <C-j> <esc>
+" noremap <C-k> <esc>
+cnoremap <C-k> <esc>
+inoremap <C-k> <esc>
+cnoremap <silent> jj <esc>
+inoremap <silent> jj <esc>
 
-function! InActivateIME()
-  call system('fcitx-remote -c')
-endfunction
-inoremap <silent> <C-j> <ESC>:call InActivateIME()<CR>
-inoremap <silent> <ESC> <ESC>:call InActivateIME()<CR>
+" function! InActivateIME()
+"   call system('fcitx-remote -c')
+" endfunction
+" inoremap <silent> <C-j> <ESC>:call InActivateIME()<CR>
+" inoremap <silent> <ESC> <ESC>:call InActivateIME()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugins
