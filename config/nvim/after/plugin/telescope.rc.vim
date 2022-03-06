@@ -10,6 +10,8 @@ nnoremap [Leader]ff <cmd>Telescope find_files<cr>
 nnoremap [Leader]fg <cmd>Telescope live_grep<cr>
 nnoremap [Leader]fb <cmd>Telescope buffers<cr>
 nnoremap [Leader]fh <cmd>Telescope help_tags<cr>
+nnoremap [Leader]tr <cmd>Telescope registers<cr>
+" nnoremap <expr> [leader]fw ':Telescope find_files<cr>' . "'" . expand('<cword>')
 
 lua << EOF
 local actions = require('telescope.actions')

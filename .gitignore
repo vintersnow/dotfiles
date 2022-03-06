@@ -6,6 +6,8 @@ fish_history
 .vim/.netrwhist
 *.db
 *.zwc
+.zsh_history
+.zsh_sessions
 
 .gdb_history
 
@@ -35,3 +37,4 @@ pw.zsh
 .emacs.d/games
 
 .chpwd-recent-dirs
+
