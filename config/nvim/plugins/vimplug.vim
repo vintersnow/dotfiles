@@ -8,7 +8,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 let $PLUGIN_BASE = expand('$BASE/plugins')
 
-Plug 'tpope/vim-fugitive'
+" Tools
+" Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 
 " UI
 " Plug 'w0ng/vim-hybrid'
