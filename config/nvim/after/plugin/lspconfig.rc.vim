@@ -7,7 +7,9 @@ lua << EOF
 EOF
 
 lua << EOF
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
+local lspconfig_configs = require'lspconfig.configs'
+local lspconfig_util = require 'lspconfig.util'
 local protocol = require'vim.lsp.protocol'
 
 -- Use an on_attach function to only map the following keys 
@@ -97,23 +99,30 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-nvim_lsp.tsserver.setup {
+lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
 
 
-nvim_lsp.pyright.setup{
+lspconfig.pyright.setup{
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-nvim_lsp.vuels.setup {
+-- lspconfig.vuels.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities
+-- }
+
+require'lspconfig'.volar.setup{
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 }
 
-nvim_lsp.diagnosticls.setup {
+
+lspconfig.diagnosticls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
