@@ -115,10 +115,25 @@ lspconfig.pyright.setup{
 --   capabilities = capabilities
 -- }
 
-require'lspconfig'.volar.setup{
+lspconfig.volar.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
+
+
+lspconfig.gopls.setup{
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"},
+  root_dir = lspconfig_util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
 }
 
 

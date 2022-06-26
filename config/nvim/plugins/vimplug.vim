@@ -116,7 +116,7 @@ Plug 'delphinus/skkeleton_indicator.nvim'
 
 call plug#end()
 
-" source $PLUGIN_BASE/rc/ultisnips.rc.vim
+source $PLUGIN_BASE/rc/ultisnips.rc.vim
 " source $PLUGIN_BASE/rc/vim-lsp.rc.vim
 " source $PLUGIN_BASE/rc/deoplete.rc.vim
 " source $PLUGIN_BASE/rc/denite.rc.vim
