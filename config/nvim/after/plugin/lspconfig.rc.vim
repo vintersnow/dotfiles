@@ -27,13 +27,13 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   -- --buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   -- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  -- buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   -- buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -44,7 +44,7 @@ local on_attach = function(client, bufnr)
   -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- lspsaga keymap
-  buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
+  -- buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
   buf_set_keymap("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
   buf_set_keymap("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
   buf_set_keymap("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
@@ -123,8 +123,10 @@ lspconfig.volar.setup{
 
 
 lspconfig.gopls.setup{
-  cmd = {"gopls", "serve"},
-  filetypes = {"go", "gomod"},
+  on_attach = on_attach,
+  -- cmd = {"gopls", "serve"},
+  cmd = {"gopls", "serve", "-rpc.trace", "--debug=localhost:6060"},
+  filetypes = {"go", "gomod", "gotmpl"},
   root_dir = lspconfig_util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {

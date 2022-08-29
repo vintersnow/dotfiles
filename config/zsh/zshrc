@@ -12,6 +12,12 @@ if versioncompare $ZSH_VERSION "5.3.0"; then
   ###
 
   zinit snippet "$ZSHHOME/env_path.zsh"
+
+  # load local setting
+  if [ -f "$HOME/.zsh.local" ]; then
+    zinit snippet "$HOME/.zsh.local"
+  fi
+
   zinit snippet "$ZSHHOME/develop.zsh"
   zinit snippet "$ZSHHOME/normal_option.zsh"
   zinit snippet "$ZSHHOME/alias.sh"
@@ -24,16 +30,11 @@ if versioncompare $ZSH_VERSION "5.3.0"; then
     zinit snippet "$ZSHHOME/pw.zsh"
   fi
 
-  # load local setting
-  if [ -f "$HOME/.zsh.local" ]; then
-    zinit snippet "$HOME/.zsh.local"
-  fi
-
   # zinit snippet "$ZSHHOME/tmux.zsh"
   source "$ZSHHOME/plugins.zsh"
 
   # open tmux
-  zinit snippet "$ZSHHOME/tmux.zsh"  # load after alias.sh
+  # zinit snippet "$ZSHHOME/tmux.zsh"  # load after alias.sh
 else
   echo "this zsh version is not supported"
 fi

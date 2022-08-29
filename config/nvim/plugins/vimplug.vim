@@ -51,6 +51,9 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'tyru/caw.vim'
 " source $PLUGIN_BASE/rc/caw.rc.vim
 
+" does not work
+" Plug 'mattn/vim-sqlfmt'
+
 """ Auto Completion
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'mattn/vim-lsp-settings'

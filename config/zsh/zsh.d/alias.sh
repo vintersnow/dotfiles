@@ -30,6 +30,7 @@ if has 'nvim'; then
   alias v='nvim'
   alias vim='nvim'
 else
+  echo "No neovim"
   alias v='vim'
 fi
 
@@ -47,7 +48,7 @@ alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
 # git
 alias g='git'
-alias deletebranch="git branch --merged | grep -v '*' | grep -v 'master' | xargs -I % git branch -d %"
+alias deletebranch="git branch --merged | egrep -v '(^\*|master|main|deploy|testflight)' | xargs -I % git branch -d %"
 alias gref='git reflog'
 alias glog='git log --oneline --decorate --color --graph'
 
