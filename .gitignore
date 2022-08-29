@@ -8,6 +8,7 @@ fish_history
 *.zwc
 .zsh_history
 .zsh_sessions
+.zcompdump*
 
 .gdb_history
 
@@ -38,3 +39,5 @@ pw.zsh
 
 .chpwd-recent-dirs
 
+# wezterm secrets
+ssh_domains.lua

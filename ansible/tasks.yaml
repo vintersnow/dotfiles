@@ -63,6 +63,7 @@
     - { src: "~/.dotfiles/config/tmux", dest: "~/.config/tmux"}
     - { src: "~/.dotfiles/config/vim", dest: "~/.config/vim"}
     - { src: "~/.dotfiles/config/zsh", dest: "~/.config/zsh"}
+    - { src: "~/.dotfiles/config/wezterm", dest: "~/.config/wezterm"}
     - { src: "~/.dotfiles/config/starship.toml", dest: "~/.config/starship.toml"}
     - { src: "~/.dotfiles/config/agignore", dest: "~/.agignore"}
     - { src: "~/.dotfiles/config/editorconfig", dest: "~/.editorconfig"}
