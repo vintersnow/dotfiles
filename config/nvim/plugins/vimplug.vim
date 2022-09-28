@@ -111,10 +111,18 @@ Plug 'kyazdani42/nvim-web-devicons'
 " " Vue.js
 " Plug 'posva/vim-vue'
 
+" term
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+" IME
 Plug 'vim-denops/denops.vim'
 Plug 'vim-denops/denops-helloworld.vim'
 Plug 'vim-skk/skkeleton'
 Plug 'delphinus/skkeleton_indicator.nvim'
+
+" python
+" Plug 'jupyter-vim/jupyter-vim'
+Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 
 
 call plug#end()

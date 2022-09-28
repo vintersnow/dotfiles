@@ -6,7 +6,14 @@ execute 'source' expand('$BASE/myautocmd.vim')
 if has('mac')
   "let g:python_host_prog = '/usr/local/bin/python2'
   "let g:python3_host_prog = expand('~/.ghq/github.com/riywo/anyenv/envs/pyenv/shims/python3')
-  let g:python3_host_prog = '~/.pyenv/shims/python3'
+  "let g:python3_host_prog = '~/.pyenv/shims/python3'
+  if exists("$VIRTUAL_ENV")
+    if !empty(glob("$VIRTUAL_ENV/bin/python3"))
+      let g:python3_host_prog = substitute(system("which python"), '\n', '', 'g')
+    else
+      let g:python_host_prog = substitute(system("which python"), '\n', '', 'g')
+    endif
+  endif
 else
   let g:python_host_prog = '/usr/bin/python2'
   " TODO: dynamic versioning

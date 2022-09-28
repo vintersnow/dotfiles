@@ -4,6 +4,8 @@ nmap    <Space> [Leader]
 vnoremap    [Leader]   <Nop>
 vmap    <Space> [Leader]
 
+let maplocalleader = "\\"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nomal bindings
 
