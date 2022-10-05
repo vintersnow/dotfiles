@@ -33,7 +33,7 @@ Plug 'kamykn/spelunker.vim'
 
 " source $PLUGIN_BASE/rc/semshi.rc.vim
 " Plug 'numirias/semshi', {'for': 'python'}
-Plug 'psf/black'
+Plug 'psf/black', { 'on': 'Black' }
 
 " other
 Plug 'jiangmiao/auto-pairs'
