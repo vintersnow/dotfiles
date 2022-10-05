@@ -8,7 +8,6 @@ zinit light "zsh-users/zsh-autosuggestions"
 
 zinit ice wait"0" lucid atinit"zpcompinit; zpcdreplay"
 zinit light "zdharma-continuum/fast-syntax-highlighting"
-# zinit light "zsh-users/zsh-syntax-highlighting"
 
 zinit ice wait'0' lucid if"has 'terminal-notifier' || has 'notify-send'"
 zinit light "marzocchi/zsh-notify"
@@ -21,17 +20,12 @@ zinit light "vintersnow/anyframe"
 source $ZSHHOME/zaw.zsh
 zinit ice wait'0' lucid atload"zaw_setup"
 zinit light "zsh-users/zaw"
-# # zinit light "skywind3000/z.lua"
-# zinit light "rupa/z"
 
 ##################################
 ### command
 
 zinit ice wait'0' lucid as"program" pick"bin/xpanes"
 zinit light "greymd/tmux-xpanes"
-
-# zinit ice wait'0' lucid
-# zinit light "b4b4r07/enhancd"
 
 zinit ice wait'0' lucid
 zinit light "Tarrasch/zsh-colors"
@@ -42,12 +36,16 @@ zinit light "lukechilds/zsh-nvm"
 
 ##################################
 ### other
-# zinit light "zdharma/zui"
-# zinit light "zdharma/zinit-crasis"
 
 ##################################
 ### Prompt
 # zinit ice pick"async.zsh" src"pure.zsh"; zinit light "sindresorhus/pure"
 if has "starship"; then 
-  eval "$(starship init zsh)"
+  # Optimize loading
+  # eval "$(starship init zsh)"
+  starship_cache="$HOME/.starship_init.zsh"
+  if [[ ! -f $starship_cache ]] then;
+    starship init zsh --print-full-init > $starship_cache
+  fi
+  zinit snippet $starship_cache
 fi
