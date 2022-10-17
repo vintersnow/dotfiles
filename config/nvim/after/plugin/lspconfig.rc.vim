@@ -58,11 +58,14 @@ local on_attach = function(client, bufnr)
     }, bufnr)
 
   -- formatting
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
+  -- if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.documentFormattingProvider then
+    vim.cmd([[
+                augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+                augroup END
+            ]])
   end
 
   -- require'completion'.on_attach(client, bufnr)
@@ -97,7 +100,7 @@ local on_attach = function(client, bufnr)
   }
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,

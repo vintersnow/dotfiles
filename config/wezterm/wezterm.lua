@@ -20,6 +20,7 @@ return {
   font = wezterm.font('UDEV Gothic 35NF', { weight = 'Regular' }),
   freetype_load_target = "HorizontalLcd",
   font_size = 13.0,
+  -- font_size = 20.0,
 
   -- key binding
   leader = { key = 't', mods = 'CTRL', timeout_milliseconds = 1000 },
