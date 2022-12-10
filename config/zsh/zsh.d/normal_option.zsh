@@ -33,15 +33,6 @@ setopt hist_reduce_blanks
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
 ###############################################################################
-# プロンプト
-
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[yellow]}%}[%n@%m]%{${reset_color}%} %~
-# $ "
-
-###############################################################################
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default

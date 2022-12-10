@@ -46,6 +46,18 @@ case ${OSTYPE} in
   export CPATH=$CPATH:$HOME/.local/include
   export LIBRARY_PATH=$LIBRARY_PATH:~/.local/lib
 
+  export PATH=/opt/homebrew/bin:$PATH
+  # coreutils
+  export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+  # binutils
+  export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+
+  # Rust PATH
+  export PATH="$HOME/.cargo/bin:$PATH"
+
+  # wezterm
+  export_path "/Applications/WezTerm.app/Contents/MacOS/"
+
   ;;
   linux*)
   if has vivaldi-stable;then

@@ -1,3 +1,5 @@
+source $ZSHHOME/alias.sh
+
 # global alias
 alias -g L='| less -R'
 alias -g G='| grep'

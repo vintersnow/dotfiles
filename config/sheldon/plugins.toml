@@ -1,0 +1,67 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+apply = ["defer"]
+
+[plugins]
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+apply = ["source"]
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit -C'
+
+[plugins.env_path]
+local = "~/.config/zsh/zsh.d"
+use = ["*.zsh"]
+apply = ["source"]
+
+[plugins.local_settings]
+local = "~/.zsh.local"
+use = ["*.zsh"]
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.zsh-notify]
+github = "marzocchi/zsh-notify"
+
+[plugins.anyframe]
+github = "vintersnow/anyframe"
+
+# TODO: Better way to hook setup
+[plugins.anyframe-setup]
+inline = "anyframe_setup"
+
+[plugins.zsh-color]
+github = "Tarrasch/zsh-colors"
+
+[plugins.zsh-nvm]
+github = "lukechilds/zsh-nvm"
+
+[plugins.starship]
+local = "~/.config/zsh/hooks"
+use = ["starship.zsh"]
+apply = ["source"]

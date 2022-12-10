@@ -57,6 +57,7 @@
     dest: "{{ item.dest }}"
     state: link
   loop:
+    - { src: "~/.dotfiles/config/sheldon", dest: "~/.config/sheldon"}
     - { src: "~/.dotfiles/config/git", dest: "~/.config/git"}
     - { src: "~/.dotfiles/config/nvim", dest: "~/.config/nvim"}
     - { src: "~/.dotfiles/config/tig", dest: "~/.config/tig"}
