@@ -22,18 +22,26 @@ apply = ["source"]
 
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+defer1 = "{% for file in files %}zsh-defer -t 1 source \"{{ file }}\"\n{% endfor %}"
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit -C'
 
-[plugins.env_path]
-local = "~/.config/zsh/zsh.d"
+[plugins.setting-sync]
+local = "~/.config/zsh/zsh.d.sync"
 use = ["*.zsh"]
 apply = ["source"]
+
+[plugins.setting-defer]
+local = "~/.config/zsh/zsh.d.defer"
+use = ["*.zsh"]
 
 [plugins.local_settings]
 local = "~/.zsh.local"
 use = ["*.zsh"]
+
+############################################################################
+## normal plugins
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
@@ -50,16 +58,20 @@ github = "marzocchi/zsh-notify"
 
 [plugins.anyframe]
 github = "vintersnow/anyframe"
+apply = ["defer1"]
 
 # TODO: Better way to hook setup
 [plugins.anyframe-setup]
-inline = "anyframe_setup"
+local = "~/.config/zsh/hooks"
+use = ["anyframe.zsh"]
+apply = ["defer1"]
 
 [plugins.zsh-color]
 github = "Tarrasch/zsh-colors"
 
 [plugins.zsh-nvm]
 github = "lukechilds/zsh-nvm"
+apply = ["defer1"]
 
 [plugins.starship]
 local = "~/.config/zsh/hooks"

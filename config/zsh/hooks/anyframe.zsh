@@ -22,3 +22,4 @@ alias gh='anyframe-widget-cd-ghq-repository'
 
 }
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border --inline-info'
+anyframe_setup

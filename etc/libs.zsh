@@ -52,3 +52,23 @@ function loadlib() {
     source $lib
   fi
 }
+
+
+#########
+# cache eval
+export EVAL_CACHE_DIR="$HOME/.cache/zsh_eval_cache"
+
+function evalcache() { 
+  local cacheName="$1"
+  local cacheCommand="$2"
+  local cacheFile="$EVAL_CACHE_DIR/init-$cacheName.sh"
+  if [[ ! -f $cacheFile ]] then;
+    mkdir -p $EVAL_CACHE_DIR
+    eval "$cacheCommand" > "$cacheFile"
+  fi
+  source $cacheFile
+}
+
+function clearevalcache() { 
+  rm $EVAL_CACHE_DIR/init-*.sh
+}

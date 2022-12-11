@@ -1,4 +1,4 @@
-source $ZSHHOME/alias.sh
+source $ZDOTDIR/zsh.d.defer/alias.sh
 
 # global alias
 alias -g L='| less -R'
