@@ -23,6 +23,7 @@ endif
 
 if has('vim_starting')
   set runtimepath+=~/.local/share/nvim/site
+  set packpath+=~/.local/share/nvim/site
   " settings
   " if isdirectory(expand('~/.config/nvim'))
   "   set runtimepath+=~/.config/nvim/
@@ -30,14 +31,15 @@ if has('vim_starting')
   " endif
 
   " plugins
-  execute 'source' expand('$BASE/plugins/vimplug.vim')
-  " execute 'source' expand('$BASE/plugins/jetpack.vim')
+  " execute 'source' expand('$BASE/vimplug.vim')
+  execute 'source' expand('$BASE/jetpack.vim')
 
   " colorscheme
   set background=dark
   try
+    " TODO: failed to load material colorscheme
     " colorscheme hybrid
-    colorscheme material
+    " colorscheme material
     " let g:material_style = 'deep ocean'
   catch /^Vim\%((\a\+)\)\=:E185/
     echo 'No hybrid colorscheme'

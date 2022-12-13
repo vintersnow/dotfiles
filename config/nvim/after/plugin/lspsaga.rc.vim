@@ -1,4 +1,7 @@
-if !exists('g:loaded_lspsaga') | finish | endif
+if !exists('g:loaded_lspsaga')
+  echom "Skip loading lspsaga setting"
+  finish
+endif
 
 lua << EOF
 local saga = require 'lspsaga'

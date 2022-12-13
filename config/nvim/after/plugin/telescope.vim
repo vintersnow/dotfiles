@@ -1,4 +1,5 @@
 if !exists('g:loaded_telescope')
+  echom "Skip loading telescope config"
   finish
 endif
 
@@ -12,6 +13,7 @@ nnoremap [Leader]fb <cmd>Telescope buffers<cr>
 nnoremap [Leader]fh <cmd>Telescope help_tags<cr>
 nnoremap [Leader]tr <cmd>Telescope registers<cr>
 " nnoremap <expr> [leader]fw ':Telescope find_files<cr>' . "'" . expand('<cword>')
+
 
 lua << EOF
 local actions = require('telescope.actions')

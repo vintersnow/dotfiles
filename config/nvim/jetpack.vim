@@ -1,7 +1,9 @@
+packadd vim-jetpack
 
 call jetpack#begin()
 """ UI
-Jetpack 'marko-cerovac/material.nvim'
+" Jetpack 'marko-cerovac/material.nvim'
+Jetpack 'EdenEast/nightfox.nvim'
 Jetpack 'hoob3rt/lualine.nvim'
 
 " icons
@@ -9,13 +11,13 @@ Jetpack 'kyazdani42/nvim-web-devicons'
 
 """ Tools
 Jetpack 'folke/trouble.nvim'
+Jetpack 'akinsho/toggleterm.nvim'
 
 " Spell Check
 Jetpack 'kamykn/spelunker.vim'
 
 " Git
-Jetpack 'tpope/vim-fugitive'
-
+Jetpack 'lambdalisue/gina.vim'
 
 """ Editing utils
 Jetpack 'jiangmiao/auto-pairs'
@@ -54,8 +56,28 @@ Jetpack 'ray-x/lsp_signature.nvim'
 """ Tools
 
 " Fizzy finder
+Jetpack 'nvim-lua/popup.nvim'
 Jetpack 'nvim-lua/plenary.nvim'
 Jetpack 'nvim-telescope/telescope.nvim'
 Jetpack 'ThePrimeagen/harpoon'
 
+" Other
+"" Python
+Jetpack 'psf/black', { 'on': 'Black' }
+
+" IME
+Jetpack 'vim-denops/denops.vim'
+Jetpack 'vim-denops/denops-helloworld.vim'
+Jetpack 'vim-skk/skkeleton'
+Jetpack 'delphinus/skkeleton_indicator.nvim'
+
 call jetpack#end()
+
+function! s:load_configurations() abort
+  for path in glob(expand('$BASE/plugin.d/') . '*.vim', 1, 1, 1)
+    execute printf('source %s', path)
+  endfor
+endfunction
+
+colorscheme nordfox
+call s:load_configurations()

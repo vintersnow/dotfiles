@@ -1,8 +1,0 @@
-repo = 'w0rp/ale'
-repo = 'Shougo/context_filetype.vim'
-repo = 'Shougo/denite.nvim'
-repo = 'Shougo/echodoc.vim'
-repo = 'Shougo/vimfiler.vim'
-repo = 'Shougo/vinarise.vim'
-repo = 'thinca/vim-quickrun'
-repo = 'lervag/vimtex'

@@ -1,5 +1,8 @@
-" if !exists('g:loaded_completion') | finish | endif
-
+" if !exists('g:loaded_completion')
+"   echom "Skip loading completion config"
+"   finish
+" endif
+ 
 " set completeopt=menuone,noinsert,noselect
 set completeopt=menu,menuone,noselect
 

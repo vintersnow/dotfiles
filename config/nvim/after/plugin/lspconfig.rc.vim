@@ -1,6 +1,11 @@
 if !exists('g:lspconfig')
+  echom "Skip loading lspconfig setting"
   finish
 endif
+" if !exists('g:loaded_completion')
+"   echom "Skip loading lspconfig config due to nvim-cmp is not loaded"
+"   finish
+" endif
 
 lua << EOF
 --vim.lsp.set_log_level("debug")
@@ -144,8 +149,6 @@ lspconfig.gopls.setup{
 lspconfig.rust_analyzer.setup{
   on_attach = on_attach,
 }
-
-
 
 
 lspconfig.diagnosticls.setup {

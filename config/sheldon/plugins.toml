@@ -71,7 +71,7 @@ github = "Tarrasch/zsh-colors"
 
 [plugins.zsh-nvm]
 github = "lukechilds/zsh-nvm"
-apply = ["defer1"]
+apply = ["defer"]
 
 [plugins.starship]
 local = "~/.config/zsh/hooks"
