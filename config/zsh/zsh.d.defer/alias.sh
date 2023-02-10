@@ -1,4 +1,4 @@
-# alias
+#li alias
 
 ################################################################################
 # builtin command
@@ -27,7 +27,7 @@ alias ......='cd ../../../../..'
 alias du='du -sh'
 
 if has 'nvim'; then
-  alias v='nvim'
+  #alias v='nvim'
   alias vim='nvim'
 else
   echo "No neovim"
@@ -188,3 +188,4 @@ function hilbert() {
   l='L${r}FR${l}F${l}RF${r}L' r='R${l}FL${r}F${r}LF${l}R' eval eval eval eval eval eval l= r= eval echo '$l' | { read a; b=${a%%F*}; echo "from turtle import *;speed(0);pensize(2);ms=min(screensize())*0.8;l=2*ms/(2**${#b}-1);up();setpos(-ms,-ms);down();${a}done()"; } | sed 's/L/lt(90);/g;s/R/rt(90);/g;s/F/fd(l);/g' | python
 }
 
+alias ulid="python -c 'import ulid; print(ulid.new().uuid)'"

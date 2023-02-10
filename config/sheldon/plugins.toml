@@ -56,15 +56,13 @@ github = "zdharma-continuum/fast-syntax-highlighting"
 [plugins.zsh-notify]
 github = "marzocchi/zsh-notify"
 
+# This seems slow
 [plugins.anyframe]
 github = "vintersnow/anyframe"
-apply = ["defer1"]
 
-# TODO: Better way to hook setup
 [plugins.anyframe-setup]
 local = "~/.config/zsh/hooks"
 use = ["anyframe.zsh"]
-apply = ["defer1"]
 
 [plugins.zsh-color]
 github = "Tarrasch/zsh-colors"
