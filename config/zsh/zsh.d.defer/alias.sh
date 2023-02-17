@@ -27,7 +27,7 @@ alias ......='cd ../../../../..'
 alias du='du -sh'
 
 if has 'nvim'; then
-  #alias v='nvim'
+  alias v='nvim'
   alias vim='nvim'
 else
   echo "No neovim"

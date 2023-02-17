@@ -4,4 +4,5 @@ export ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 
 # lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim', 'nvim')
+export NVM_NO_USE=true
+# export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim', 'nvim', 'node', 'apollo')
