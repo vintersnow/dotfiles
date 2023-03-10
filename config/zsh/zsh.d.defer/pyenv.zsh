@@ -22,7 +22,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     if [ "$#" -gt 0 ]; then
       shift
     fi
-  
+
     case "$command" in
     rehash|shell)
       eval "$(pyenv "sh-$command" "$@")"
