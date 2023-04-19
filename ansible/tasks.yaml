@@ -70,6 +70,7 @@
     - { src: "~/.dotfiles/config/editorconfig", dest: "~/.editorconfig"}
     - { src: "~/.dotfiles/config/zsh/zshenv", dest: "~/.zshenv"}
     - { src: "~/.dotfiles/config/gitui", dest: "~/.config/gitui"}
+    - { src: "~/.dotfiles/config/rtx", dest: "~/.config/rtx"}
 
 - name: Install vim plugins
   shell: "yes | vim +PlugInstall +qall"

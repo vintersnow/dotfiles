@@ -4,9 +4,9 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'material-nvim',
-    section_separators = {'', ''},
-    component_separators = {'', ''},
+    theme = 'auto',
+    -- section_separators = {'', ''},
+    -- component_separators = {'', ''},
     disabled_filetypes = {}
   },
   sections = {

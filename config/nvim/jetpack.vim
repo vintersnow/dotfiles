@@ -65,12 +65,6 @@ Jetpack 'ThePrimeagen/harpoon'
 "" Python
 Jetpack 'psf/black', { 'on': 'Black' }
 
-" IME
-Jetpack 'vim-denops/denops.vim'
-Jetpack 'vim-denops/denops-helloworld.vim'
-Jetpack 'vim-skk/skkeleton'
-Jetpack 'delphinus/skkeleton_indicator.nvim'
-
 call jetpack#end()
 
 function! s:load_configurations() abort

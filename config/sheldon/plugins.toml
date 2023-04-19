@@ -68,17 +68,9 @@ github = "vintersnow/anyframe"
 local = "~/.config/zsh/hooks"
 use = ["anyframe.zsh"]
 
-[plugins.zsh-color]
-github = "Tarrasch/zsh-colors"
- 
-[plugins.zsh-nvm]
-github = "lukechilds/zsh-nvm"
-apply = ["source"]
+# [plugins.zsh-color]
+# github = "Tarrasch/zsh-colors"
 
-[plugins.nvm-setup]
-local = "~/.config/zsh/hooks"
-use = ["nvm.after.zsh"]
- 
 [plugins.starship]
 local = "~/.config/zsh/hooks"
 use = ["starship.zsh"]
