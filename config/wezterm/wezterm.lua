@@ -28,6 +28,7 @@ return {
     -- window
     { key = '-', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
     { key = '\\', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
+    { key = '|', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
     { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left', },
     { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right', },
     { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection 'Up', },
@@ -42,6 +43,18 @@ return {
     -- select / copy mode
     { key = 'f', mods = 'LEADER', action = act.Search { Regex = '' }, },
     { key = '[', mods = 'LEADER', action = act.ActivateCopyMode, },
+
+    -- view
+    {
+      key = 'K',
+      mods = 'CTRL|SHIFT',
+      action = act.Multiple {
+        act.ClearScrollback 'ScrollbackAndViewport',
+        act.SendKey { key = 'L', mods = 'CTRL' },
+      },
+    },
+    { key = 'k', mods = 'CTRL', action = act.ScrollToPrompt(-1) },
+    { key = 'j', mods = 'CTRL', action = act.ScrollToPrompt(1) },
   },
 
   -- key_tables = {

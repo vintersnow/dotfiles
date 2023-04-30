@@ -1,0 +1,77 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+apply = ["defer"]
+
+[plugins]
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+apply = ["source"]
+
+# [plugins.zsh-async]
+# github = "mafredri/zsh-async"
+# apply = ["source"]
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+defer1 = "{% for file in files %}zsh-defer -t 1 source \"{{ file }}\"\n{% endfor %}"
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit -C'
+
+[plugins.setting-sync]
+local = "~/.config/zsh/zsh.d.sync"
+use = ["*.zsh"]
+apply = ["source"]
+ 
+[plugins.setting-defer]
+local = "~/.config/zsh/zsh.d.defer"
+use = ["*.zsh"]
+ 
+[plugins.local_settings]
+local = "~/.zsh.local"
+use = ["*.zsh"]
+
+############################################################################
+## normal plugins
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.zsh-notify]
+github = "marzocchi/zsh-notify"
+
+# This seems slow
+[plugins.anyframe]
+github = "vintersnow/anyframe"
+
+[plugins.anyframe-setup]
+local = "~/.config/zsh/hooks"
+use = ["anyframe.zsh"]
+
+# [plugins.zsh-color]
+# github = "Tarrasch/zsh-colors"
+
+[plugins.starship]
+local = "~/.config/zsh/hooks"
+use = ["starship.zsh"]
+apply = ["source"]

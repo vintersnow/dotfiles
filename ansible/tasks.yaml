@@ -57,6 +57,7 @@
     dest: "{{ item.dest }}"
     state: link
   loop:
+    - { src: "~/.dotfiles/config/sheldon", dest: "~/.config/sheldon"}
     - { src: "~/.dotfiles/config/git", dest: "~/.config/git"}
     - { src: "~/.dotfiles/config/nvim", dest: "~/.config/nvim"}
     - { src: "~/.dotfiles/config/tig", dest: "~/.config/tig"}
@@ -69,6 +70,7 @@
     - { src: "~/.dotfiles/config/editorconfig", dest: "~/.editorconfig"}
     - { src: "~/.dotfiles/config/zsh/zshenv", dest: "~/.zshenv"}
     - { src: "~/.dotfiles/config/gitui", dest: "~/.config/gitui"}
+    - { src: "~/.dotfiles/config/rtx", dest: "~/.config/rtx"}
 
 - name: Install vim plugins
   shell: "yes | vim +PlugInstall +qall"
