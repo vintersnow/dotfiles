@@ -71,7 +71,16 @@ use = ["anyframe.zsh"]
 # [plugins.zsh-color]
 # github = "Tarrasch/zsh-colors"
 
-[plugins.starship]
-local = "~/.config/zsh/hooks"
-use = ["starship.zsh"]
+# [plugins.starship]
+# local = "~/.config/zsh/hooks"
+# use = ["starship.zsh"]
+# apply = ["source"]
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+apply = ["source"]
+
+[plugins.powerlevel10kSettings]
+local = "~/.config/zsh/"
+use = [".p10k.zsh"]
 apply = ["source"]
