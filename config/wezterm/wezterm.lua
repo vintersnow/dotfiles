@@ -25,6 +25,8 @@ return {
   -- key binding
   leader = { key = 't', mods = 'CTRL', timeout_milliseconds = 1000 },
   keys = {
+    { key = 'r', mods = 'CMD|SHIFT', action = wezterm.action.ReloadConfiguration, },
+
     -- window
     { key = '-', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
     { key = '\\', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
@@ -35,6 +37,10 @@ return {
     { key = 'j', mods = 'LEADER', action = act.ActivatePaneDirection 'Down', },
     { key = 'c', mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain', },
     { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane { confirm = false }, },
+    { key = 'H', mods = 'LEADER', action = act.AdjustPaneSize { 'Left', 5 }, },
+    { key = 'J', mods = 'LEADER', action = act.AdjustPaneSize { 'Down', 5 }, },
+    { key = 'K', mods = 'LEADER', action = act.AdjustPaneSize { 'Up', 5 } },
+    { key = 'L', mods = 'LEADER', action = act.AdjustPaneSize { 'Right', 5 }, },
 
     -- tab
     { key = 'n', mods = 'LEADER', action = act.ActivateTabRelative(1), },

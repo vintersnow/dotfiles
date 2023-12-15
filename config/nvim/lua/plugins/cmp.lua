@@ -25,7 +25,7 @@ cmp.setup({
     end,
   },
   mapping = {
-      ["<Tab>"] = vim.schedule_wrap(function(fallback)
+      ["<C-j>"] = vim.schedule_wrap(function(fallback)
         if cmp.visible() and has_words_before() then
           cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
         elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
@@ -59,7 +59,7 @@ cmp.setup({
       --         end
       --     end
       -- }),
-      ["<S-Tab>"] = cmp.mapping({
+      ["<C-k>"] = cmp.mapping({
           c = function()
               if cmp.visible() then
                   cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
@@ -130,7 +130,7 @@ cmp.setup({
     }),
   },
   sources = cmp.config.sources({
-    { name = "copilot" },
+    -- { name = "copilot" },
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
@@ -142,7 +142,7 @@ cmp.setup({
   sorting = {
     priority_weight = 2,
     comparators = {
-      require("copilot_cmp.comparators").prioritize,
+      -- require("copilot_cmp.comparators").prioritize,
 
       -- Below is the default comparitor list and order for nvim-cmp
       cmp.config.compare.offset,
@@ -157,11 +157,11 @@ cmp.setup({
       cmp.config.compare.order,
     },
   },
-  formatters = {
-    label = require("copilot_cmp.format").format_label_text,
-    insert_text = require("copilot_cmp.format").format_insert_text,
-    preview = require("copilot_cmp.format").deindent,
-  },
+  -- formatters = {
+  --   label = require("copilot_cmp.format").format_label_text,
+  --   insert_text = require("copilot_cmp.format").format_insert_text,
+  --   preview = require("copilot_cmp.format").deindent,
+  -- },
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol', -- show only symbol annotations

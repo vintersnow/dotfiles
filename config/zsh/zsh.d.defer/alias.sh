@@ -36,6 +36,10 @@ fi
 
 alias countinode='sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n'
 
+if has 'gitui'; then
+  alias gu='gitui'
+fi
+
 ################################################################################
 # change init config
 
