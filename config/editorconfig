@@ -15,12 +15,12 @@ trim_traling_whitespace=true
 # 4 space indentation
 [*.py]
 indent_size = 4
-insert_final_newline = false
+# insert_final_newline = false
 max_line_length = 120
 
 [*.cpp]
 indent_size = 2
-insert_final_newline = false
+# insert_final_newline = false
 max_line_length = 120
 
 # Tab indentation (no size specified)

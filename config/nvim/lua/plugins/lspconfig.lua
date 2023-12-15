@@ -32,7 +32,10 @@ local on_attach = function(client, bufnr)
   -- --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   -- buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  -- buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  vim.keymap.set('n', '<space>e', function()
+      vim.lsp.buf.format { async = true }
+  end, opts)
 
   -- lspsaga keymap
   -- buf_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
@@ -148,76 +151,76 @@ require("mason-lspconfig").setup_handlers {
 -- }
 
 
-lspconfig.diagnosticls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
-  init_options = {
-    linters = {
-      eslint = {
-        command = 'eslint',
-        rootPatterns = { '.git' },
-        debounce = 100,
-        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-        sourceName = 'eslint',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning'
-        }
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint = {
-        command = 'eslint',
-        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-        rootPatterns = { '.git' },
-      },
-      prettier = {
-        command = 'prettier',
-        args = { '--stdin-filepath', '%filename' }
-      }
-    },
-    formatFiletypes = {
-      css = 'prettier',
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      json = 'prettier',
-      scss = 'prettier',
-      less = 'prettier',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-      json = 'prettier',
-      markdown = 'prettier',
-    }
-  }
-}
+-- lspconfig.diagnosticls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+--   init_options = {
+--     linters = {
+--       eslint = {
+--         command = 'eslint',
+--         rootPatterns = { '.git' },
+--         debounce = 100,
+--         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+--         sourceName = 'eslint',
+--         parseJson = {
+--           errorsRoot = '[0].messages',
+--           line = 'line',
+--           column = 'column',
+--           endLine = 'endLine',
+--           endColumn = 'endColumn',
+--           message = '[eslint] ${message} [${ruleId}]',
+--           security = 'severity'
+--         },
+--         securities = {
+--           [2] = 'error',
+--           [1] = 'warning'
+--         }
+--       },
+--     },
+--     filetypes = {
+--       javascript = 'eslint',
+--       javascriptreact = 'eslint',
+--       typescript = 'eslint',
+--       typescriptreact = 'eslint',
+--     },
+--     formatters = {
+--       eslint = {
+--         command = 'eslint',
+--         args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+--         rootPatterns = { '.git' },
+--       },
+--       prettier = {
+--         command = 'prettier',
+--         args = { '--stdin-filepath', '%filename' }
+--       }
+--     },
+--     formatFiletypes = {
+--       css = 'prettier',
+--       javascript = 'eslint',
+--       javascriptreact = 'eslint',
+--       json = 'prettier',
+--       scss = 'prettier',
+--       less = 'prettier',
+--       typescript = 'eslint',
+--       typescriptreact = 'eslint',
+--       json = 'prettier',
+--       markdown = 'prettier',
+--     }
+--   }
+-- }
 
 -- icon
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
-    }
-  }
-)
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--   vim.lsp.diagnostic.on_publish_diagnostics, {
+--     underline = true,
+--     -- This sets the spacing and the prefix, obviously.
+--     virtual_text = {
+--       spacing = 4,
+--       prefix = ''
+--     }
+--   }
+-- )
 -- require('lspconfig.ui.windows').default_options.border = 'single'
 
 return {

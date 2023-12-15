@@ -76,6 +76,9 @@ use = ["anyframe.zsh"]
 # use = ["starship.zsh"]
 # apply = ["source"]
 
+# [plugins.zsh-vim-mode]
+# github = "jeffreytse/zsh-vi-mode"
+
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
 apply = ["source"]
