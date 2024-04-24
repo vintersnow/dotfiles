@@ -29,7 +29,8 @@ defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 defer1 = "{% for file in files %}zsh-defer -t 1 source \"{{ file }}\"\n{% endfor %}"
 
 [plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit -C'
+inline = 'autoload -Uz compinit && compinit -C'
+# apply = ["source"]
 
 [plugins.setting-sync]
 local = "~/.config/zsh/zsh.d.sync"

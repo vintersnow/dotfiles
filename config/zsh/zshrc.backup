@@ -1,0 +1,21 @@
+export DOTFILES="$HOME/.dotfiles"
+# export ZSHHOME="$ZDOTDIR/zsh.d"
+
+. $DOTFILES/etc/libs.zsh
+. "$ZDOTDIR/zsh.d.sync/env_path.zsh"
+
+evalcache "sheldon" "sheldon source"
+
+# Move under plugins
+# evalcache "rtx" "rtx activate zsh"
+evalcache "mise" "mise activate zsh"
+
+if has zoxide; then
+  evalcache "zoxide" "zoxide init zsh"
+fi
+
+# #setting for zprof
+# if type zprof > /dev/null 2>&1;then
+#   zprof | less
+# fi
+source "$HOME/.rye/env"

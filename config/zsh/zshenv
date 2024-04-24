@@ -22,9 +22,10 @@ export HISTFILE=$XDG_DATA_HOME/zsh/history
 export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 
 # vim
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+# export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 # system-wide environment settings for zsh(1)
 if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
+source "/Users/vinter/.rover/env"
