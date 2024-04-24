@@ -16,7 +16,6 @@
 	status = auto
 	diff = auto
 [alias]
-[alias]
 	co = checkout
 	st = status
   ss = status -s
@@ -32,6 +31,7 @@
   rb = rebase
   drymerge = merge --no-commit --no-ff
   conflict = diff --name-only --diff-filter=U
+  vacuum = "!f () { git switch $1; git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; git fetch --prune; };f"
 [merge]
 	ff = false
 [push]
