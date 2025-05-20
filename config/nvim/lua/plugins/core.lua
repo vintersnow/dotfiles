@@ -117,7 +117,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     dependencies = {
       { "github/copilot.vim" },
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -128,6 +128,267 @@ return {
     },
     -- See Commands section for default commands if you want to lazy load on them
   },
+
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    version = "*", -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+    opts = {
+      -- provider = "copilot",
+      provider = "claude",
+      -- auto_suggestions_provider = "copilot",
+      auto_suggestions_provider = "claude",
+      file_selector = {
+        provider = "telescope",
+        -- provider = "fzf",
+        -- provider = "mini.pick",
+        opts = {
+          -- fzf = {
+          --   fzf_layout = "default",
+          --   fzf_args = "--reverse --prompt='Avante> '",
+          -- },
+          telescope = {
+            layout_config = {
+              prompt_position = "top",
+            },
+          },
+        },
+      },
+
+      hints = { enabled = true },
+
+    },
+    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    build = "make",
+    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+    dependencies = {
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      -- "echasnovski/mini.pick", -- for file_selector provider mini.pick
+      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+      -- "ibhagwan/fzf-lua", -- for file_selector provider fzf
+      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      -- "zbirenbaum/copilot.lua", -- for providers='copilot'
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            -- required for Windows users
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        -- Make sure to set this up properly if you have lazy=true
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
+  },
+
+  -- lua/plugins/ai-terminals.lua
+  -- {
+  --   "aweis89/ai-terminals.nvim",
+  --   -- Example opts using functions for dynamic command generation
+  --   -- (matches plugin defaults)
+  --   opts = {
+  --     terminals = {
+  --       goose = {
+  --         cmd = function()
+  --           return string.format("GOOSE_CLI_THEME=%s goose", vim.o.background)
+  --         end,
+  --       },
+  --       aichat = {
+  --         cmd = function()
+  --           return string.format(
+  --             "AICHAT_LIGHT_THEME=%s aichat -r %%functions%% --session",
+  --             -- Convert boolean to string "true" or "false"
+  --             tostring(vim.o.background == "light")
+  --           )
+  --         end,
+  --       },
+  --       claude = {
+  --         cmd = function()
+  --           return string.format("claude config set -g theme %s && claude", vim.o.background)
+  --         end,
+  --       },
+  --       kode = {
+  --         cmd = function()
+  --           return string.format("kode config set -g theme %s && kode", vim.o.background)
+  --         end,
+  --       },
+  --       aider = {
+  --         cmd = function()
+  --           return string.format("aider --watch-files --%s-mode --no-auto-commit", vim.o.background)
+  --         end,
+  --       },
+  --     },
+  --     window_dimensions = {
+  --       right = { width = 0.3, height = 1.0 }, -- Right side
+  --     },
+  --     -- You can also set window, default_position, enable_diffing here
+  --     default_position = "right",
+  --   },
+  --   dependencies = { "folke/snacks.nvim" },
+  --   keys = {
+  --     -- Diff Tools
+  --     {
+  --       "<leader>dvo",
+  --       function() require("ai-terminals").diff_changes() end,
+  --       desc = "Show diff (vimdiff)",
+  --     },
+  --     {
+  --       "<leader>dvD",
+  --       function() require("ai-terminals").diff_changes({ delta = true }) end,
+  --       desc = "Show diff (delta)",
+  --     },
+  --     {
+  --       "<leader>dvr",
+  --       function() require("ai-terminals").revert_changes() end,
+  --       desc = "Revert changes from backup",
+  --     },
+  --     -- Example Keymaps (using default terminal names: 'claude', 'goose',
+  --     -- 'aider', 'aichat', 'kode')
+  --     -- Claude Keymaps
+  --     {
+  --       "<leader>atc", -- Mnemonic: AI Terminal Claude
+  --       function() require("ai-terminals").toggle("claude") end,
+  --       mode = { "n", "v" }, -- Works in normal and visual mode
+  --       desc = "Toggle Claude terminal (sends selection in visual mode)",
+  --     },
+  --     {
+  --       "<leader>adc", -- Mnemonic: AI Diagnostics Claude
+  --       function() require("ai-terminals").send_diagnostics("claude") end,
+  --       mode = { "n", "v" },
+  --       desc = "Send diagnostics to Claude",
+  --     },
+  --     -- Goose Keymaps
+  --     -- {
+  --     --   "<leader>atg",
+  --     --   function() require("ai-terminals").toggle("goose") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Toggle Goose terminal (sends selection in visual mode)",
+  --     -- },
+  --     -- {
+  --     --   "<leader>adg",
+  --     --   function() require("ai-terminals").send_diagnostics("goose") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Send diagnostics to Goose",
+  --     -- },
+  --     -- Aider Keymaps
+  --     {
+  --       "<leader>ata",
+  --       function() require("ai-terminals").toggle("aider") end,
+  --       mode = { "n", "v" },
+  --       desc = "Toggle Aider terminal (sends selection in visual mode)",
+  --     },
+  --     {
+  --       "<leader>ac",
+  --       function()
+  --         -- Adds comment and saves file
+  --         require("ai-terminals").aider_comment("AI!")
+  --       end,
+  --       desc = "Add 'AI!' comment above line",
+  --     },
+  --     {
+  --       "<leader>aC",
+  --       function()
+  --         -- Adds comment and saves file
+  --         require("ai-terminals").aider_comment("AI?")
+  --       end,
+  --       desc = "Add 'AI?' comment above line",
+  --     },
+  --     {
+  --       "<leader>al", -- Mnemonic: AI add Local file
+  --       function()
+  --         -- add current file (path conversion happens inside)
+  --         require("ai-terminals").aider_add_files(vim.fn.expand("%"))
+  --       end,
+  --       desc = "Add current file to Aider (/add)",
+  --     },
+  --     {
+  --       "<leader>aR", -- Mnemonic: AI add Read-only
+  --       function()
+  --         -- add current file as read-only (path conversion happens inside)
+  --         require("ai-terminals").aider_add_files(vim.fn.expand("%"), { read_only = true })
+  --       end,
+  --       desc = "Add current file to Aider (read-only)",
+  --     },
+  --     {
+  --       "<leader>aL", -- Mnemonic: AI add Listed buffers
+  --       function() require("ai-terminals").aider_add_buffers() end,
+  --       desc = "Add all listed buffers to Aider",
+  --     },
+  --     {
+  --       "<leader>ada",
+  --       function() require("ai-terminals").send_diagnostics("aider") end,
+  --       mode = { "n", "v" },
+  --       desc = "Send diagnostics to Aider",
+  --     },
+  --     -- aichat Keymaps
+  --     -- {
+  --     --   "<leader>ati",
+  --     --   function() require("ai-terminals").toggle("aichat") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Toggle AI Chat terminal (sends selection in visual mode)",
+  --     -- },
+  --     -- {
+  --     --   "<leader>adi",
+  --     --   function() require("ai-terminals").send_diagnostics("aichat") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Send diagnostics to AI Chat",
+  --     -- },
+  --     -- Kode Keymaps
+  --     -- {
+  --     --   "<leader>atk",
+  --     --   function() require("ai-terminals").toggle("kode") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Toggle Kode terminal (sends selection in visual mode)",
+  --     -- },
+  --     -- {
+  --     --   "<leader>adk",
+  --     --   function() require("ai-terminals").send_diagnostics("kode") end,
+  --     --   mode = { "n", "v" },
+  --     --   desc = "Send diagnostics to Kode",
+  --     -- },
+  --     -- Run Command and Send Output
+  --     -- {
+  --     --   "<leader>ar", -- Mnemonic: AI Run command
+  --     --   function()
+  --     --     -- Prompts user for command, then sends output to Aider
+  --     --     require("ai-terminals").send_command_output("aider")
+  --     --   end,
+  --     --   desc = "Run command (prompts) and send output to Aider terminal",
+  --     -- },
+  --     -- Destroy All Terminals
+  --     {
+  --       "<leader>ax", -- Mnemonic: AI eXterminate
+  --       function() require("ai-terminals").destroy_all() end,
+  --       desc = "Destroy all AI terminals (closes windows, stops processes)",
+  --     },
+  --     -- Focus Terminal
+  --     {
+  --       "<leader>af", -- Mnemonic: AI Focus
+  --       function() require("ai-terminals").focus() end,
+  --       desc = "Focus the last used AI terminal window",
+  --     },
+  --   },
+  -- },
 
   -- {
   --   "zbirenbaum/copilot.lua",
@@ -199,7 +460,7 @@ return {
     end,
   },
   {
-    "lambdalisue/gina.vim",
+    "lambdalisue/vim-gin",
     -- config = function()
     -- end
   },

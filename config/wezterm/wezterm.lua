@@ -29,8 +29,8 @@ config.font_size = 13.0
 
 config.use_ime = true
 
-config.window_background_opacity = 0.85
-config.macos_window_background_blur = 10
+config.window_background_opacity = 0.99
+config.macos_window_background_blur = 20
 
 
 config.window_decorations = "RESIZE"
@@ -105,6 +105,8 @@ config.keys = {
   -- tab
   { key = 'n', mods = 'LEADER', action = act.ActivateTabRelative(1), },
   { key = 'p', mods = 'LEADER', action = act.ActivateTabRelative(-1), },
+  { key = '{', mods = 'LEADER', action = act.MoveTabRelative(-1) },
+  { key = '}', mods = 'LEADER', action = act.MoveTabRelative(1) },
 
   -- select / copy mode
   { key = 'f', mods = 'LEADER', action = act.Search { Regex = '' }, },

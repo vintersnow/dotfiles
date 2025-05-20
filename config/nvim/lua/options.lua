@@ -18,6 +18,7 @@ local options = {
   list = true,
   spell = true,
   fixendofline = false,
+  laststatus = 3,
 }
 
 for k, v in pairs(options) do

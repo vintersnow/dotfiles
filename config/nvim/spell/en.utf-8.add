@@ -18,3 +18,4 @@ HtmlWebpackPlugin
 classmethod
 Mixins
 UserSession
+SetPin
