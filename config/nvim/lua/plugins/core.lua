@@ -493,6 +493,7 @@ return {
         { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     },
     config = function()
+      vim.g.lazygit_use_neovim_remote = 0
       -- vim.env.GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
     end,
   },
