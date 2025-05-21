@@ -25,15 +25,15 @@ cmp.setup({
     end,
   },
   mapping = {
-      ["<C-j>"] = vim.schedule_wrap(function(fallback)
-        if cmp.visible() and has_words_before() then
-          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-        elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-            vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-        else
-          fallback()
-        end
-      end),
+      -- ["<C-j>"] = vim.schedule_wrap(function(fallback)
+      --   if cmp.visible() and has_words_before() then
+      --     cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+      --   elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+      --       vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+      --   else
+      --     fallback()
+      --   end
+      -- end),
       -- ["<Tab>"] = cmp.mapping({
       --     c = function()
       --         if cmp.visible() then

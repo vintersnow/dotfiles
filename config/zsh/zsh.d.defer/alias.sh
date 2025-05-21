@@ -27,12 +27,21 @@ alias ......='cd ../../../../..'
 alias du='du -sh'
 
 if has 'nvim'; then
-  alias v='nvim'
-  alias vim='nvim'
+  if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+    alias vim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+    alias v=nvr -cc split --remote-wait +'set bufhidden=wipe'
+  else
+    alias v='nvim'
+    alias vim='nvim'
+  fi
+
 else
   echo "No neovim"
   alias v='vim'
 fi
+
+
 
 alias countinode='sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n'
 

@@ -491,7 +491,10 @@ return {
     -- order to load the plugin when the command is run for the first time
     keys = {
         { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
+    },
+    config = function()
+      -- vim.env.GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    end,
   },
 
   -- Editor

@@ -27,8 +27,13 @@ export LC_ALL=ja_JP.UTF-8
 
 #Sheet EDITOR
 if has 'nvim'; then
-  export EDITOR=nvim
-  export VISUAL=nvim
+  if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+  else
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+  fi
 else
   export EDITOR=vim
   export VISUAL=vim
