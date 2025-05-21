@@ -121,8 +121,8 @@ config.keys = {
       act.SendKey { key = 'L', mods = 'CTRL' },
     },
   },
-  { key = 'k', mods = 'CTRL', action = act.ScrollToPrompt(-1) },
-  { key = 'j', mods = 'CTRL', action = act.ScrollToPrompt(1) },
+  -- { key = 'k', mods = 'CTRL', action = act.ScrollToPrompt(-1) },
+  -- { key = 'j', mods = 'CTRL', action = act.ScrollToPrompt(1) },
 }
 
 config.key_tables ={

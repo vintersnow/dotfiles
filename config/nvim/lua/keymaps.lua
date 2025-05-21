@@ -26,9 +26,6 @@ keymap("i", "<C-l>", "<C-g>U<Right>", opts)
 
 keymap("n", "<leader>r", "<Plug>(quickrun)", opts)
 
--- SKK
-keymap('i', '<C-j>', '<Plug>(skkeleton-enable)', opts)
-keymap('c', '<C-j>', '<Plug>(skkeleton-enable)', opts)
 
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
