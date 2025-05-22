@@ -13,5 +13,5 @@ telescope.setup{
 -- telescope.load_extension('harpoon')
 
 -- vim.api.nvim_set_keymap("n", "<leader>ff", "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fr", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader>fr", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap("n", "<leader>fF", "<Cmd>lua require('telescope').<CR>", {noremap = true, silent = true})

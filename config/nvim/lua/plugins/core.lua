@@ -22,6 +22,41 @@ return {
       vim.cmd([[colorscheme nordfox]])
     end,
   },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require'treesitter-context'.setup{
+        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+        multiwindow = false, -- Enable multiwindow support.
+        max_lines = 3, -- How many lines the window should span. Values <= 0 mean no limit.
+        min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to show for a single context
+        trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20, -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      }
+    end,
+  },
+
+  -- {
+  --   "shortcuts/no-neck-pain.nvim",
+  --   version = "*"
+  -- },
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
@@ -45,6 +80,13 @@ return {
   },
   {
     'rcarriga/nvim-notify'
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    config = function()
+      require("plugins/ufo")
+    end,
   },
 
   -- LSP
@@ -83,6 +125,10 @@ return {
   },
   {
     "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = {
+      -- cfg options
+    },
   },
   {
     "williamboman/mason.nvim",
@@ -109,6 +155,7 @@ return {
     -- end })
     -- end
   },
+
   {
     'github/copilot.vim',
     config = function()
@@ -503,6 +550,27 @@ return {
     cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewToggleFiles", "DiffviewFocusFiles" },
   },
 
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+    config = function()
+      require("oil").setup({
+        -- See :help oil-config-options for all available options
+        view_options = {
+          -- Show files and directories that start with "."
+          show_hidden = true,
+        },
+      })
+    end,
+  },
+
   -- Editor
   {
     "windwp/nvim-autopairs",
@@ -567,13 +635,13 @@ return {
   "quangnguyen30192/cmp-nvim-ultisnips",
 
   -- Fizzy finder
-  "nvim-lua/plenary.nvim",
   {
     "nvim-telescope/telescope.nvim",
     init = function()
       local opts = { noremap = true, silent = true }
       local keymap = vim.api.nvim_set_keymap
-      keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+      keymap("n", "<leader>fr", "<cmd>Telescope find_files<cr>", opts)
+      keymap("n", "<leader>ff", "<cmd>Telescope smart_open<cr>", opts)
       keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
       keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
       keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
@@ -586,12 +654,26 @@ return {
     cmd = "Telescope",
   },
   { "kkharji/sqlite.lua" },
+  -- {
+  --   "nvim-telescope/telescope-frecency.nvim",
+  --   dependencies = { "nvim-telescope/telescope.nvim", "kkharji/sqlite.lua" },
+  --   config = function()
+  --     require("telescope").load_extension("frecency")
+  --   end,
+  -- },
   {
-    "nvim-telescope/telescope-frecency.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "kkharji/sqlite.lua" },
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
     config = function()
-      require("telescope").load_extension("frecency")
+      require("telescope").load_extension("smart_open")
     end,
+    dependencies = {
+      "kkharji/sqlite.lua",
+      -- Only required if using match_algorithm fzf
+      -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      -- Optional.  If installed, native fzy will be used when match_algorithm is fzy
+      -- { "nvim-telescope/telescope-fzy-native.nvim" },
+    },
   },
   -- 'ThePrimeagen/harpoon',
 
@@ -622,19 +704,19 @@ return {
   --     require("dap-go").setup()
   --   end,
   -- },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("plugins/chatgpt")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("plugins/chatgpt")
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "folke/trouble.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- },
 
   {
     "folke/which-key.nvim",
