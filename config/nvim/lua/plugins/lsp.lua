@@ -9,7 +9,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function()
-      require("plugins/lspconfig")
+      require("plugins/lspconfig_setting")
     end,
   },
   {
@@ -29,7 +29,7 @@ return {
     -- dependencies = { "zbirenbaum/copilot-cmp", "onsails/lspkind.nvim" },
     dependencies = { "onsails/lspkind.nvim" },
     config = function()
-      require("plugins/cmp")
+      require("plugins/cmp_setting")
     end,
   },
   {

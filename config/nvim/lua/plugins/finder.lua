@@ -12,7 +12,17 @@ return {
       keymap("n", "<leader>tr", "<cmd>Telescope registers<cr>", opts)
     end,
     config = function()
-      require("plugins/telescope")
+      local actions = require('telescope.actions')
+      local telescope = require('telescope')
+      telescope.setup{
+        defaults = {
+          mappings = {
+            n = {
+              ["q"] = actions.close
+            },
+          },
+        }
+      }
     end,
     lazy = true,
     cmd = "Telescope",
