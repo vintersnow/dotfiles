@@ -22,6 +22,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-plugins = require('plugins/core')
+-- plugins = require('plugins/core')
 
-require('lazy').setup(plugins)
+require('lazy').setup({
+  spec = {
+    -- { import = "plugins.core" },
+    { import = "lazy.whichkey" },
+    { import = "lazy.ui" },
+    { import = "lazy.treesitter"},
+    { import = "lazy.lsp" },
+    { import = "lazy.avante" },
+    { import = "lazy.flutter" },
+    { import = "lazy.git" },
+    { import = "lazy.tool" },
+    { import = "lazy.oil" },
+    { import = "lazy.overseer" },
+    { import = "lazy.editor" },
+    { import = "lazy.skk" },
+    { import = "lazy.snippet" },
+  },
+})
