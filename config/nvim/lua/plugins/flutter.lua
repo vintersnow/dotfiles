@@ -1,7 +1,8 @@
 return {
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
+    -- lazy = false,
+    ft = { "dart" },
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig", "stevearc/dressing.nvim" },
     config = function()
       local config = require("plugins/lspconfig_setting")
