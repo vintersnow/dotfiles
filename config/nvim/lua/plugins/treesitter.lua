@@ -20,34 +20,32 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    init = function()
+    config = function()
       vim.opt.foldmethod = "expr"
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
       vim.opt.foldenable = false
+
+      require("nvim-treesitter.configs").setup({
+        highlight = {
+          enable = true,
+          disable = {},
+        },
+        indent = {
+          enable = false,
+          disable = {},
+        },
+        ensure_installed = {
+          "tsx",
+          "toml",
+          "json",
+          "yaml",
+          "swift",
+          "html",
+          "scss"
+        },
+      })
     end,
-    opts = {
-      highlight = {
-        enable = true,
-        disable = {},
-      },
-      indent = {
-        enable = false,
-        disable = {},
-      },
-      ensure_installed = {
-        "tsx",
-        "toml",
-        "json",
-        "yaml",
-        "swift",
-        "html",
-        "scss"
-      },
-    },
-    -- config = function()
-    --   require("plugins/treesitter")
-    -- end,
     build = ":TSUpdate",
   },
 }
