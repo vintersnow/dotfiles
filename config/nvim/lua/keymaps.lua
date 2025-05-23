@@ -22,9 +22,9 @@ keymap("n", "<leader>t-", ":split<Space>term://.//zsh<CR>", opts)
 keymap("n", "<leader>t\\", ":vsplit<Space>term://.//zsh<CR>", opts)
 
 -- move right in insert mode
-keymap("i", "<C-l>", "<C-g>U<Right>", opts)
+-- keymap("i", "<C-l>", "<C-g>U<Right>", opts)
 
-keymap("n", "<leader>r", "<Plug>(quickrun)", opts)
+-- keymap("n", "<leader>r", "<Plug>(quickrun)", opts)
 
 
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
