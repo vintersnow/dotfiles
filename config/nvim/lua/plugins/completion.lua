@@ -3,7 +3,7 @@ return {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdLineEnter" },
     -- dependencies = { "zbirenbaum/copilot-cmp", "onsails/lspkind.nvim" },
-    dependencies = { 
+    dependencies = {
       "onsails/lspkind.nvim",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -15,7 +15,7 @@ return {
     end,
   },
   {
-    'github/copilot.vim',
+    "github/copilot.vim",
     -- event = "InsertEnter", -- this does not work
     init = function()
       local opts = { noremap = true, silent = true }

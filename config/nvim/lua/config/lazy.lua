@@ -21,10 +21,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- plugins = require('plugins/core')
 
-require('lazy').setup({
+require("lazy").setup({
   spec = {
     { import = "plugins.avante" },
     { import = "plugins.completion" },
@@ -39,7 +38,7 @@ require('lazy').setup({
     { import = "plugins.snippet" },
     { import = "plugins.startuptime" },
     { import = "plugins.tool" },
-    { import = "plugins.treesitter"},
+    { import = "plugins.treesitter" },
     { import = "plugins.ui" },
     { import = "plugins.whichkey" },
   },

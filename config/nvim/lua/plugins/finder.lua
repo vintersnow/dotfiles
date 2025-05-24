@@ -12,17 +12,17 @@ return {
       keymap("n", "<leader>tr", "<cmd>Telescope registers<cr>", opts)
     end,
     config = function()
-      local actions = require('telescope.actions')
-      local telescope = require('telescope')
-      telescope.setup{
+      local actions = require("telescope.actions")
+      local telescope = require("telescope")
+      telescope.setup({
         defaults = {
           mappings = {
             n = {
-              ["q"] = actions.close
+              ["q"] = actions.close,
             },
           },
-        }
-      }
+        },
+      })
       telescope.load_extension("smart_open")
     end,
     lazy = true,

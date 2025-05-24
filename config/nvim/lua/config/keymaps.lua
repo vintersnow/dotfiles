@@ -12,9 +12,9 @@ keymap("n", "<leader>-", ":<C-u>sp<CR>", opts)
 keymap("n", "<leader>/", ":<C-u>vs<CR>", opts)
 keymap("n", "<leader>\\", ":<C-u>vs<CR>", opts)
 
-keymap("n", "<leader>p", "\"+p<CR>", opts)
-keymap("n", "<leader>y", "\"+yy", opts)
-keymap("v", "<leader>y", "\"+y", opts)
+keymap("n", "<leader>p", '"+p<CR>', opts)
+keymap("n", "<leader>y", '"+yy', opts)
+keymap("v", "<leader>y", '"+y', opts)
 
 keymap("n", "<C-[>", "<C-t>", opts)
 
@@ -26,21 +26,19 @@ keymap("n", "<leader>t\\", ":vsplit<Space>term://.//zsh<CR>", opts)
 
 -- keymap("n", "<leader>r", "<Plug>(quickrun)", opts)
 
-
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 local group_id = augroup("filetype_keymap", {
-    clear = false
+  clear = false,
 })
 
-
 local function on_ft(ft, cb)
-    autocmd('FileType', {
-        group = group_id,
-        pattern = ft,
-        callback = cb,
-    })
+  autocmd("FileType", {
+    group = group_id,
+    pattern = ft,
+    callback = cb,
+  })
 end
-on_ft({'qf', 'help'}, function()
+on_ft({ "qf", "help" }, function()
   buf_keymap(0, "n", "q", ":q<CR>", opts)
 end)

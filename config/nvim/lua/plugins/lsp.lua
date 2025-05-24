@@ -11,7 +11,7 @@ return {
     "neovim/nvim-lspconfig",
     cond = not vim.g.vscode,
     event = { "BufReadPost", "BufNewFile" },
-		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     dependencies = {
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },

@@ -38,7 +38,6 @@ return {
       },
 
       hints = { enabled = true },
-
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
@@ -73,7 +72,7 @@ return {
       },
       {
         -- Make sure to set this up properly if you have lazy=true
-        'MeanderingProgrammer/render-markdown.nvim',
+        "MeanderingProgrammer/render-markdown.nvim",
         opts = {
           file_types = { "markdown", "Avante" },
         },
