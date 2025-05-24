@@ -1,7 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-context",
+    event = { "BufNewFile", "BufRead" },
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    cmd = "TSContextToggle",
     opts = {
       enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
       multiwindow = false, -- Enable multiwindow support.
@@ -20,6 +22,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufNewFile", "BufRead" },
     config = function()
       vim.opt.foldmethod = "expr"
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

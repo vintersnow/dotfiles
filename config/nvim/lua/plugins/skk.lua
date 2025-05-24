@@ -1,7 +1,12 @@
 return {
   {
     "vim-skk/skkeleton",
-    dependencies = { "vim-denops/denops.vim" },
+    -- event = "InsertEnter",
+    event = { "BufNewFile", "BufRead" },
+    dependencies = {
+      "vim-denops/denops.vim",
+      "delphinus/skkeleton_indicator.nvim",
+    },
     config = function()
       -- call skkeleton#config({ 'globalJisyo': '~/Library/Application Support/AquaSKK/SKK-JISYO.L' })
       -- Coment out for now
@@ -19,9 +24,5 @@ return {
 
       require'skkeleton_indicator'.setup{}
     end,
-  },
-  {
-    "delphinus/skkeleton_indicator.nvim",
-    dependencies = { "vim-skk/skkeleton" },
   },
 }
