@@ -16,7 +16,7 @@ local options = {
   wrap = false,
   conceallevel = 0,
   list = true,
-  spell = true,
+  -- spell = true, -- slow startup
   fixendofline = false,
   laststatus = 3,
 }
