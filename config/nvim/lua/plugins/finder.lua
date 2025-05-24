@@ -23,6 +23,7 @@ return {
           },
         }
       }
+      telescope.load_extension("smart_open")
     end,
     lazy = true,
     cmd = "Telescope",
@@ -30,10 +31,8 @@ return {
   { "kkharji/sqlite.lua" },
   {
     "danielfalk/smart-open.nvim",
+    lazy = true,
     branch = "0.2.x",
-    config = function()
-      require("telescope").load_extension("smart_open")
-    end,
     dependencies = {
       "kkharji/sqlite.lua",
       -- Only required if using match_algorithm fzf
