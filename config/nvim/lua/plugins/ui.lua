@@ -1,12 +1,12 @@
 return {
-  {
-    'goolord/alpha-nvim',
-    event = "VimEnter",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-  },
+  -- {
+  --   'goolord/alpha-nvim',
+  --   event = "VimEnter",
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function ()
+  --       require'alpha'.setup(require'alpha.themes.startify'.config)
+  --   end
+  -- },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -76,6 +76,7 @@ return {
   {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
+    event = "VeryLazy",
     config = function()
       vim.o.foldcolumn = '1' -- '0' is not bad
       vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
