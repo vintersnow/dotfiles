@@ -6,6 +6,9 @@ return {
       { "<leader>R", "<CMD>OverseerToggle<CR>" },
     },
     cmd = { "OverseerRun", "OverseerToggle" },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
     opts = {
       templates = {
         "builtin",

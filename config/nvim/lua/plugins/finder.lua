@@ -9,7 +9,7 @@ return {
       keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
       keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
       keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-      keymap("n", "<leader>tr", "<cmd>Telescope registers<cr>", opts)
+      -- keymap("n", "<leader>tr", "<cmd>Telescope registers<cr>", opts)
     end,
     config = function()
       local actions = require("telescope.actions")

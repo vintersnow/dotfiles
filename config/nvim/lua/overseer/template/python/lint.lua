@@ -1,6 +1,6 @@
 ---@type overseer.TemplateDefinition
 return {
-  name = "Ruff Format",
+  name = "Ruff Lint",
   builder = function()
     ---@type overseer.TaskDefinition
     return {
