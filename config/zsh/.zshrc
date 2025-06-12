@@ -5,9 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $ZDOTDIR/zshrc
+if [[ -r $ZDOTDIR/zshrc ]]; then
+  source $ZDOTDIR/zshrc
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 ######## END ZSHRC CONFIG ########
+
+. "$HOME/.cache/../bin/env"

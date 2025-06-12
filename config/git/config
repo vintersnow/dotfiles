@@ -4,6 +4,7 @@
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
 	precomposeunicode = true
+  pager = delta
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -49,7 +50,8 @@
 	smudge = git hawser smudge %f
 	required = true
 [pull]
-        ff = only
+  ff = only
+  conflictstyle = zdiff3
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
@@ -58,3 +60,8 @@
   root = ~/.ghq
 [github]
 	user = vintersnow
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection

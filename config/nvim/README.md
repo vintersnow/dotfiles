@@ -1,0 +1,5 @@
+
+# Format
+```
+stylua --glob '**/*.lua' .
+```

@@ -41,3 +41,4 @@ pw.zsh
 
 # wezterm secrets
 ssh_domains.lua
+.aider*

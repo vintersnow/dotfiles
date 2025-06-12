@@ -30,3 +30,11 @@ Temporary Items
 .tern-port
 tags
 .nvmrc
+
+repomix-output*.txt
+
+**/.claude/settings.local.json
+
+**/.claude/settings.local.json
+
+.aider*

@@ -28,4 +28,3 @@ export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 if [ -x /usr/libexec/path_helper ]; then
     eval `/usr/libexec/path_helper -s`
 fi
-source "/Users/vinter/.rover/env"

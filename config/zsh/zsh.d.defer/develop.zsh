@@ -35,3 +35,9 @@ export PIPENV_VENV_IN_PROJECT=true
 # zinit snippet "$ZSHHOME/pyenv.zsh"
 
 export_path "$HOME/.poetry/bin"
+
+# bun completions: Need call after compinit
+# [ -s "/Users/vinter/.bun/_bun" ] && source "/Users/vinter/.bun/_bun"
+
+# mise setting
+export MISE_PYTHON_DEFAULT_PACKAGES_FILE="$XDG_CONFIG_HOME/mise/default-python-packages"

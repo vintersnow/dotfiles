@@ -110,6 +110,9 @@ setopt auto_menu
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
 
+# Ignore command start from space
+setopt histignorespace
+
 ###############################################################################
 
 autoload -U is-at-least
