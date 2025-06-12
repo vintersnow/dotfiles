@@ -123,6 +123,28 @@ config.keys = {
   },
   -- { key = 'k', mods = 'CTRL', action = act.ScrollToPrompt(-1) },
   -- { key = 'j', mods = 'CTRL', action = act.ScrollToPrompt(1) },
+
+  -- Workspace
+  { key = 's', mods = 'LEADER', action = act.ShowLauncherArgs { flags = 'WORKSPACES' , title = "Select workspace" }, },
+  {
+    -- Rename workspace
+    mods = 'LEADER',
+    key = '$',
+    action = act.PromptInputLine {
+      description = '(wezterm) Set workspace title:',
+      action = wezterm.action_callback(function(win,pane,line)
+        if line then
+          wezterm.mux.rename_workspace(
+            wezterm.mux.get_active_workspace(),
+            line
+          )
+        end
+      end),
+    },
+  },
+  -- { key = 'w', mods = 'LEADER', action = act.ActivateWorkspace, },
+  -- { key = 'W', mods = 'LEADER', action = act.SwitchToWorkspace, },
+  -- { key = 'd', mods = 'LEADER', action = act.DetachWorkspace, },
 }
 
 config.key_tables ={
